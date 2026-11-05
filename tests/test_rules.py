@@ -80,21 +80,37 @@ def test_new_device_rule_skips_users_with_short_history():
 # --------------------------------------------------------------------------- R3
 
 def test_amount_anomaly_fires_when_amount_blows_p99():
-    # Use enough baseline so p99 isn't dragged up by the single outlier:
-    # p99 of 101 values is close to the baseline.
+    # With point-in-time features, 20 baseline $10 txns + 1 $500 txn fires
+    # because prior p99 is $10, threshold = max($15, $300) = $300, and $500
+    # > $300. This is the reviewer counterexample from the feedback round.
     rows = [
         *[{"txn_id": f"h{i}", "user_id": "u1", "timestamp": _iso(i),
-           "merchant_name": "SHELL", "amount": 10.0, "device_id": "d1"} for i in range(100)],
-        {"txn_id": "big", "user_id": "u1", "timestamp": _iso(1000),
-         "merchant_name": "AIRLINE", "amount": 1500.0, "device_id": "d1"},
+           "merchant_name": "SHELL", "amount": 10.0, "device_id": "d1"} for i in range(20)],
+        {"txn_id": "big", "user_id": "u1", "timestamp": _iso(100),
+         "merchant_name": "AIRLINE", "amount": 500.0, "device_id": "d1"},
     ]
     df = make_df(rows)
     flags = AmountAnomalyRule(min_history=20, floor=300, multiplier=1.5).apply(df)
     assert "big" in set(flags["txn_id"])
 
 
+def test_amount_anomaly_is_point_in_time():
+    # If features were computed over the full period, p99 of twenty $10s plus
+    # one $500 would be ~$402, and the $500 would NOT fire. The point-in-time
+    # version should still fire — this test asserts the correct behaviour.
+    rows = [
+        *[{"txn_id": f"h{i}", "user_id": "u1", "timestamp": _iso(i),
+           "merchant_name": "SHELL", "amount": 10.0, "device_id": "d1"} for i in range(20)],
+        {"txn_id": "the_spike", "user_id": "u1", "timestamp": _iso(100),
+         "merchant_name": "AIRLINE", "amount": 500.0, "device_id": "d1"},
+    ]
+    df = make_df(rows)
+    flags = AmountAnomalyRule(min_history=20, floor=300, multiplier=1.5).apply(df)
+    assert "the_spike" in set(flags["txn_id"])
+
+
 def test_amount_anomaly_respects_floor():
-    # p99 is 10, 1.5x = 15, floor 300 wins. A $100 txn should NOT fire.
+    # Prior p99 = 10, 1.5x = 15, floor 300 wins. A $100 txn should NOT fire.
     rows = [
         *[{"txn_id": f"h{i}", "user_id": "u1", "timestamp": _iso(i),
            "merchant_name": "SHELL", "amount": 10.0, "device_id": "d1"} for i in range(25)],
@@ -133,16 +149,29 @@ def test_card_testing_quiet_when_same_merchant():
 
 # --------------------------------------------------------------------------- R5
 
-def test_device_sharing_fires_when_many_users_on_one_device():
+def test_device_sharing_fires_from_fourth_user_onward():
+    # First three users on the device should NOT fire (threshold is 4). The
+    # fourth user's txn and any subsequent txns on the device should fire.
     rows = [
-        {"txn_id": f"t{u}", "user_id": f"u{u}", "timestamp": _iso(u * 10),
-         "merchant_name": "SHELL", "amount": 20.0 + u, "device_id": "shared"}
-        for u in range(4)
+        {"txn_id": "t0", "user_id": "u0", "timestamp": _iso(0),
+         "merchant_name": "SHELL", "amount": 20.0, "device_id": "shared"},
+        {"txn_id": "t1", "user_id": "u1", "timestamp": _iso(10),
+         "merchant_name": "SHELL", "amount": 21.0, "device_id": "shared"},
+        {"txn_id": "t2", "user_id": "u2", "timestamp": _iso(20),
+         "merchant_name": "SHELL", "amount": 22.0, "device_id": "shared"},
+        {"txn_id": "t3_fourth_user", "user_id": "u3", "timestamp": _iso(30),
+         "merchant_name": "SHELL", "amount": 23.0, "device_id": "shared"},
+        {"txn_id": "t4_same_user_later", "user_id": "u0", "timestamp": _iso(40),
+         "merchant_name": "SHELL", "amount": 30.0, "device_id": "shared"},
     ]
     df = make_df(rows)
     flags = DeviceSharingRule(user_threshold=4, top_n_per_device=5).apply(df)
-    assert len(flags) == 4  # all four surfaced (<= top_n)
-    assert all(f.startswith("device shared used by 4 distinct users") for f in flags["reason"])
+    flagged = set(flags["txn_id"])
+    assert "t0" not in flagged
+    assert "t1" not in flagged
+    assert "t2" not in flagged
+    assert "t3_fourth_user" in flagged
+    assert "t4_same_user_later" in flagged
 
 
 def test_device_sharing_quiet_on_single_user_device():

@@ -11,43 +11,82 @@
   },
   "per_rule_counts": {
     "R1": 1348,
-    "R2": 424,
-    "R3": 1182,
+    "R2": 395,
+    "R3": 1715,
     "R4": 93,
     "R5": 95
   },
-  "pre_budget_flags": 2957,
+  "per_rule_budget_survival": {
+    "R1": {
+      "pre_budget": 1348,
+      "survived_budget": 590,
+      "dropped_by_budget": 758,
+      "survival_rate": 0.4377
+    },
+    "R2": {
+      "pre_budget": 395,
+      "survived_budget": 395,
+      "dropped_by_budget": 0,
+      "survival_rate": 1.0
+    },
+    "R3": {
+      "pre_budget": 1715,
+      "survived_budget": 211,
+      "dropped_by_budget": 1504,
+      "survival_rate": 0.123
+    },
+    "R4": {
+      "pre_budget": 93,
+      "survived_budget": 93,
+      "dropped_by_budget": 0,
+      "survival_rate": 1.0
+    },
+    "R5": {
+      "pre_budget": 95,
+      "survived_budget": 36,
+      "dropped_by_budget": 59,
+      "survival_rate": 0.3789
+    }
+  },
+  "pre_budget_flags": 3321,
   "final_flags": 1000,
   "flag_rate_per_1M": 1000.06,
   "budget": 1000,
   "pairwise_overlap": {
     "R1&R2": 10,
-    "R1&R3": 2,
+    "R1&R3": 4,
     "R1&R4": 81,
     "R1&R5": 2,
-    "R2&R3": 58,
+    "R2&R3": 197,
     "R2&R4": 0,
     "R2&R5": 23,
     "R3&R4": 0,
-    "R3&R5": 19,
+    "R3&R5": 33,
     "R4&R5": 0
   },
   "recall_against_confirmed_fraud": {
-    "labeled_fraud_count": 190,
-    "flagged_labels": 82,
-    "recall": 0.4316
+    "pre_budget": {
+      "labeled_fraud_count": 190,
+      "flagged_labels": 133,
+      "recall": 0.7
+    },
+    "post_budget": {
+      "labeled_fraud_count": 190,
+      "flagged_labels": 85,
+      "recall": 0.4474
+    }
   },
   "timings_seconds": {
-    "ingest": 2.353,
-    "load_fraud": 0.018,
-    "rule:R1": 0.425,
-    "rule:R2": 0.615,
-    "rule:R3": 0.442,
+    "ingest": 2.369,
+    "load_fraud": 0.017,
+    "rule:R1": 0.434,
+    "rule:R2": 0.916,
+    "rule:R3": 0.618,
     "rule:R4": 0.029,
-    "rule:R5": 0.328,
-    "merge": 0.043,
-    "trim": 0.001,
+    "rule:R5": 1.001,
+    "merge": 0.051,
+    "trim": 0.002,
     "write": 0.003
   },
-  "total_seconds": 4.257
+  "total_seconds": 5.44
 }

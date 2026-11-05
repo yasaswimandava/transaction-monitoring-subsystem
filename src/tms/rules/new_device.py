@@ -1,15 +1,16 @@
-"""R2 — New device + high-value spend.
+"""R2 — New device + high-value spend (point-in-time).
 
 Pattern: account takeover via SIM-swap or credential stuffing. Attacker logs in
 from a device the legitimate user has never used, then cashes out quickly.
 
 Flag: the first time a user is seen on a device, if any of the first
 ``lookahead_hours`` of txns on that device exceed ``multiple`` × the user's
-historical median. The flagged transaction is the specific one that crossed
+prior median. The flagged transaction is the specific one that crossed
 the threshold.
 
-We require the user to have enough history (``min_history``) so that a brand-new
-account doesn't look suspicious for just transacting.
+Point-in-time correctness: the user's history count and median are computed
+only over txns strictly *before* the current one. A fraud alert must reflect
+what could have been known at the time the transaction cleared.
 """
 from __future__ import annotations
 
@@ -28,27 +29,26 @@ class NewDeviceRule:
     min_history: int = 20
     lookahead_hours: int = 24
     multiple: float = 5.0
-    floor: float = 150.0  # don't flag tiny amounts even if they beat the median
+    floor: float = 150.0
 
     def apply(self, df: pd.DataFrame) -> pd.DataFrame:
-        # Per-user history count (for the min_history gate) and median amount.
-        grp_user = df.groupby("user_id", sort=False)["amount"]
-        user_count = grp_user.transform("count")
-        user_median = grp_user.transform("median")
+        grp_user = df.groupby("user_id", sort=False)
+        # Prior-only features: count of previous txns, median of previous amounts.
+        prior_count = grp_user.cumcount()
+        prior_median = grp_user["amount"].transform(
+            lambda s: s.shift(1).expanding().median()
+        )
+        # cummin is "as-of" — it only uses current + prior rows, never future.
+        first_seen_ud = df.groupby(["user_id", "device_id"], sort=False)["timestamp"].transform("cummin")
+        user_first_ts = grp_user["timestamp"].transform("cummin")
 
-        # First-seen timestamp per (user_id, device_id) and per user. The user
-        # comparison is so we don't flag the user's very first device (every
-        # user has to start somewhere).
-        first_seen = df.groupby(["user_id", "device_id"], sort=False)["timestamp"].transform("min")
-        user_first_ts = df.groupby("user_id", sort=False)["timestamp"].transform("min")
-
-        delta_hours = (df["timestamp"] - first_seen).dt.total_seconds() / 3600.0
+        delta_hours = (df["timestamp"] - first_seen_ud).dt.total_seconds() / 3600.0
         in_lookahead = delta_hours <= self.lookahead_hours
-        is_not_users_first_ever = first_seen > user_first_ts
-        threshold = (user_median * self.multiple).clip(lower=self.floor)
+        is_not_users_first_ever = first_seen_ud > user_first_ts
+        threshold = (prior_median * self.multiple).clip(lower=self.floor)
 
         mask = (
-            (user_count >= self.min_history)
+            (prior_count >= self.min_history)
             & is_not_users_first_ever
             & in_lookahead
             & (df["amount"] > threshold)
@@ -56,11 +56,11 @@ class NewDeviceRule:
         if not mask.any():
             return pd.DataFrame(columns=FLAG_COLUMNS)
         hits = df.loc[mask, ["txn_id", "amount", "device_id"]].copy()
-        hits["median"] = user_median[mask].round(2)
+        hits["median"] = prior_median[mask].round(2)
         hits["threshold"] = threshold[mask].round(2)
         hits["rule_id"] = self.id
         hits["reason"] = [
-            f"${a:.2f} on new device {d} (user median ${m:.2f}, threshold ${t:.2f}) "
+            f"${a:.2f} on new device {d} (user prior median ${m:.2f}, threshold ${t:.2f}) "
             f"within {self.lookahead_hours}h of first use — possible ATO"
             for a, d, m, t in zip(hits["amount"], hits["device_id"], hits["median"], hits["threshold"])
         ]

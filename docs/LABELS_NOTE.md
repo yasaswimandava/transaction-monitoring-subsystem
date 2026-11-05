@@ -24,29 +24,41 @@ systematically underreported. Specifically:
   to encode "look like the fraud we already know" rather than "look like fraud
   in general". That is a failure mode of label-driven tuning in fraud.
 
-## What the 43.2% recall tells you
+## What the two recall numbers tell you
 
-82 of 190 labeled fraud txns landed in our 1,000-flag budget. That is strong
-precision-vs-budget evidence:
+The pipeline reports recall against the 190 labeled fraud txns at two points:
 
-- Our thresholds, tuned only on fraud-pattern reasoning, surface 43% of known
-  fraud while using 0.1% of total volume.
-- Multi-rule hits (R1+R2, R1+R4, R2+R3+R5, etc.) show up repeatedly in the
-  labeled subset — corroboration across independent signals is real.
+- **Pre-budget recall: 70.0%** (133 / 190). Of the labeled fraud, this is how
+  much our rules catch *before* the 1,000-flag trim. That is the ceiling of
+  what our rule set can see given its thresholds.
+- **Post-budget recall: 44.7%** (85 / 190). After trimming to the 1,000-flag
+  analyst budget, this is how much actually reaches a reviewer.
 
-## What the 43.2% recall does NOT tell you
+The gap between the two (25.3 percentage points, or 48 labeled fraud txns) is
+the direct cost of the budget cut — mostly R3 single-rule hits that get
+outranked by multi-rule corroborated flags. The per-rule survival table in
+`metrics.json` shows exactly which rule paid for the budget.
 
-- **It does not measure total fraud recall.** We only see labels for fraud the
-  customer reported. The unlabeled 108 misses include an unknown mix of
-  genuine misses and genuinely benign txns.
-- **It does not validate the rules against underreported patterns.** Mule
-  activity (R5) and card testing (R4) are structurally underreported. Low
-  recall against the labels for those rules is expected and not a bug.
-- **It is not a precision estimate.** We have no "confirmed legit" set, so
+Both numbers are post-hoc — never used to adjust thresholds. They are reported
+so a reviewer can see the recall-vs-precision tradeoff explicitly instead of
+the pipeline hiding the cost of its own budget decision.
+
+## What the recall numbers do NOT tell you
+
+- **They do not measure total fraud recall.** We only see labels for fraud the
+  customer reported. The 57 labeled fraud txns our rules missed entirely
+  (190 − 133 pre-budget) are known misses; the dataset almost certainly
+  contains additional unlabeled fraud that neither the labels nor our rules
+  surface. Neither number estimates that denominator.
+- **They do not validate the rules against underreported patterns.** Mule
+  activity (R5) and card testing (R4) are structurally underreported in
+  dispute data. Low recall against the labels for those rules is expected
+  and not a bug.
+- **They are not a precision estimate.** We have no "confirmed legit" set, so
   false-positive rate is unknown. The best we can say is that an analyst
-  reviewing 1,000 flags, of which 82 are known-bad, will see corroborated
-  evidence for most of the rest (per the multi-rule overlap matrix in
-  `metrics.json`).
+  reviewing 1,000 flags, of which 85 are known-bad, will see corroborated
+  evidence (multi-rule hits) for a substantial fraction of the rest — see the
+  pairwise overlap matrix in `metrics.json`.
 
 ## What we'd want next
 

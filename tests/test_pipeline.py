@@ -74,4 +74,7 @@ def test_run_end_to_end_on_synthetic_csv(tmp_path: Path):
     big_row = flagged[flagged["txn_id"] == "big"].iloc[0]
     assert "R2" in big_row["rules_fired"]
     assert "R3" in big_row["rules_fired"]
-    assert metrics["recall_against_confirmed_fraud"]["recall"] == 1.0
+    assert metrics["recall_against_confirmed_fraud"]["post_budget"]["recall"] == 1.0
+    # Per-rule survival dict should exist and contain entries for all 5 rules.
+    survival = metrics["per_rule_budget_survival"]
+    assert set(survival.keys()) == {"R1", "R2", "R3", "R4", "R5"}

@@ -1,12 +1,16 @@
-"""R5 — Device shared across many unrelated users.
+"""R5 — Device shared across many users (point-in-time).
 
 Pattern: mule ring / account farming. One device operating many accounts is a
 strong tell: shared family phones exist, but a device serving >= N distinct
 users is overwhelmingly fraud infrastructure in consumer fintech.
 
-Flag: transactions on a device whose lifetime distinct user count >=
-``user_threshold``. To keep the flag count bounded we only surface the N
-highest-amount txns per such device.
+Flag: transactions on a device whose *running* distinct-user count has reached
+``user_threshold`` as of (and including) that transaction. The N highest-
+amount qualifying txns per device are surfaced.
+
+Point-in-time correctness: we count distinct users seen on the device so far,
+not its eventual lifetime count. A txn from the first user on a device cannot
+be flagged just because that device later serves many users.
 """
 from __future__ import annotations
 
@@ -26,16 +30,23 @@ class DeviceSharingRule:
     top_n_per_device: int = 5
 
     def apply(self, df: pd.DataFrame) -> pd.DataFrame:
-        user_counts = df.groupby("device_id", sort=False)["user_id"].transform("nunique")
-        mask = user_counts >= self.user_threshold
+        # Work on a subset sorted by (device_id, timestamp) so cumsum can act
+        # as a running distinct-user count.
+        tmp = df[["device_id", "user_id", "timestamp", "txn_id", "amount"]].copy()
+        tmp = tmp.sort_values(["device_id", "timestamp"], kind="stable").reset_index(drop=True)
+
+        is_first_combo = ~tmp.duplicated(subset=["device_id", "user_id"], keep="first")
+        tmp["_first"] = is_first_combo.astype(int)
+        tmp["users_so_far"] = tmp.groupby("device_id", sort=False)["_first"].cumsum()
+
+        mask = tmp["users_so_far"] >= self.user_threshold
         if not mask.any():
             return pd.DataFrame(columns=FLAG_COLUMNS)
 
-        candidates = df.loc[mask, ["txn_id", "device_id", "amount", "user_id"]].copy()
-        candidates["device_user_count"] = user_counts[mask]
-
-        # Keep only the top-N by amount per device to respect the budget and
-        # surface the most material txns to an analyst.
+        candidates = tmp.loc[
+            mask, ["txn_id", "device_id", "amount", "user_id", "users_so_far"]
+        ].copy()
+        # Cap per device so one shared device can't flood the queue.
         candidates = (
             candidates.sort_values(["device_id", "amount"], ascending=[True, False])
             .groupby("device_id", sort=False)
@@ -44,11 +55,12 @@ class DeviceSharingRule:
 
         candidates["rule_id"] = self.id
         candidates["reason"] = [
-            f"device {d} used by {n} distinct users (threshold {self.user_threshold}) "
-            f"— possible mule ring; this ${a:.2f} txn by user {u}"
+            f"device {d} had {n} distinct users as of this txn "
+            f"(threshold {self.user_threshold}) — possible mule ring; "
+            f"this ${a:.2f} txn by user {u}"
             for d, n, a, u in zip(
                 candidates["device_id"],
-                candidates["device_user_count"],
+                candidates["users_so_far"],
                 candidates["amount"],
                 candidates["user_id"],
             )

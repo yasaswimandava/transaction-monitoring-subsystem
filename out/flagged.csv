@@ -1,15 +1,27 @@
 txn_id,rules_fired,reason,severity
-t_6972708e8910895b,"R1,R2,R5","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $437.40 on new device d_847598 (user median $25.94, threshold $150.00) within 24h of first use — possible ATO | device d_847598 used by 14 distinct users (threshold 4) — possible mule ring; this $437.40 txn by user u_00020",5
-t_19ae85f114702472,"R1,R2,R3","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $335.49 on new device d_847598 (user median $20.15, threshold $150.00) within 24h of first use — possible ATO | $335.49 vs user p99 $201.61 (threshold $302.42) — possible stolen-card cashout",5
-t_1a7416fff33f317d,"R1,R2,R5","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $413.39 on new device d_931250 (user median $38.23, threshold $191.15) within 24h of first use — possible ATO | device d_931250 used by 11 distinct users (threshold 4) — possible mule ring; this $413.39 txn by user u_01976",5
-t_4c746c0baf252f14,"R2,R3,R5","$449.98 on new device d_847598 (user median $43.37, threshold $216.85) within 24h of first use — possible ATO | $449.98 vs user p99 $256.08 (threshold $384.12) — possible stolen-card cashout | device d_847598 used by 14 distinct users (threshold 4) — possible mule ring; this $449.98 txn by user u_00296",5
-t_7c9f39ed01c30ee5,"R2,R3,R5","$441.74 on new device d_904876 (user median $22.00, threshold $150.00) within 24h of first use — possible ATO | $441.74 vs user p99 $211.73 (threshold $317.59) — possible stolen-card cashout | device d_904876 used by 9 distinct users (threshold 4) — possible mule ring; this $441.74 txn by user u_00576",5
-t_50525713f8f0e277,"R2,R3,R5","$445.39 on new device d_772146 (user median $14.06, threshold $150.00) within 24h of first use — possible ATO | $445.39 vs user p99 $139.27 (threshold $300.00) — possible stolen-card cashout | device d_772146 used by 11 distinct users (threshold 4) — possible mule ring; this $445.39 txn by user u_00698",5
-t_20de5bcb620ded2e,"R2,R3,R5","$435.88 on new device d_985129 (user median $27.52, threshold $150.00) within 24h of first use — possible ATO | $435.88 vs user p99 $245.59 (threshold $368.39) — possible stolen-card cashout | device d_985129 used by 11 distinct users (threshold 4) — possible mule ring; this $435.88 txn by user u_00881",5
-t_2567a761b7579d8b,"R2,R3,R5","$447.75 on new device d_772146 (user median $47.13, threshold $235.65) within 24h of first use — possible ATO | $447.75 vs user p99 $260.55 (threshold $390.83) — possible stolen-card cashout | device d_772146 used by 11 distinct users (threshold 4) — possible mule ring; this $447.75 txn by user u_01380",5
-t_4284899599ff295f,"R2,R3,R5","$435.34 on new device d_985129 (user median $16.06, threshold $150.00) within 24h of first use — possible ATO | $435.34 vs user p99 $116.63 (threshold $300.00) — possible stolen-card cashout | device d_985129 used by 11 distinct users (threshold 4) — possible mule ring; this $435.34 txn by user u_01746",5
-t_3f85f723ca0f227b,"R2,R3,R5","$430.98 on new device d_899055 (user median $8.67, threshold $150.00) within 24h of first use — possible ATO | $430.98 vs user p99 $228.27 (threshold $342.40) — possible stolen-card cashout | device d_899055 used by 9 distinct users (threshold 4) — possible mule ring; this $430.98 txn by user u_01982",5
-t_7743252e6309b6de,"R1,R2","user made 8 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $418.57 on new device d_847598 (user median $25.94, threshold $150.00) within 24h of first use — possible ATO",5
+t_6972708e8910895b,"R1,R2,R3,R5","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $437.40 on new device d_847598 (user prior median $25.58, threshold $150.00) within 24h of first use — possible ATO | $437.40 vs user prior p99 $197.56 (threshold $300.00) — possible stolen-card cashout | device d_847598 had 6 distinct users as of this txn (threshold 4) — possible mule ring; this $437.40 txn by user u_00020",5
+t_7743252e6309b6de,"R1,R2,R3","user made 8 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $418.57 on new device d_847598 (user prior median $25.77, threshold $150.00) within 24h of first use — possible ATO | $418.57 vs user prior p99 $266.17 (threshold $399.25) — possible stolen-card cashout",5
+t_19ae85f114702472,"R1,R2,R3","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $335.49 on new device d_847598 (user prior median $20.08, threshold $150.00) within 24h of first use — possible ATO | $335.49 vs user prior p99 $129.36 (threshold $300.00) — possible stolen-card cashout",5
+t_1a7416fff33f317d,"R1,R2,R5","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $413.39 on new device d_931250 (user prior median $37.94, threshold $189.70) within 24h of first use — possible ATO | device d_931250 had 11 distinct users as of this txn (threshold 4) — possible mule ring; this $413.39 txn by user u_01976",5
+t_207957dd4c2a3d3e,"R2,R3,R5","$403.27 on new device d_985129 (user prior median $34.41, threshold $172.05) within 24h of first use — possible ATO | $403.27 vs user prior p99 $237.30 (threshold $355.95) — possible stolen-card cashout | device d_985129 had 10 distinct users as of this txn (threshold 4) — possible mule ring; this $403.27 txn by user u_00009",5
+t_12bf2e28ceed4e83,"R2,R3,R5","$430.54 on new device d_832817 (user prior median $65.60, threshold $328.00) within 24h of first use — possible ATO | $430.54 vs user prior p99 $259.63 (threshold $389.44) — possible stolen-card cashout | device d_832817 had 10 distinct users as of this txn (threshold 4) — possible mule ring; this $430.54 txn by user u_00255",5
+t_3ae07b9b2379edf5,"R2,R3,R5","$430.44 on new device d_985129 (user prior median $18.46, threshold $150.00) within 24h of first use — possible ATO | $430.44 vs user prior p99 $56.44 (threshold $300.00) — possible stolen-card cashout | device d_985129 had 6 distinct users as of this txn (threshold 4) — possible mule ring; this $430.44 txn by user u_00272",5
+t_4c746c0baf252f14,"R2,R3,R5","$449.98 on new device d_847598 (user prior median $42.44, threshold $212.20) within 24h of first use — possible ATO | $449.98 vs user prior p99 $199.04 (threshold $300.00) — possible stolen-card cashout | device d_847598 had 7 distinct users as of this txn (threshold 4) — possible mule ring; this $449.98 txn by user u_00296",5
+t_09c738b4deb060a4,"R2,R3,R5","$442.86 on new device d_832817 (user prior median $16.32, threshold $150.00) within 24h of first use — possible ATO | $442.86 vs user prior p99 $68.24 (threshold $300.00) — possible stolen-card cashout | device d_832817 had 12 distinct users as of this txn (threshold 4) — possible mule ring; this $442.86 txn by user u_00515",5
+t_4888cc3358abfc71,"R2,R3,R5","$425.92 on new device d_847598 (user prior median $65.44, threshold $327.18) within 24h of first use — possible ATO | $425.92 vs user prior p99 $274.81 (threshold $412.21) — possible stolen-card cashout | device d_847598 had 8 distinct users as of this txn (threshold 4) — possible mule ring; this $425.92 txn by user u_00539",5
+t_7c9f39ed01c30ee5,"R2,R3,R5","$441.74 on new device d_904876 (user prior median $22.86, threshold $150.00) within 24h of first use — possible ATO | $441.74 vs user prior p99 $70.16 (threshold $300.00) — possible stolen-card cashout | device d_904876 had 6 distinct users as of this txn (threshold 4) — possible mule ring; this $441.74 txn by user u_00576",5
+t_3a2ad9ffa8986326,"R2,R3,R5","$420.99 on new device d_847598 (user prior median $17.08, threshold $150.00) within 24h of first use — possible ATO | $420.99 vs user prior p99 $120.74 (threshold $300.00) — possible stolen-card cashout | device d_847598 had 10 distinct users as of this txn (threshold 4) — possible mule ring; this $420.99 txn by user u_00659",5
+t_5c167c19dcbb8c99,"R2,R3,R5","$397.14 on new device d_985129 (user prior median $36.06, threshold $180.30) within 24h of first use — possible ATO | $397.14 vs user prior p99 $175.72 (threshold $300.00) — possible stolen-card cashout | device d_985129 had 11 distinct users as of this txn (threshold 4) — possible mule ring; this $397.14 txn by user u_00691",5
+t_50525713f8f0e277,"R2,R3,R5","$445.39 on new device d_772146 (user prior median $13.65, threshold $150.00) within 24h of first use — possible ATO | $445.39 vs user prior p99 $109.04 (threshold $300.00) — possible stolen-card cashout | device d_772146 had 11 distinct users as of this txn (threshold 4) — possible mule ring; this $445.39 txn by user u_00698",5
+t_404c0ad9f7771040,"R2,R3,R5","$435.00 on new device d_899055 (user prior median $15.31, threshold $150.00) within 24h of first use — possible ATO | $435.00 vs user prior p99 $44.52 (threshold $300.00) — possible stolen-card cashout | device d_899055 had 7 distinct users as of this txn (threshold 4) — possible mule ring; this $435.00 txn by user u_00834",5
+t_6887257dbfbf4d42,"R2,R3,R5","$398.25 on new device d_931250 (user prior median $21.33, threshold $150.00) within 24h of first use — possible ATO | $398.25 vs user prior p99 $136.21 (threshold $300.00) — possible stolen-card cashout | device d_931250 had 4 distinct users as of this txn (threshold 4) — possible mule ring; this $398.25 txn by user u_00951",5
+t_2567a761b7579d8b,"R2,R3,R5","$447.75 on new device d_772146 (user prior median $49.04, threshold $245.20) within 24h of first use — possible ATO | $447.75 vs user prior p99 $236.42 (threshold $354.63) — possible stolen-card cashout | device d_772146 had 6 distinct users as of this txn (threshold 4) — possible mule ring; this $447.75 txn by user u_01380",5
+t_06aef8b1fa80bd09,"R2,R3,R5","$439.22 on new device d_931250 (user prior median $24.63, threshold $150.00) within 24h of first use — possible ATO | $439.22 vs user prior p99 $227.19 (threshold $340.78) — possible stolen-card cashout | device d_931250 had 8 distinct users as of this txn (threshold 4) — possible mule ring; this $439.22 txn by user u_01468",5
+t_07c96eb0e6c5fec6,"R2,R3,R5","$435.71 on new device d_772146 (user prior median $32.11, threshold $160.57) within 24h of first use — possible ATO | $435.71 vs user prior p99 $152.68 (threshold $300.00) — possible stolen-card cashout | device d_772146 had 10 distinct users as of this txn (threshold 4) — possible mule ring; this $435.71 txn by user u_01556",5
+t_3e96dedad5cf3ce0,"R2,R3,R5","$416.09 on new device d_899055 (user prior median $26.28, threshold $150.00) within 24h of first use — possible ATO | $416.09 vs user prior p99 $132.88 (threshold $300.00) — possible stolen-card cashout | device d_899055 had 5 distinct users as of this txn (threshold 4) — possible mule ring; this $416.09 txn by user u_01722",5
+t_4284899599ff295f,"R2,R3,R5","$435.34 on new device d_985129 (user prior median $16.15, threshold $150.00) within 24h of first use — possible ATO | $435.34 vs user prior p99 $126.20 (threshold $300.00) — possible stolen-card cashout | device d_985129 had 9 distinct users as of this txn (threshold 4) — possible mule ring; this $435.34 txn by user u_01746",5
+t_0d86dce776be46e5,"R2,R3,R5","$439.72 on new device d_931250 (user prior median $37.91, threshold $189.55) within 24h of first use — possible ATO | $439.72 vs user prior p99 $241.55 (threshold $362.33) — possible stolen-card cashout | device d_931250 had 11 distinct users as of this txn (threshold 4) — possible mule ring; this $439.72 txn by user u_01976",5
+t_3f85f723ca0f227b,"R2,R3,R5","$430.98 on new device d_899055 (user prior median $8.54, threshold $150.00) within 24h of first use — possible ATO | $430.98 vs user prior p99 $197.01 (threshold $300.00) — possible stolen-card cashout | device d_899055 had 8 distinct users as of this txn (threshold 4) — possible mule ring; this $430.98 txn by user u_01982",5
 t_093b903f0b5d1051,"R1,R4",user made 8 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_3c0364289c113ce2,"R1,R4",user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 6 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_2fec936ca1ce3620,"R1,R4",user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 7 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
@@ -23,9 +35,9 @@ t_73bc86deb748bacb,"R1,R4",user made 6 transactions in 10 min (threshold 6) — 
 t_2ccea6a56630ecbb,"R1,R4",user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 7 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_0cd4e2e6a42d5f66,"R1,R4",user made 8 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_3a0ae3c15c9666ed,"R1,R4",user made 9 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
-t_21cb0a672325b571,"R1,R2","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $280.66 on new device d_847598 (user median $12.58, threshold $150.00) within 24h of first use — possible ATO",5
-t_4146aef7c1f8f293,"R1,R2","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $238.50 on new device d_847598 (user median $17.20, threshold $150.00) within 24h of first use — possible ATO",5
-t_78fc6d23aba86edb,"R1,R2","user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $309.22 on new device d_847598 (user median $17.20, threshold $150.00) within 24h of first use — possible ATO",5
+t_21cb0a672325b571,"R1,R2","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $280.66 on new device d_847598 (user prior median $12.55, threshold $150.00) within 24h of first use — possible ATO",5
+t_4146aef7c1f8f293,"R1,R2","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $238.50 on new device d_847598 (user prior median $17.16, threshold $150.00) within 24h of first use — possible ATO",5
+t_78fc6d23aba86edb,"R1,R2","user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $309.22 on new device d_847598 (user prior median $17.18, threshold $150.00) within 24h of first use — possible ATO",5
 t_674a60386c2a9092,"R1,R4",user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_4d93a28a1e08e587,"R1,R4",user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 6 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_4b5607d36a26d420,"R1,R4",user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 6 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
@@ -72,7 +84,7 @@ t_7020a623cde3388c,"R1,R4",user made 8 transactions in 10 min (threshold 6) — 
 t_08f79840d0a28599,"R1,R4",user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_6eab320428cae025,"R1,R4",user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_07e1184994e3b8ef,"R1,R4",user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 6 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
-t_3612911f5209d389,"R1,R2","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $288.92 on new device d_847598 (user median $24.46, threshold $150.00) within 24h of first use — possible ATO",5
+t_3612911f5209d389,"R1,R2","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $288.92 on new device d_847598 (user prior median $24.44, threshold $150.00) within 24h of first use — possible ATO",5
 t_6b38d0d9c0c67fd0,"R1,R4",user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_4834850226b7c97b,"R1,R4",user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_175764108eb0058e,"R1,R4",user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
@@ -93,430 +105,390 @@ t_6ab7258bb797c2cd,"R1,R4",user made 8 transactions in 10 min (threshold 6) — 
 t_6460e1b2c6f09bd6,"R1,R4",user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 7 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_12dc600603a3dd5a,"R1,R4",user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 7 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_4f08d492f4afa436,"R1,R4",user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 7 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
-t_524b90363a8ae785,"R1,R2","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $394.07 on new device d_931250 (user median $23.51, threshold $150.00) within 24h of first use — possible ATO",5
+t_524b90363a8ae785,"R1,R2","user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $394.07 on new device d_931250 (user prior median $23.42, threshold $150.00) within 24h of first use — possible ATO",5
 t_778e610526052106,"R1,R4",user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_13bfea38e22fa4b2,"R1,R4",user made 8 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | 5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
-t_414f5aba5f0804fe,"R1,R2","user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $263.09 on new device d_931250 (user median $38.23, threshold $191.15) within 24h of first use — possible ATO",5
-t_0484a46a96b56b81,"R2,R3","$336.37 on new device d_985129 (user median $21.80, threshold $150.00) within 24h of first use — possible ATO | $336.37 vs user p99 $131.78 (threshold $300.00) — possible stolen-card cashout",5
-t_4269893d5faf4f32,"R2,R3","$346.79 on new device d_985129 (user median $21.80, threshold $150.00) within 24h of first use — possible ATO | $346.79 vs user p99 $131.78 (threshold $300.00) — possible stolen-card cashout",5
-t_4bb82736139ce2d4,"R2,R3","$419.40 on new device d_847598 (user median $35.75, threshold $178.75) within 24h of first use — possible ATO | $419.40 vs user p99 $194.07 (threshold $300.00) — possible stolen-card cashout",5
-t_1176b88214a841f6,"R2,R3","$332.70 on new device d_847598 (user median $35.75, threshold $178.75) within 24h of first use — possible ATO | $332.70 vs user p99 $194.07 (threshold $300.00) — possible stolen-card cashout",5
-t_6c3dc3ff705a5728,"R2,R3","$363.18 on new device d_847598 (user median $35.75, threshold $178.75) within 24h of first use — possible ATO | $363.18 vs user p99 $194.07 (threshold $300.00) — possible stolen-card cashout",5
-t_6c17190268734497,"R2,R3","$318.73 on new device d_832817 (user median $24.93, threshold $150.00) within 24h of first use — possible ATO | $318.73 vs user p99 $166.04 (threshold $300.00) — possible stolen-card cashout",5
-t_3a3af14caf0fa26b,"R2,R3","$1144.90 on new device d_945424 (user median $12.03, threshold $150.00) within 24h of first use — possible ATO | $1144.90 vs user p99 $106.95 (threshold $300.00) — possible stolen-card cashout",5
-t_469a9a6c8eb28b4b,"R2,R3","$1044.01 on new device d_945424 (user median $12.03, threshold $150.00) within 24h of first use — possible ATO | $1044.01 vs user p99 $106.95 (threshold $300.00) — possible stolen-card cashout",5
-t_75d1cce3d75b6534,"R2,R3","$1469.21 on new device d_945424 (user median $12.03, threshold $150.00) within 24h of first use — possible ATO | $1469.21 vs user p99 $106.95 (threshold $300.00) — possible stolen-card cashout",5
-t_6c917559f6557f0a,"R2,R3","$1585.50 on new device d_945424 (user median $12.03, threshold $150.00) within 24h of first use — possible ATO | $1585.50 vs user p99 $106.95 (threshold $300.00) — possible stolen-card cashout",5
-t_2abcfdac1f7a654b,"R2,R3","$1592.05 on new device d_945424 (user median $12.03, threshold $150.00) within 24h of first use — possible ATO | $1592.05 vs user p99 $106.95 (threshold $300.00) — possible stolen-card cashout",5
-t_5f3ea6f5b3e25df9,"R2,R3","$326.72 on new device d_832817 (user median $18.54, threshold $150.00) within 24h of first use — possible ATO | $326.72 vs user p99 $140.63 (threshold $300.00) — possible stolen-card cashout",5
-t_0229532a940f4d9f,"R2,R3","$367.69 on new device d_931250 (user median $29.63, threshold $150.00) within 24h of first use — possible ATO | $367.69 vs user p99 $185.53 (threshold $300.00) — possible stolen-card cashout",5
-t_01e622bab28d4ee1,"R2,R3","$329.34 on new device d_931250 (user median $29.63, threshold $150.00) within 24h of first use — possible ATO | $329.34 vs user p99 $185.53 (threshold $300.00) — possible stolen-card cashout",5
-t_12bf2e28ceed4e83,"R2,R5","$430.54 on new device d_832817 (user median $65.94, threshold $329.70) within 24h of first use — possible ATO | device d_832817 used by 14 distinct users (threshold 4) — possible mule ring; this $430.54 txn by user u_00255",5
-t_3ae07b9b2379edf5,"R2,R5","$430.44 on new device d_985129 (user median $17.58, threshold $150.00) within 24h of first use — possible ATO | device d_985129 used by 11 distinct users (threshold 4) — possible mule ring; this $430.44 txn by user u_00272",5
-t_3d6bf427144ffeed,"R2,R3","$347.35 on new device d_847598 (user median $13.24, threshold $150.00) within 24h of first use — possible ATO | $347.35 vs user p99 $76.96 (threshold $300.00) — possible stolen-card cashout",5
-t_45d03feb733de26d,"R2,R3","$307.30 on new device d_985129 (user median $15.26, threshold $150.00) within 24h of first use — possible ATO | $307.30 vs user p99 $126.69 (threshold $300.00) — possible stolen-card cashout",5
-t_1a1383683f31d791,"R2,R3","$330.07 on new device d_985129 (user median $15.26, threshold $150.00) within 24h of first use — possible ATO | $330.07 vs user p99 $126.69 (threshold $300.00) — possible stolen-card cashout",5
-t_09c738b4deb060a4,"R2,R5","$442.86 on new device d_832817 (user median $16.90, threshold $150.00) within 24h of first use — possible ATO | device d_832817 used by 14 distinct users (threshold 4) — possible mule ring; this $442.86 txn by user u_00515",5
-t_4888cc3358abfc71,"R2,R5","$425.92 on new device d_847598 (user median $66.76, threshold $333.80) within 24h of first use — possible ATO | device d_847598 used by 14 distinct users (threshold 4) — possible mule ring; this $425.92 txn by user u_00539",5
-t_625c20d34d614fe9,"R2,R3","$374.48 on new device d_904876 (user median $22.00, threshold $150.00) within 24h of first use — possible ATO | $374.48 vs user p99 $211.73 (threshold $317.59) — possible stolen-card cashout",5
-t_1451f2735653a3be,"R2,R3","$375.32 on new device d_904876 (user median $22.00, threshold $150.00) within 24h of first use — possible ATO | $375.32 vs user p99 $211.73 (threshold $317.59) — possible stolen-card cashout",5
-t_0d682d5c136d5200,"R2,R3","$368.60 on new device d_847598 (user median $12.58, threshold $150.00) within 24h of first use — possible ATO | $368.60 vs user p99 $151.36 (threshold $300.00) — possible stolen-card cashout",5
-t_2c1819586cc127e4,"R2,R3","$360.11 on new device d_985129 (user median $35.32, threshold $176.60) within 24h of first use — possible ATO | $360.11 vs user p99 $185.58 (threshold $300.00) — possible stolen-card cashout",5
-t_5c167c19dcbb8c99,"R2,R3","$397.14 on new device d_985129 (user median $35.32, threshold $176.60) within 24h of first use — possible ATO | $397.14 vs user p99 $185.58 (threshold $300.00) — possible stolen-card cashout",5
-t_7ff871f7ce18a7b6,"R2,R3","$366.87 on new device d_772146 (user median $14.06, threshold $150.00) within 24h of first use — possible ATO | $366.87 vs user p99 $139.27 (threshold $300.00) — possible stolen-card cashout",5
-t_4e2fe28d072d037f,"R2,R3","$421.55 on new device d_904876 (user median $17.37, threshold $150.00) within 24h of first use — possible ATO | $421.55 vs user p99 $175.03 (threshold $300.00) — possible stolen-card cashout",5
-t_404c0ad9f7771040,"R2,R5","$435.00 on new device d_899055 (user median $15.89, threshold $150.00) within 24h of first use — possible ATO | device d_899055 used by 9 distinct users (threshold 4) — possible mule ring; this $435.00 txn by user u_00834",5
-t_430db10e4ed7239c,"R2,R5","$426.09 on new device d_899055 (user median $15.89, threshold $150.00) within 24h of first use — possible ATO | device d_899055 used by 9 distinct users (threshold 4) — possible mule ring; this $426.09 txn by user u_00834",5
-t_2e330ef1c99adf92,"R2,R3","$1746.99 on new device d_836713 (user median $31.82, threshold $159.10) within 24h of first use — possible ATO | $1746.99 vs user p99 $219.41 (threshold $329.11) — possible stolen-card cashout",5
-t_703f1e6cb186b26c,"R2,R3","$1407.95 on new device d_836713 (user median $31.82, threshold $159.10) within 24h of first use — possible ATO | $1407.95 vs user p99 $219.41 (threshold $329.11) — possible stolen-card cashout",5
-t_1ac41c99491478bb,"R2,R3","$1216.43 on new device d_836713 (user median $31.82, threshold $159.10) within 24h of first use — possible ATO | $1216.43 vs user p99 $219.41 (threshold $329.11) — possible stolen-card cashout",5
-t_274c9fc48ed10b8f,"R2,R3","$335.43 on new device d_001289 (user median $37.56, threshold $187.80) within 24h of first use — possible ATO | $335.43 vs user p99 $173.45 (threshold $300.00) — possible stolen-card cashout",5
-t_6887257dbfbf4d42,"R2,R5","$398.25 on new device d_931250 (user median $21.66, threshold $150.00) within 24h of first use — possible ATO | device d_931250 used by 11 distinct users (threshold 4) — possible mule ring; this $398.25 txn by user u_00951",5
-t_27d20598dd9ca4a5,"R2,R5","$415.17 on new device d_772146 (user median $44.11, threshold $220.55) within 24h of first use — possible ATO | device d_772146 used by 11 distinct users (threshold 4) — possible mule ring; this $415.17 txn by user u_01032",5
-t_4360f665da1927b1,"R2,R3","$460.20 on new device d_808534 (user median $33.76, threshold $168.82) within 24h of first use — possible ATO | $460.20 vs user p99 $140.06 (threshold $300.00) — possible stolen-card cashout",5
-t_0547f08089839e5b,"R2,R3","$1277.97 on new device d_808534 (user median $33.76, threshold $168.82) within 24h of first use — possible ATO | $1277.97 vs user p99 $140.06 (threshold $300.00) — possible stolen-card cashout",5
-t_111f4b2454178c37,"R2,R3","$548.74 on new device d_808534 (user median $33.76, threshold $168.82) within 24h of first use — possible ATO | $548.74 vs user p99 $140.06 (threshold $300.00) — possible stolen-card cashout",5
-t_1c1d145a577f9952,"R2,R3","$1747.65 on new device d_871301 (user median $26.67, threshold $150.00) within 24h of first use — possible ATO | $1747.65 vs user p99 $1162.59 (threshold $1743.89) — possible stolen-card cashout",5
-t_67e0c8918b2fbff4,"R2,R3","$1096.02 on new device d_848085 (user median $11.23, threshold $150.00) within 24h of first use — possible ATO | $1096.02 vs user p99 $722.85 (threshold $1084.27) — possible stolen-card cashout",5
-t_5361424bd02ed317,"R2,R3","$1666.59 on new device d_848085 (user median $11.23, threshold $150.00) within 24h of first use — possible ATO | $1666.59 vs user p99 $722.85 (threshold $1084.27) — possible stolen-card cashout",5
-t_1aa7a1f9dc8db37c,"R2,R3","$1382.10 on new device d_710585 (user median $29.15, threshold $150.00) within 24h of first use — possible ATO | $1382.10 vs user p99 $831.07 (threshold $1246.61) — possible stolen-card cashout",5
-t_2066166e04f93ed6,"R2,R3","$1711.63 on new device d_710585 (user median $29.15, threshold $150.00) within 24h of first use — possible ATO | $1711.63 vs user p99 $831.07 (threshold $1246.61) — possible stolen-card cashout",5
-t_06aef8b1fa80bd09,"R2,R5","$439.22 on new device d_931250 (user median $24.76, threshold $150.00) within 24h of first use — possible ATO | device d_931250 used by 11 distinct users (threshold 4) — possible mule ring; this $439.22 txn by user u_01468",5
-t_3ac6ff0c11636ab1,"R2,R3","$1342.52 on new device d_905902 (user median $19.17, threshold $150.00) within 24h of first use — possible ATO | $1342.52 vs user p99 $846.94 (threshold $1270.41) — possible stolen-card cashout",5
-t_07c96eb0e6c5fec6,"R2,R5","$435.71 on new device d_772146 (user median $35.76, threshold $178.82) within 24h of first use — possible ATO | device d_772146 used by 11 distinct users (threshold 4) — possible mule ring; this $435.71 txn by user u_01556",5
-t_00006372f2898f1b,"R2,R3","$401.65 on new device d_847598 (user median $8.34, threshold $150.00) within 24h of first use — possible ATO | $401.65 vs user p99 $135.70 (threshold $300.00) — possible stolen-card cashout",5
-t_7da2c0cf370d4293,"R2,R5","$303.86 on new device d_002846 (user median $41.69, threshold $208.45) within 24h of first use — possible ATO | device d_002846 used by 4 distinct users (threshold 4) — possible mule ring; this $303.86 txn by user u_01611",5
-t_6268b8e95df7cf97,"R2,R3","$1788.48 on new device d_743104 (user median $42.10, threshold $210.53) within 24h of first use — possible ATO | $1788.48 vs user p99 $1089.21 (threshold $1633.82) — possible stolen-card cashout",5
-t_5ec88699b9c1f74e,"R2,R3","$313.65 on new device d_904876 (user median $21.19, threshold $150.00) within 24h of first use — possible ATO | $313.65 vs user p99 $171.65 (threshold $300.00) — possible stolen-card cashout",5
-t_457ccb09dad8c056,"R2,R3","$396.32 on new device d_904876 (user median $21.19, threshold $150.00) within 24h of first use — possible ATO | $396.32 vs user p99 $171.65 (threshold $300.00) — possible stolen-card cashout",5
-t_3e96dedad5cf3ce0,"R2,R3","$416.09 on new device d_899055 (user median $26.80, threshold $150.00) within 24h of first use — possible ATO | $416.09 vs user p99 $137.29 (threshold $300.00) — possible stolen-card cashout",5
-t_638fc72d63cd98b2,"R2,R3","$378.24 on new device d_931250 (user median $29.01, threshold $150.00) within 24h of first use — possible ATO | $378.24 vs user p99 $127.53 (threshold $300.00) — possible stolen-card cashout",5
-t_6d40ecda9556cc6a,"R2,R3","$351.33 on new device d_931250 (user median $29.01, threshold $150.00) within 24h of first use — possible ATO | $351.33 vs user p99 $127.53 (threshold $300.00) — possible stolen-card cashout",5
-t_385432e33f70f320,"R2,R3","$371.71 on new device d_985129 (user median $16.06, threshold $150.00) within 24h of first use — possible ATO | $371.71 vs user p99 $116.63 (threshold $300.00) — possible stolen-card cashout",5
-t_77180f6f3b2f5db4,"R2,R3","$335.36 on new device d_985129 (user median $16.06, threshold $150.00) within 24h of first use — possible ATO | $335.36 vs user p99 $116.63 (threshold $300.00) — possible stolen-card cashout",5
-t_55ab965b7c96b895,"R2,R3","$1553.29 on new device d_708294 (user median $10.43, threshold $150.00) within 24h of first use — possible ATO | $1553.29 vs user p99 $852.35 (threshold $1278.52) — possible stolen-card cashout",5
-t_6f90082dd1c36bbd,"R2,R5","$449.26 on new device d_904876 (user median $55.90, threshold $279.47) within 24h of first use — possible ATO | device d_904876 used by 9 distinct users (threshold 4) — possible mule ring; this $449.26 txn by user u_01839",5
-t_4afd7737dd5472b7,"R2,R3","$1605.09 on new device d_768933 (user median $24.44, threshold $150.00) within 24h of first use — possible ATO | $1605.09 vs user p99 $1043.44 (threshold $1565.16) — possible stolen-card cashout",5
-t_5cd6f250d43627e4,"R2,R3","$1646.79 on new device d_741671 (user median $15.90, threshold $150.00) within 24h of first use — possible ATO | $1646.79 vs user p99 $1017.38 (threshold $1526.08) — possible stolen-card cashout",5
-t_5375e38b62b56419,"R2,R5","$447.63 on new device d_931250 (user median $23.51, threshold $150.00) within 24h of first use — possible ATO | device d_931250 used by 11 distinct users (threshold 4) — possible mule ring; this $447.63 txn by user u_01901",5
-t_097c3132d9f2ebfc,"R2,R3","$1128.58 on new device d_002832 (user median $24.27, threshold $150.00) within 24h of first use — possible ATO | $1128.58 vs user p99 $142.96 (threshold $300.00) — possible stolen-card cashout",5
-t_0d86dce776be46e5,"R2,R5","$439.72 on new device d_931250 (user median $38.23, threshold $191.15) within 24h of first use — possible ATO | device d_931250 used by 11 distinct users (threshold 4) — possible mule ring; this $439.72 txn by user u_01976",5
-t_0da49460c00aa7b2,"R1,R3",user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $738.19 vs user p99 $244.90 (threshold $367.34) — possible stolen-card cashout,4
-t_704bcfe312a404f9,"R3,R5",$422.61 vs user p99 $76.96 (threshold $300.00) — possible stolen-card cashout | device d_847598 used by 14 distinct users (threshold 4) — possible mule ring; this $422.61 txn by user u_00327,3
-t_2a2eccc571560ad8,"R3,R5",$434.61 vs user p99 $284.18 (threshold $426.28) — possible stolen-card cashout | device d_772146 used by 11 distinct users (threshold 4) — possible mule ring; this $434.61 txn by user u_00464,3
-t_479593fa8665bf92,"R3,R5",$427.73 vs user p99 $247.46 (threshold $371.18) — possible stolen-card cashout | device d_847598 used by 14 distinct users (threshold 4) — possible mule ring; this $427.73 txn by user u_00819,3
-t_44e2f2faf88b6459,"R3,R5",$432.19 vs user p99 $274.09 (threshold $411.14) — possible stolen-card cashout | device d_904876 used by 9 distinct users (threshold 4) — possible mule ring; this $432.19 txn by user u_00980,3
-t_6f9e667fef6cebeb,"R3,R5",$627.66 vs user p99 $356.76 (threshold $535.14) — possible stolen-card cashout | device d_002845 used by 5 distinct users (threshold 4) — possible mule ring; this $627.66 txn by user u_01105,3
-t_2cdd4eec16f2f3ef,"R3,R5",$579.13 vs user p99 $342.36 (threshold $513.53) — possible stolen-card cashout | device d_002853 used by 4 distinct users (threshold 4) — possible mule ring; this $579.13 txn by user u_01466,3
-t_48f576bf29db4413,"R3,R5",$555.47 vs user p99 $342.36 (threshold $513.53) — possible stolen-card cashout | device d_002853 used by 4 distinct users (threshold 4) — possible mule ring; this $555.47 txn by user u_01466,3
-t_3ff9a860f47e7b78,"R3,R5",$685.44 vs user p99 $342.36 (threshold $513.53) — possible stolen-card cashout | device d_002853 used by 4 distinct users (threshold 4) — possible mule ring; this $685.44 txn by user u_01466,3
-t_3d11d6ec37fc19fe,"R3,R5",$379.57 vs user p99 $211.51 (threshold $317.27) — possible stolen-card cashout | device d_002849 used by 4 distinct users (threshold 4) — possible mule ring; this $379.57 txn by user u_01518,3
-t_72b69432e9fa1826,"R3,R5",$2433.33 vs user p99 $1107.96 (threshold $1661.94) — possible stolen-card cashout | device d_002854 used by 4 distinct users (threshold 4) — possible mule ring; this $2433.33 txn by user u_01532,3
-t_6ae06ff597e256fe,"R3,R5",$435.23 vs user p99 $282.09 (threshold $423.14) — possible stolen-card cashout | device d_985129 used by 11 distinct users (threshold 4) — possible mule ring; this $435.23 txn by user u_01859,3
-t_3d1e15939989ea6c,"R3,R5",$809.93 vs user p99 $456.87 (threshold $685.30) — possible stolen-card cashout | device d_002845 used by 5 distinct users (threshold 4) — possible mule ring; this $809.93 txn by user u_01904,3
-t_036a01e1d3fb2b7e,R2,"$236.88 on new device d_985129 (user median $34.41, threshold $172.05) within 24h of first use — possible ATO",5
-t_207957dd4c2a3d3e,R2,"$403.27 on new device d_985129 (user median $34.41, threshold $172.05) within 24h of first use — possible ATO",5
-t_154f33eb4c6f635a,R2,"$332.83 on new device d_847598 (user median $25.94, threshold $150.00) within 24h of first use — possible ATO",5
-t_4fc65162f96b8584,R2,"$258.76 on new device d_847598 (user median $25.94, threshold $150.00) within 24h of first use — possible ATO",5
-t_53525cc113ce9a8c,R2,"$189.22 on new device d_847598 (user median $25.94, threshold $150.00) within 24h of first use — possible ATO",5
-t_79ed690980c4aee4,R2,"$156.53 on new device d_847598 (user median $25.94, threshold $150.00) within 24h of first use — possible ATO",5
-t_4d7b2a626e366bb0,R2,"$349.10 on new device d_931250 (user median $19.31, threshold $150.00) within 24h of first use — possible ATO",5
-t_45485ba66bda303f,R2,"$264.57 on new device d_931250 (user median $19.31, threshold $150.00) within 24h of first use — possible ATO",5
-t_1d715ede5c39f193,R2,"$372.24 on new device d_931250 (user median $19.31, threshold $150.00) within 24h of first use — possible ATO",5
-t_2af4d9417ab1a5cc,R2,"$824.53 on new device d_754243 (user median $140.10, threshold $700.50) within 24h of first use — possible ATO",5
-t_6921f4cae1ddb7e8,R2,"$1114.56 on new device d_754243 (user median $140.10, threshold $700.50) within 24h of first use — possible ATO",5
-t_7d1fbcab92313e83,R2,"$1504.24 on new device d_754243 (user median $140.10, threshold $700.50) within 24h of first use — possible ATO",5
-t_0ccee32be830599b,R2,"$1618.91 on new device d_754243 (user median $140.10, threshold $700.50) within 24h of first use — possible ATO",5
-t_4955218b948add2c,R2,"$272.70 on new device d_000058 (user median $15.12, threshold $150.00) within 24h of first use — possible ATO",5
-t_345d34e0052254c1,R2,"$187.47 on new device d_899055 (user median $35.92, threshold $179.60) within 24h of first use — possible ATO",5
-t_71a3fdb062645de8,R2,"$186.93 on new device d_899055 (user median $35.92, threshold $179.60) within 24h of first use — possible ATO",5
-t_756d21128af6b603,R2,"$194.70 on new device d_899055 (user median $35.92, threshold $179.60) within 24h of first use — possible ATO",5
-t_08421627a4704344,R2,"$234.18 on new device d_832817 (user median $24.93, threshold $150.00) within 24h of first use — possible ATO",5
-t_110bff58e41226e2,R2,"$299.24 on new device d_899055 (user median $25.45, threshold $150.00) within 24h of first use — possible ATO",5
-t_591d8ff49e1713f0,R2,"$336.22 on new device d_899055 (user median $25.45, threshold $150.00) within 24h of first use — possible ATO",5
-t_155aa3114a22fec7,R2,"$244.22 on new device d_000165 (user median $26.44, threshold $150.00) within 24h of first use — possible ATO",5
-t_57c1f9d8ab256a1b,R2,"$997.47 on new device d_842963 (user median $33.94, threshold $169.72) within 24h of first use — possible ATO",5
-t_611fe6b2c6a58584,R2,"$689.05 on new device d_842963 (user median $33.94, threshold $169.72) within 24h of first use — possible ATO",5
-t_0b769a418bb76b69,R2,"$1784.03 on new device d_842963 (user median $33.94, threshold $169.72) within 24h of first use — possible ATO",5
-t_58df544c9bbd06bc,R2,"$1406.63 on new device d_842963 (user median $33.94, threshold $169.72) within 24h of first use — possible ATO",5
-t_7535485b67f5063e,R2,"$236.12 on new device d_931250 (user median $26.30, threshold $150.00) within 24h of first use — possible ATO",5
-t_2f4cee11e1700b94,R2,"$322.36 on new device d_931250 (user median $26.30, threshold $150.00) within 24h of first use — possible ATO",5
-t_5b2065d87f5cceb9,R2,"$301.80 on new device d_931250 (user median $26.30, threshold $150.00) within 24h of first use — possible ATO",5
-t_3e7f6ef6c91e913f,R2,"$209.38 on new device d_931250 (user median $26.30, threshold $150.00) within 24h of first use — possible ATO",5
-t_79bf67f670f2e8c9,R2,"$288.26 on new device d_931250 (user median $26.30, threshold $150.00) within 24h of first use — possible ATO",5
-t_50f0cfce9bd451d7,R2,"$186.08 on new device d_931250 (user median $29.63, threshold $150.00) within 24h of first use — possible ATO",5
-t_6a141d8a027c660a,R2,"$207.83 on new device d_931250 (user median $29.63, threshold $150.00) within 24h of first use — possible ATO",5
-t_10efbb5e7e61bb8e,R2,"$204.70 on new device d_931250 (user median $29.63, threshold $150.00) within 24h of first use — possible ATO",5
-t_2d0d31cebf5102d6,R2,"$1204.34 on new device d_739614 (user median $90.49, threshold $452.45) within 24h of first use — possible ATO",5
-t_73e17964ba7343b2,R2,"$1126.65 on new device d_739614 (user median $90.49, threshold $452.45) within 24h of first use — possible ATO",5
-t_659e253bf6d00930,R2,"$1669.27 on new device d_739614 (user median $90.49, threshold $452.45) within 24h of first use — possible ATO",5
-t_16e80d167f4a9d32,R2,"$1212.09 on new device d_739614 (user median $90.49, threshold $452.45) within 24h of first use — possible ATO",5
-t_03ac85d4180b9b13,R2,"$976.63 on new device d_739614 (user median $90.49, threshold $452.45) within 24h of first use — possible ATO",5
-t_46d7bbbf7d8aa0d9,R2,"$1435.08 on new device d_815031 (user median $34.94, threshold $174.70) within 24h of first use — possible ATO",5
-t_4719d4b16bc81d0a,R2,"$1755.59 on new device d_815031 (user median $34.94, threshold $174.70) within 24h of first use — possible ATO",5
-t_6908733509a5ba00,R2,"$1132.59 on new device d_815031 (user median $34.94, threshold $174.70) within 24h of first use — possible ATO",5
-t_33172c64eaf6c4f2,R2,"$1781.46 on new device d_815031 (user median $34.94, threshold $174.70) within 24h of first use — possible ATO",5
-t_3743709201ec9e31,R2,"$581.30 on new device d_815031 (user median $34.94, threshold $174.70) within 24h of first use — possible ATO",5
-t_7ec5527f335625a8,R2,"$1333.79 on new device d_815031 (user median $34.94, threshold $174.70) within 24h of first use — possible ATO",5
-t_53389263edaa950e,R2,"$865.32 on new device d_737139 (user median $54.54, threshold $272.70) within 24h of first use — possible ATO",5
-t_3283c75e8518dc98,R2,"$1289.51 on new device d_737139 (user median $54.54, threshold $272.70) within 24h of first use — possible ATO",5
-t_09ff8474cfbb6733,R2,"$1011.62 on new device d_737139 (user median $54.54, threshold $272.70) within 24h of first use — possible ATO",5
-t_4c08b8a97020b810,R2,"$1705.86 on new device d_737139 (user median $54.54, threshold $272.70) within 24h of first use — possible ATO",5
-t_239d645fc13a80c8,R2,"$1741.15 on new device d_737139 (user median $54.54, threshold $272.70) within 24h of first use — possible ATO",5
-t_0de52120f98ff47c,R2,"$993.61 on new device d_737139 (user median $54.54, threshold $272.70) within 24h of first use — possible ATO",5
-t_1ba1ffb1f91983f3,R2,"$268.35 on new device d_985129 (user median $17.58, threshold $150.00) within 24h of first use — possible ATO",5
-t_1f50f82c8972e89b,R2,"$246.03 on new device d_847598 (user median $43.37, threshold $216.85) within 24h of first use — possible ATO",5
-t_5e74ca01137292ec,R2,"$248.07 on new device d_847598 (user median $43.37, threshold $216.85) within 24h of first use — possible ATO",5
-t_0a515c437a9eafab,R2,"$199.31 on new device d_000410 (user median $28.41, threshold $150.00) within 24h of first use — possible ATO",5
-t_53947499e15e495e,R2,"$1701.64 on new device d_752324 (user median $20.00, threshold $150.00) within 24h of first use — possible ATO",5
-t_16401693ed136e83,R2,"$1071.76 on new device d_752324 (user median $20.00, threshold $150.00) within 24h of first use — possible ATO",5
-t_65763ff2025f28ac,R2,"$901.01 on new device d_752324 (user median $20.00, threshold $150.00) within 24h of first use — possible ATO",5
-t_2084be645c2c72ca,R2,"$1316.25 on new device d_752324 (user median $20.00, threshold $150.00) within 24h of first use — possible ATO",5
-t_4bd5fa79be2e18b5,R2,"$931.63 on new device d_752324 (user median $20.00, threshold $150.00) within 24h of first use — possible ATO",5
-t_1fbd11bd70ae895b,R2,"$270.86 on new device d_847598 (user median $13.24, threshold $150.00) within 24h of first use — possible ATO",5
-t_09d798ff9b182c6e,R2,"$1346.81 on new device d_949314 (user median $27.77, threshold $150.00) within 24h of first use — possible ATO",5
-t_0db888bcc9dffab5,R2,"$1541.82 on new device d_949314 (user median $27.77, threshold $150.00) within 24h of first use — possible ATO",5
-t_5c0d4713a135cae1,R2,"$1020.73 on new device d_949314 (user median $27.77, threshold $150.00) within 24h of first use — possible ATO",5
-t_29fdcc7e91546d2e,R2,"$1612.23 on new device d_949314 (user median $27.77, threshold $150.00) within 24h of first use — possible ATO",5
-t_278a54571a26cdd8,R2,"$403.93 on new device d_949314 (user median $27.77, threshold $150.00) within 24h of first use — possible ATO",5
-t_0038d9554f344ad3,R2,"$645.39 on new device d_724476 (user median $34.20, threshold $171.02) within 24h of first use — possible ATO",5
-t_1c2e1a87f8911fff,R2,"$632.77 on new device d_724476 (user median $34.20, threshold $171.02) within 24h of first use — possible ATO",5
-t_79848286aaddb552,R2,"$1647.76 on new device d_724476 (user median $34.20, threshold $171.02) within 24h of first use — possible ATO",5
-t_20b4cd55c8772338,R2,"$291.91 on new device d_985129 (user median $15.26, threshold $150.00) within 24h of first use — possible ATO",5
-t_18b05607f27d5164,R2,"$210.62 on new device d_772146 (user median $18.09, threshold $150.00) within 24h of first use — possible ATO",5
-t_40ba0eb818b16d36,R2,"$230.76 on new device d_772146 (user median $18.09, threshold $150.00) within 24h of first use — possible ATO",5
-t_4f35eaa9b18b10f4,R2,"$339.73 on new device d_832817 (user median $35.09, threshold $175.45) within 24h of first use — possible ATO",5
-t_029f60df3390cc03,R2,"$961.07 on new device d_987869 (user median $29.48, threshold $150.00) within 24h of first use — possible ATO",5
-t_542a87502148f538,R2,"$1167.16 on new device d_987869 (user median $29.48, threshold $150.00) within 24h of first use — possible ATO",5
-t_4aeacc352527e3ad,R2,"$1324.25 on new device d_987869 (user median $29.48, threshold $150.00) within 24h of first use — possible ATO",5
-t_1014c9630b253252,R2,"$279.77 on new device d_985129 (user median $41.36, threshold $206.78) within 24h of first use — possible ATO",5
-t_5cde4e22978278bf,R2,"$359.44 on new device d_985129 (user median $41.36, threshold $206.78) within 24h of first use — possible ATO",5
-t_289e406f2f2b9942,R2,"$360.14 on new device d_772146 (user median $41.42, threshold $207.10) within 24h of first use — possible ATO",5
-t_24aee7b716266bec,R2,"$210.87 on new device d_772146 (user median $32.74, threshold $163.70) within 24h of first use — possible ATO",5
-t_1f2f8c44c60f6857,R2,"$287.44 on new device d_772146 (user median $32.74, threshold $163.70) within 24h of first use — possible ATO",5
-t_0df3d8ff23ae5e8b,R2,"$767.00 on new device d_905940 (user median $16.03, threshold $150.00) within 24h of first use — possible ATO",5
-t_7ced7cc6edd935c6,R2,"$1397.65 on new device d_905940 (user median $16.03, threshold $150.00) within 24h of first use — possible ATO",5
-t_3223633dab76ddeb,R2,"$1600.68 on new device d_905940 (user median $16.03, threshold $150.00) within 24h of first use — possible ATO",5
-t_607ec5a0371c2c8a,R2,"$1129.12 on new device d_905940 (user median $16.03, threshold $150.00) within 24h of first use — possible ATO",5
-t_661f4f20896875cc,R2,"$1317.17 on new device d_905940 (user median $16.03, threshold $150.00) within 24h of first use — possible ATO",5
-t_1643505b4db82427,R2,"$1285.53 on new device d_978745 (user median $53.22, threshold $266.12) within 24h of first use — possible ATO",5
-t_1fce7f75c194e0ef,R2,"$1697.56 on new device d_978745 (user median $53.22, threshold $266.12) within 24h of first use — possible ATO",5
-t_732e04bacb1bc8ae,R2,"$940.07 on new device d_978745 (user median $53.22, threshold $266.12) within 24h of first use — possible ATO",5
-t_21d7cf97eabb9ca9,R2,"$1504.21 on new device d_978745 (user median $53.22, threshold $266.12) within 24h of first use — possible ATO",5
-t_50a3f25105fc673d,R2,"$227.32 on new device d_000690 (user median $29.08, threshold $150.00) within 24h of first use — possible ATO",5
-t_260e18ee8a50f7b4,R2,"$392.73 on new device d_832817 (user median $16.90, threshold $150.00) within 24h of first use — possible ATO",5
-t_722c9d325196e2f7,R2,"$312.55 on new device d_832817 (user median $16.90, threshold $150.00) within 24h of first use — possible ATO",5
-t_36e10b9e9ccf68d2,R2,"$252.53 on new device d_832817 (user median $16.90, threshold $150.00) within 24h of first use — possible ATO",5
-t_6dfd0c0bdb132916,R2,"$171.17 on new device d_000775 (user median $22.50, threshold $150.00) within 24h of first use — possible ATO",5
-t_04451c78fc2b0c07,R2,"$1658.73 on new device d_773269 (user median $21.85, threshold $150.00) within 24h of first use — possible ATO",5
-t_0ad7906e67459b1f,R2,"$382.08 on new device d_773269 (user median $21.85, threshold $150.00) within 24h of first use — possible ATO",5
-t_3148913751c0f236,R2,"$1059.65 on new device d_773269 (user median $21.85, threshold $150.00) within 24h of first use — possible ATO",5
-t_3a24f492f1ba0697,R2,"$930.77 on new device d_773269 (user median $21.85, threshold $150.00) within 24h of first use — possible ATO",5
-t_491e71924bbd8900,R2,"$1386.87 on new device d_773269 (user median $21.85, threshold $150.00) within 24h of first use — possible ATO",5
-t_0e76ceec46446aea,R2,"$709.42 on new device d_773269 (user median $21.85, threshold $150.00) within 24h of first use — possible ATO",5
-t_6acab916ed240a88,R2,"$206.77 on new device d_904876 (user median $22.00, threshold $150.00) within 24h of first use — possible ATO",5
-t_304f4d7541bc9c3e,R2,"$1694.71 on new device d_839789 (user median $23.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_2c8faa6f5240cf60,R2,"$577.93 on new device d_839789 (user median $23.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_3e1822b19e432989,R2,"$621.94 on new device d_839789 (user median $23.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_6eb722a80e2c329e,R2,"$1253.58 on new device d_839789 (user median $23.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_0a2802aee55e0949,R2,"$673.69 on new device d_839789 (user median $23.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_3836588497a69083,R2,"$356.12 on new device d_899055 (user median $32.83, threshold $164.15) within 24h of first use — possible ATO",5
-t_76875f2af2958528,R2,"$193.51 on new device d_899055 (user median $32.83, threshold $164.15) within 24h of first use — possible ATO",5
-t_4f6559dfde8421de,R2,"$350.87 on new device d_899055 (user median $32.83, threshold $164.15) within 24h of first use — possible ATO",5
-t_11a9a25b867443ca,R2,"$304.39 on new device d_000844 (user median $29.30, threshold $150.00) within 24h of first use — possible ATO",5
-t_69ef424ff40064af,R2,"$184.94 on new device d_000859 (user median $28.24, threshold $150.00) within 24h of first use — possible ATO",5
-t_7dca6ef3478ba69b,R2,"$264.47 on new device d_000885 (user median $25.25, threshold $150.00) within 24h of first use — possible ATO",5
-t_409607d8296ec22a,R2,"$554.19 on new device d_752033 (user median $39.88, threshold $199.42) within 24h of first use — possible ATO",5
-t_65a826d872ed5ea4,R2,"$1797.78 on new device d_752033 (user median $39.88, threshold $199.42) within 24h of first use — possible ATO",5
-t_1d0eb87d907e4cc2,R2,"$1217.79 on new device d_752033 (user median $39.88, threshold $199.42) within 24h of first use — possible ATO",5
-t_297d60609df20518,R2,"$1644.83 on new device d_752033 (user median $39.88, threshold $199.42) within 24h of first use — possible ATO",5
-t_12815210a61e4f64,R2,"$150.73 on new device d_847598 (user median $12.58, threshold $150.00) within 24h of first use — possible ATO",5
-t_3907b5a3e1a1c59c,R2,"$403.42 on new device d_847598 (user median $17.20, threshold $150.00) within 24h of first use — possible ATO",5
-t_3a2ad9ffa8986326,R2,"$420.99 on new device d_847598 (user median $17.20, threshold $150.00) within 24h of first use — possible ATO",5
-t_5eb915321094540f,R2,"$411.85 on new device d_847598 (user median $17.20, threshold $150.00) within 24h of first use — possible ATO",5
-t_1c32b64460cd5894,R2,"$310.03 on new device d_847598 (user median $17.20, threshold $150.00) within 24h of first use — possible ATO",5
-t_54746f069f47846d,R2,"$1063.84 on new device d_726059 (user median $13.76, threshold $150.00) within 24h of first use — possible ATO",5
-t_4148466023fbba20,R2,"$946.71 on new device d_726059 (user median $13.76, threshold $150.00) within 24h of first use — possible ATO",5
-t_3d99653458d32b53,R2,"$1213.10 on new device d_726059 (user median $13.76, threshold $150.00) within 24h of first use — possible ATO",5
-t_7f821d02aa166b74,R2,"$1524.43 on new device d_709067 (user median $25.18, threshold $150.00) within 24h of first use — possible ATO",5
-t_07cf9396780a75db,R2,"$1753.17 on new device d_709067 (user median $25.18, threshold $150.00) within 24h of first use — possible ATO",5
-t_2d753df81f073242,R2,"$1138.73 on new device d_709067 (user median $25.18, threshold $150.00) within 24h of first use — possible ATO",5
-t_3c1231645485f464,R2,"$759.64 on new device d_709067 (user median $25.18, threshold $150.00) within 24h of first use — possible ATO",5
-t_0e2daf4f467d593e,R2,"$1602.42 on new device d_709067 (user median $25.18, threshold $150.00) within 24h of first use — possible ATO",5
-t_28e24ca99626f975,R2,"$674.32 on new device d_709067 (user median $25.18, threshold $150.00) within 24h of first use — possible ATO",5
-t_65a05d56d6360fb4,R2,"$262.09 on new device d_000979 (user median $45.60, threshold $228.00) within 24h of first use — possible ATO",5
-t_1d7da6327b082ee6,R2,"$256.59 on new device d_000979 (user median $45.60, threshold $228.00) within 24h of first use — possible ATO",5
-t_01ca905333cdd214,R2,"$184.42 on new device d_002840 (user median $34.98, threshold $174.88) within 24h of first use — possible ATO",5
-t_4b899837ee778802,R2,"$184.68 on new device d_001046 (user median $28.00, threshold $150.00) within 24h of first use — possible ATO",5
-t_02c140ef600bb675,R2,"$235.30 on new device d_847598 (user median $17.84, threshold $150.00) within 24h of first use — possible ATO",5
-t_6e4c588ee203b450,R2,"$270.64 on new device d_847598 (user median $17.84, threshold $150.00) within 24h of first use — possible ATO",5
-t_3a2ea6feb36eab7f,R2,"$245.86 on new device d_847598 (user median $17.84, threshold $150.00) within 24h of first use — possible ATO",5
-t_1abe2f79c4f1e152,R2,"$853.18 on new device d_858104 (user median $14.88, threshold $150.00) within 24h of first use — possible ATO",5
-t_31ff3d9d2e0b38f7,R2,"$573.21 on new device d_858104 (user median $14.88, threshold $150.00) within 24h of first use — possible ATO",5
-t_717038f6521d35e9,R2,"$1678.96 on new device d_858104 (user median $14.88, threshold $150.00) within 24h of first use — possible ATO",5
-t_30f53e8199fbbd9e,R2,"$839.95 on new device d_858104 (user median $14.88, threshold $150.00) within 24h of first use — possible ATO",5
-t_7a110dde57fd991b,R2,"$1483.19 on new device d_858104 (user median $14.88, threshold $150.00) within 24h of first use — possible ATO",5
-t_2b1896e400b35fc7,R2,"$1058.01 on new device d_858104 (user median $14.88, threshold $150.00) within 24h of first use — possible ATO",5
-t_2e69e1c76ef4e706,R2,"$316.10 on new device d_899055 (user median $20.93, threshold $150.00) within 24h of first use — possible ATO",5
-t_2f5dfd840078c0c8,R2,"$367.37 on new device d_899055 (user median $20.93, threshold $150.00) within 24h of first use — possible ATO",5
-t_5512caa05aad4b8c,R2,"$189.68 on new device d_899055 (user median $20.93, threshold $150.00) within 24h of first use — possible ATO",5
-t_30a91987972fb45f,R2,"$194.18 on new device d_001118 (user median $24.97, threshold $150.00) within 24h of first use — possible ATO",5
-t_78e40dabc3b30fb1,R2,"$453.89 on new device d_788486 (user median $46.30, threshold $231.48) within 24h of first use — possible ATO",5
-t_31f1eba2cc71fc0b,R2,"$1493.41 on new device d_788486 (user median $46.30, threshold $231.48) within 24h of first use — possible ATO",5
-t_3c4171ea470ee3fc,R2,"$1435.56 on new device d_788486 (user median $46.30, threshold $231.48) within 24h of first use — possible ATO",5
-t_131f2c1b6282eb65,R2,"$1161.41 on new device d_788486 (user median $46.30, threshold $231.48) within 24h of first use — possible ATO",5
-t_3784acacb8b9f8d8,R2,"$1425.19 on new device d_788486 (user median $46.30, threshold $231.48) within 24h of first use — possible ATO",5
-t_0378b5de488d4d8e,R2,"$942.32 on new device d_788486 (user median $46.30, threshold $231.48) within 24h of first use — possible ATO",5
-t_15dc43761ed1f913,R2,"$182.17 on new device d_847598 (user median $17.59, threshold $150.00) within 24h of first use — possible ATO",5
-t_371401abaacb99de,R2,"$295.05 on new device d_899055 (user median $15.89, threshold $150.00) within 24h of first use — possible ATO",5
-t_6d9a886cab5b8d3b,R2,"$255.29 on new device d_899055 (user median $15.89, threshold $150.00) within 24h of first use — possible ATO",5
-t_226dcb29f255e624,R2,"$298.35 on new device d_899055 (user median $15.89, threshold $150.00) within 24h of first use — possible ATO",5
-t_74284d638fa06ced,R2,"$298.45 on new device d_001168 (user median $52.03, threshold $260.15) within 24h of first use — possible ATO",5
-t_6971f3dec0233c03,R2,"$167.34 on new device d_001277 (user median $31.57, threshold $157.85) within 24h of first use — possible ATO",5
-t_01d004496568ed7b,R2,"$1125.56 on new device d_832888 (user median $38.53, threshold $192.65) within 24h of first use — possible ATO",5
-t_79930713ebf538b5,R2,"$415.78 on new device d_832888 (user median $38.53, threshold $192.65) within 24h of first use — possible ATO",5
-t_310ada1133b6f7bb,R2,"$772.81 on new device d_832888 (user median $38.53, threshold $192.65) within 24h of first use — possible ATO",5
-t_4d074ab7e1190977,R2,"$634.26 on new device d_832888 (user median $38.53, threshold $192.65) within 24h of first use — possible ATO",5
-t_24a038d156d41bfe,R2,"$1485.07 on new device d_832888 (user median $38.53, threshold $192.65) within 24h of first use — possible ATO",5
-t_1169daef44b9f5e0,R2,"$724.03 on new device d_832888 (user median $38.53, threshold $192.65) within 24h of first use — possible ATO",5
-t_5f2bb21d8db7cff2,R2,"$1207.28 on new device d_932918 (user median $15.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_2a748a2b00b9ef73,R2,"$1570.67 on new device d_932918 (user median $15.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_3c904eed66912cda,R2,"$911.54 on new device d_932918 (user median $15.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_1e78d2b3318d9a8c,R2,"$1304.47 on new device d_932918 (user median $15.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_05b1ff92bceabcaa,R2,"$1141.97 on new device d_932918 (user median $15.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_1744e23f46d05330,R2,"$321.51 on new device d_931250 (user median $21.66, threshold $150.00) within 24h of first use — possible ATO",5
-t_738e71fd1a3d9e2a,R2,"$340.31 on new device d_931250 (user median $21.66, threshold $150.00) within 24h of first use — possible ATO",5
-t_488ee52a2fa78308,R2,"$253.92 on new device d_904876 (user median $29.42, threshold $150.00) within 24h of first use — possible ATO",5
-t_17f3c4963327b8b8,R2,"$157.89 on new device d_904876 (user median $29.42, threshold $150.00) within 24h of first use — possible ATO",5
-t_260c1c3e730321ea,R2,"$178.77 on new device d_904876 (user median $29.42, threshold $150.00) within 24h of first use — possible ATO",5
-t_38c6f4e1ca6c9fe7,R2,"$397.72 on new device d_847598 (user median $10.31, threshold $150.00) within 24h of first use — possible ATO",5
-t_3003f3677b263063,R2,"$264.45 on new device d_847598 (user median $10.31, threshold $150.00) within 24h of first use — possible ATO",5
-t_660cbbc142bd1300,R2,"$209.83 on new device d_847598 (user median $10.31, threshold $150.00) within 24h of first use — possible ATO",5
-t_721ec71849e1a628,R2,"$329.64 on new device d_847598 (user median $10.31, threshold $150.00) within 24h of first use — possible ATO",5
-t_23ed347ea1ee687f,R2,"$392.20 on new device d_847598 (user median $10.31, threshold $150.00) within 24h of first use — possible ATO",5
-t_2cbe6cc991131a9a,R2,"$308.36 on new device d_832817 (user median $20.91, threshold $150.00) within 24h of first use — possible ATO",5
-t_68eddd70fc228b35,R2,"$216.06 on new device d_904876 (user median $39.27, threshold $196.35) within 24h of first use — possible ATO",5
-t_0dd93b8ad49a30b0,R2,"$198.25 on new device d_904876 (user median $39.27, threshold $196.35) within 24h of first use — possible ATO",5
-t_4ede7cea2af661d4,R2,"$281.92 on new device d_904876 (user median $39.27, threshold $196.35) within 24h of first use — possible ATO",5
-t_06a92eb400c39af2,R2,"$302.48 on new device d_002845 (user median $46.17, threshold $230.85) within 24h of first use — possible ATO",5
-t_2085eba74650e245,R2,"$547.32 on new device d_719120 (user median $26.92, threshold $150.00) within 24h of first use — possible ATO",5
-t_71e3f8cddf9712a6,R2,"$1784.90 on new device d_719120 (user median $26.92, threshold $150.00) within 24h of first use — possible ATO",5
-t_782857873a57e8c8,R2,"$1254.17 on new device d_719120 (user median $26.92, threshold $150.00) within 24h of first use — possible ATO",5
-t_4cf6f5993fa0610b,R2,"$1753.49 on new device d_719120 (user median $26.92, threshold $150.00) within 24h of first use — possible ATO",5
-t_27ce02fdd1379bb4,R2,"$335.55 on new device d_772146 (user median $44.11, threshold $220.55) within 24h of first use — possible ATO",5
-t_2bc476e38d7f35f3,R2,"$736.45 on new device d_718405 (user median $31.52, threshold $157.57) within 24h of first use — possible ATO",5
-t_405c497465221c9a,R2,"$643.62 on new device d_718405 (user median $31.52, threshold $157.57) within 24h of first use — possible ATO",5
-t_55b7e2bae09d360c,R2,"$883.31 on new device d_718405 (user median $31.52, threshold $157.57) within 24h of first use — possible ATO",5
-t_6d5ead8332ab5b73,R2,"$752.36 on new device d_718405 (user median $31.52, threshold $157.57) within 24h of first use — possible ATO",5
-t_0a9f11157c241036,R2,"$265.70 on new device d_001493 (user median $46.79, threshold $233.95) within 24h of first use — possible ATO",5
-t_76fa52bfdc4b8e7a,R2,"$220.87 on new device d_001572 (user median $20.33, threshold $150.00) within 24h of first use — possible ATO",5
-t_6850bdc77ee19c88,R2,"$163.80 on new device d_832817 (user median $22.72, threshold $150.00) within 24h of first use — possible ATO",5
-t_38a3cb0e28d1582d,R2,"$198.90 on new device d_832817 (user median $22.72, threshold $150.00) within 24h of first use — possible ATO",5
-t_6a9e5ab61e6be483,R2,"$213.26 on new device d_001587 (user median $32.91, threshold $164.55) within 24h of first use — possible ATO",5
-t_5e2c9b7818297391,R2,"$183.96 on new device d_001638 (user median $19.85, threshold $150.00) within 24h of first use — possible ATO",5
-t_1e5b664e862f272f,R2,"$504.52 on new device d_871301 (user median $26.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_6ae206f80ddf10ce,R2,"$946.20 on new device d_871301 (user median $26.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_40781937c31dde67,R2,"$663.74 on new device d_871301 (user median $26.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_6fc7739cbb1dc94e,R2,"$330.63 on new device d_871301 (user median $26.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_08d904c635f11e56,R2,"$287.60 on new device d_847598 (user median $20.15, threshold $150.00) within 24h of first use — possible ATO",5
-t_160f36543c33b329,R2,"$226.91 on new device d_847598 (user median $20.15, threshold $150.00) within 24h of first use — possible ATO",5
-t_28aa550c040b8cca,R2,"$188.32 on new device d_832817 (user median $36.52, threshold $182.60) within 24h of first use — possible ATO",5
-t_06780264f71d1a94,R2,"$263.34 on new device d_832817 (user median $36.52, threshold $182.60) within 24h of first use — possible ATO",5
-t_2b4a0acb50ab3784,R2,"$270.19 on new device d_931250 (user median $32.73, threshold $163.65) within 24h of first use — possible ATO",5
-t_6e8da96f02615647,R2,"$260.20 on new device d_931250 (user median $32.73, threshold $163.65) within 24h of first use — possible ATO",5
-t_14c13e3a60a7b152,R2,"$328.30 on new device d_931250 (user median $32.73, threshold $163.65) within 24h of first use — possible ATO",5
-t_63fc0d7c624ac02b,R2,"$708.18 on new device d_859441 (user median $7.56, threshold $150.00) within 24h of first use — possible ATO",5
-t_7965e7e197c9b2b8,R2,"$509.32 on new device d_859441 (user median $7.56, threshold $150.00) within 24h of first use — possible ATO",5
-t_53516ab1c54a289e,R2,"$632.46 on new device d_859441 (user median $7.56, threshold $150.00) within 24h of first use — possible ATO",5
-t_10fc7eb19e87d699,R2,"$1798.31 on new device d_859441 (user median $7.56, threshold $150.00) within 24h of first use — possible ATO",5
-t_2f80ec2a1863a040,R2,"$1644.07 on new device d_859441 (user median $7.56, threshold $150.00) within 24h of first use — possible ATO",5
-t_61176eb3bb96e493,R2,"$1372.61 on new device d_859441 (user median $7.56, threshold $150.00) within 24h of first use — possible ATO",5
-t_488e2a087910c27a,R2,"$1308.45 on new device d_712924 (user median $49.64, threshold $248.20) within 24h of first use — possible ATO",5
-t_0ab360dc1aaa7b75,R2,"$948.85 on new device d_712924 (user median $49.64, threshold $248.20) within 24h of first use — possible ATO",5
-t_2784a074eceba836,R2,"$441.63 on new device d_712924 (user median $49.64, threshold $248.20) within 24h of first use — possible ATO",5
-t_26aa94da2b8ab159,R2,"$1218.93 on new device d_712924 (user median $49.64, threshold $248.20) within 24h of first use — possible ATO",5
-t_3e13036e6896adaa,R2,"$559.10 on new device d_712924 (user median $49.64, threshold $248.20) within 24h of first use — possible ATO",5
-t_2200a6ed21df4a2b,R2,"$975.18 on new device d_712924 (user median $49.64, threshold $248.20) within 24h of first use — possible ATO",5
-t_4a5cdea2c5da7bb1,R2,"$694.76 on new device d_848085 (user median $11.23, threshold $150.00) within 24h of first use — possible ATO",5
-t_406af559b5bace75,R2,"$356.42 on new device d_772146 (user median $47.13, threshold $235.65) within 24h of first use — possible ATO",5
-t_5e777b6bea402096,R2,"$236.61 on new device d_904876 (user median $31.90, threshold $159.50) within 24h of first use — possible ATO",5
-t_590bb9771bb904dc,R2,"$183.05 on new device d_904876 (user median $31.90, threshold $159.50) within 24h of first use — possible ATO",5
-t_4d1bec6c764178eb,R2,"$190.29 on new device d_001951 (user median $30.43, threshold $152.15) within 24h of first use — possible ATO",5
-t_1f728978e1daf4e8,R2,"$358.65 on new device d_847598 (user median $24.46, threshold $150.00) within 24h of first use — possible ATO",5
-t_6c7034fd54cfa7e7,R2,"$271.92 on new device d_847598 (user median $24.46, threshold $150.00) within 24h of first use — possible ATO",5
-t_3c35494806a96694,R2,"$236.20 on new device d_847598 (user median $24.46, threshold $150.00) within 24h of first use — possible ATO",5
-t_4e4dbf22836fd55f,R2,"$1441.80 on new device d_905062 (user median $23.92, threshold $150.00) within 24h of first use — possible ATO",5
-t_0aa35f369f706b10,R2,"$456.17 on new device d_905062 (user median $23.92, threshold $150.00) within 24h of first use — possible ATO",5
-t_399e061a3f2b3f5c,R2,"$768.63 on new device d_905062 (user median $23.92, threshold $150.00) within 24h of first use — possible ATO",5
-t_1e0360186620ecb9,R2,"$1015.52 on new device d_905062 (user median $23.92, threshold $150.00) within 24h of first use — possible ATO",5
-t_0537666550ba7996,R2,"$399.32 on new device d_905062 (user median $23.92, threshold $150.00) within 24h of first use — possible ATO",5
-t_1956777577b0a70a,R2,"$335.49 on new device d_905062 (user median $23.92, threshold $150.00) within 24h of first use — possible ATO",5
-t_5840a896d6c50812,R2,"$320.53 on new device d_001986 (user median $59.98, threshold $299.92) within 24h of first use — possible ATO",5
-t_5d0532321ca69404,R2,"$687.08 on new device d_710585 (user median $29.15, threshold $150.00) within 24h of first use — possible ATO",5
-t_088f0811d8ec9bc7,R2,"$841.91 on new device d_710585 (user median $29.15, threshold $150.00) within 24h of first use — possible ATO",5
-t_27b7a1e2359a89f5,R2,"$753.43 on new device d_940216 (user median $37.06, threshold $185.30) within 24h of first use — possible ATO",5
-t_2c3ca33dc7fd68a2,R2,"$1178.37 on new device d_940216 (user median $37.06, threshold $185.30) within 24h of first use — possible ATO",5
-t_3683cf511947c270,R2,"$802.92 on new device d_940216 (user median $37.06, threshold $185.30) within 24h of first use — possible ATO",5
-t_2cc89066b8aafddf,R2,"$159.64 on new device d_002004 (user median $26.56, threshold $150.00) within 24h of first use — possible ATO",5
-t_1fc901bb220ab9a4,R2,"$1440.58 on new device d_857915 (user median $28.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_5d5f10f4f4adfa16,R2,"$769.34 on new device d_857915 (user median $28.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_5441954a896796e4,R2,"$794.47 on new device d_857915 (user median $28.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_1d23539ab5516773,R2,"$817.52 on new device d_857915 (user median $28.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_5115ceb3dcf259c7,R2,"$482.98 on new device d_857915 (user median $28.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_7a6cefe498181e71,R2,"$1463.18 on new device d_857915 (user median $28.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_2093f42f365ce60d,R2,"$265.22 on new device d_002853 (user median $37.70, threshold $188.50) within 24h of first use — possible ATO",5
-t_008c13105c40fecb,R2,"$229.89 on new device d_931250 (user median $24.76, threshold $150.00) within 24h of first use — possible ATO",5
-t_3ebf109745acd6ff,R2,"$342.64 on new device d_931250 (user median $24.76, threshold $150.00) within 24h of first use — possible ATO",5
-t_43e811b72d697b6d,R2,"$298.37 on new device d_931250 (user median $24.76, threshold $150.00) within 24h of first use — possible ATO",5
-t_4cbf0b0caf2ac1f2,R2,"$322.00 on new device d_832817 (user median $60.16, threshold $300.77) within 24h of first use — possible ATO",5
-t_5815e94663ecf314,R2,"$219.44 on new device d_904876 (user median $14.43, threshold $150.00) within 24h of first use — possible ATO",5
-t_3575befbc8f8919f,R2,"$182.41 on new device d_832817 (user median $24.88, threshold $150.00) within 24h of first use — possible ATO",5
-t_5cd11379d4e4ca74,R2,"$199.43 on new device d_832817 (user median $24.88, threshold $150.00) within 24h of first use — possible ATO",5
-t_04076b80d051d50f,R2,"$306.97 on new device d_832817 (user median $24.88, threshold $150.00) within 24h of first use — possible ATO",5
-t_105566342c5e1409,R2,"$293.79 on new device d_899055 (user median $12.07, threshold $150.00) within 24h of first use — possible ATO",5
-t_62087a4167cb1e80,R2,"$886.53 on new device d_905902 (user median $19.17, threshold $150.00) within 24h of first use — possible ATO",5
-t_10b99d9585c52d70,R2,"$750.01 on new device d_905902 (user median $19.17, threshold $150.00) within 24h of first use — possible ATO",5
-t_702fe90fe9944c41,R2,"$1118.74 on new device d_905902 (user median $19.17, threshold $150.00) within 24h of first use — possible ATO",5
-t_492250785aaba263,R2,"$349.85 on new device d_905902 (user median $19.17, threshold $150.00) within 24h of first use — possible ATO",5
-t_5707ddf96d3dcf6c,R2,"$982.03 on new device d_905902 (user median $19.17, threshold $150.00) within 24h of first use — possible ATO",5
-t_5ee7d37f5cc25cda,R2,"$240.62 on new device d_772146 (user median $35.76, threshold $178.82) within 24h of first use — possible ATO",5
-t_5b030795f0073aa4,R2,"$183.00 on new device d_847598 (user median $8.34, threshold $150.00) within 24h of first use — possible ATO",5
-t_6a45ea92b6b5613a,R2,"$244.82 on new device d_847598 (user median $8.34, threshold $150.00) within 24h of first use — possible ATO",5
-t_013a20ecb57a68a2,R2,"$1346.80 on new device d_743104 (user median $42.10, threshold $210.53) within 24h of first use — possible ATO",5
-t_52ec25c8a0179c48,R2,"$984.00 on new device d_743104 (user median $42.10, threshold $210.53) within 24h of first use — possible ATO",5
-t_0276a736eb6b1163,R2,"$498.05 on new device d_743104 (user median $42.10, threshold $210.53) within 24h of first use — possible ATO",5
-t_65eb0f0642bffc3e,R2,"$634.67 on new device d_743104 (user median $42.10, threshold $210.53) within 24h of first use — possible ATO",5
-t_3ffc97899c6dfb62,R2,"$860.05 on new device d_937470 (user median $16.23, threshold $150.00) within 24h of first use — possible ATO",5
-t_35068f6e7791c13a,R2,"$1723.64 on new device d_937470 (user median $16.23, threshold $150.00) within 24h of first use — possible ATO",5
-t_53f8f2e20e30d3f8,R2,"$606.65 on new device d_937470 (user median $16.23, threshold $150.00) within 24h of first use — possible ATO",5
-t_4daa836fc08e53fb,R2,"$1619.66 on new device d_937470 (user median $16.23, threshold $150.00) within 24h of first use — possible ATO",5
-t_550727533b833559,R2,"$1176.21 on new device d_937470 (user median $16.23, threshold $150.00) within 24h of first use — possible ATO",5
-t_6586218785d9e037,R2,"$753.02 on new device d_937470 (user median $16.23, threshold $150.00) within 24h of first use — possible ATO",5
-t_547902a5255c587f,R2,"$168.75 on new device d_904876 (user median $21.19, threshold $150.00) within 24h of first use — possible ATO",5
-t_06285914c6fc4bf1,R2,"$239.61 on new device d_904876 (user median $21.19, threshold $150.00) within 24h of first use — possible ATO",5
-t_3da69eb53b2feac7,R2,"$164.06 on new device d_002326 (user median $12.58, threshold $150.00) within 24h of first use — possible ATO",5
-t_2b223f1f0e10d9bd,R2,"$285.95 on new device d_832817 (user median $14.16, threshold $150.00) within 24h of first use — possible ATO",5
-t_54855faed2b54980,R2,"$154.69 on new device d_002842 (user median $28.58, threshold $150.00) within 24h of first use — possible ATO",5
-t_7c88a11ee667f7ac,R2,"$268.11 on new device d_772146 (user median $21.52, threshold $150.00) within 24h of first use — possible ATO",5
-t_27e37fe017c1b398,R2,"$380.41 on new device d_772146 (user median $21.52, threshold $150.00) within 24h of first use — possible ATO",5
-t_110eeb7bcf5912cb,R2,"$366.32 on new device d_772146 (user median $21.52, threshold $150.00) within 24h of first use — possible ATO",5
-t_4cec5cf867a301d5,R2,"$199.33 on new device d_931250 (user median $29.01, threshold $150.00) within 24h of first use — possible ATO",5
-t_5ea318d9ff87ddff,R2,"$299.47 on new device d_931250 (user median $29.01, threshold $150.00) within 24h of first use — possible ATO",5
-t_6348f883f2a89a4f,R2,"$350.87 on new device d_904876 (user median $8.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_0674dacffebe325c,R2,"$150.58 on new device d_904876 (user median $8.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_4ac52dff631ad8a9,R2,"$356.76 on new device d_904876 (user median $8.62, threshold $150.00) within 24h of first use — possible ATO",5
-t_7abb1ae689ffe718,R2,"$475.95 on new device d_825348 (user median $14.28, threshold $150.00) within 24h of first use — possible ATO",5
-t_700653b1edd12b4a,R2,"$790.74 on new device d_825348 (user median $14.28, threshold $150.00) within 24h of first use — possible ATO",5
-t_047529e3321c7488,R2,"$772.84 on new device d_825348 (user median $14.28, threshold $150.00) within 24h of first use — possible ATO",5
-t_7b775527d7fdd44d,R2,"$1080.06 on new device d_825348 (user median $14.28, threshold $150.00) within 24h of first use — possible ATO",5
-t_798dcf42384b35fd,R2,"$1429.48 on new device d_825348 (user median $14.28, threshold $150.00) within 24h of first use — possible ATO",5
-t_4e65d0e5fb95d999,R2,"$321.12 on new device d_899055 (user median $12.89, threshold $150.00) within 24h of first use — possible ATO",5
-t_609e394b21c771b2,R2,"$1545.58 on new device d_865092 (user median $37.89, threshold $189.42) within 24h of first use — possible ATO",5
-t_61395772bf63c5df,R2,"$1046.26 on new device d_865092 (user median $37.89, threshold $189.42) within 24h of first use — possible ATO",5
-t_08b2be930112da65,R2,"$1222.02 on new device d_865092 (user median $37.89, threshold $189.42) within 24h of first use — possible ATO",5
-t_4a14c172fed712eb,R2,"$1061.44 on new device d_865092 (user median $37.89, threshold $189.42) within 24h of first use — possible ATO",5
-t_6fa5a1844dc5a4b8,R2,"$326.35 on new device d_865092 (user median $37.89, threshold $189.42) within 24h of first use — possible ATO",5
-t_47052307d17b0847,R2,"$1074.74 on new device d_708294 (user median $10.43, threshold $150.00) within 24h of first use — possible ATO",5
-t_58de8289119b15b4,R2,"$539.19 on new device d_708294 (user median $10.43, threshold $150.00) within 24h of first use — possible ATO",5
-t_7c7ea88987fd328f,R2,"$697.80 on new device d_708294 (user median $10.43, threshold $150.00) within 24h of first use — possible ATO",5
-t_11b1e10c40230c23,R2,"$568.31 on new device d_708294 (user median $10.43, threshold $150.00) within 24h of first use — possible ATO",5
-t_378e29f4e54b84f7,R2,"$271.97 on new device d_931250 (user median $53.92, threshold $269.62) within 24h of first use — possible ATO",5
-t_7add65f205e5194a,R2,"$339.48 on new device d_772146 (user median $20.30, threshold $150.00) within 24h of first use — possible ATO",5
-t_28a771a1f45d241b,R2,"$164.09 on new device d_772146 (user median $20.30, threshold $150.00) within 24h of first use — possible ATO",5
-t_5738aa6e8eaac932,R2,"$309.07 on new device d_772146 (user median $20.30, threshold $150.00) within 24h of first use — possible ATO",5
-t_0e6dd0c31faafabb,R2,"$182.73 on new device d_002556 (user median $10.50, threshold $150.00) within 24h of first use — possible ATO",5
-t_6b23b121bb8e8aad,R2,"$866.08 on new device d_768933 (user median $24.44, threshold $150.00) within 24h of first use — possible ATO",5
-t_7420479ea7da749e,R2,"$737.45 on new device d_768933 (user median $24.44, threshold $150.00) within 24h of first use — possible ATO",5
-t_493a46c019d3cca4,R2,"$299.10 on new device d_772146 (user median $58.57, threshold $292.85) within 24h of first use — possible ATO",5
-t_06723105f6781457,R2,"$305.99 on new device d_772146 (user median $58.57, threshold $292.85) within 24h of first use — possible ATO",5
-t_41a262247fb8ea92,R2,"$352.13 on new device d_772146 (user median $58.57, threshold $292.85) within 24h of first use — possible ATO",5
-t_78de779cab132170,R2,"$313.66 on new device d_985129 (user median $21.31, threshold $150.00) within 24h of first use — possible ATO",5
-t_5ee12274f6848f31,R2,"$1511.88 on new device d_741671 (user median $15.90, threshold $150.00) within 24h of first use — possible ATO",5
-t_3b796d666c60b741,R2,"$942.57 on new device d_741671 (user median $15.90, threshold $150.00) within 24h of first use — possible ATO",5
-t_75fe1d51a1fc518b,R2,"$982.50 on new device d_741671 (user median $15.90, threshold $150.00) within 24h of first use — possible ATO",5
-t_338b0a864269fdf3,R2,"$1008.75 on new device d_741671 (user median $15.90, threshold $150.00) within 24h of first use — possible ATO",5
-t_2a71aba17c3ec7eb,R2,"$1440.47 on new device d_741671 (user median $15.90, threshold $150.00) within 24h of first use — possible ATO",5
-t_120295061d964ac7,R2,"$163.57 on new device d_002614 (user median $13.08, threshold $150.00) within 24h of first use — possible ATO",5
-t_2480f0e4d924b656,R2,"$344.11 on new device d_931250 (user median $23.51, threshold $150.00) within 24h of first use — possible ATO",5
-t_1ae71cc05d837064,R2,"$680.18 on new device d_965945 (user median $31.00, threshold $155.00) within 24h of first use — possible ATO",5
-t_15fab4a76b74c704,R2,"$847.38 on new device d_965945 (user median $31.00, threshold $155.00) within 24h of first use — possible ATO",5
-t_3e25bff510b3d060,R2,"$928.21 on new device d_965945 (user median $31.00, threshold $155.00) within 24h of first use — possible ATO",5
-t_1471aa22c532ff54,R2,"$1408.70 on new device d_965945 (user median $31.00, threshold $155.00) within 24h of first use — possible ATO",5
-t_228439ac8ae0358b,R2,"$684.43 on new device d_965945 (user median $31.00, threshold $155.00) within 24h of first use — possible ATO",5
-t_08b6fc56db662b1e,R2,"$302.08 on new device d_002678 (user median $45.94, threshold $229.70) within 24h of first use — possible ATO",5
-t_6b19a65b595a6162,R2,"$1390.00 on new device d_730432 (user median $30.62, threshold $153.10) within 24h of first use — possible ATO",5
-t_3a2de009e7ad742b,R2,"$832.57 on new device d_730432 (user median $30.62, threshold $153.10) within 24h of first use — possible ATO",5
-t_6d61a14c186a3f1b,R2,"$456.50 on new device d_730432 (user median $30.62, threshold $153.10) within 24h of first use — possible ATO",5
-t_46b743db481d752b,R2,"$945.06 on new device d_730432 (user median $30.62, threshold $153.10) within 24h of first use — possible ATO",5
-t_1b658f829cdb3a75,R2,"$1273.51 on new device d_730432 (user median $30.62, threshold $153.10) within 24h of first use — possible ATO",5
-t_1b4b4593dccd882a,R2,"$386.23 on new device d_772146 (user median $19.05, threshold $150.00) within 24h of first use — possible ATO",5
-t_3f0137bd06c266dd,R2,"$406.96 on new device d_772146 (user median $19.05, threshold $150.00) within 24h of first use — possible ATO",5
-t_5e5fd1e241794b45,R2,"$196.90 on new device d_002823 (user median $30.52, threshold $152.60) within 24h of first use — possible ATO",5
-t_11acd5bb063b66db,R2,"$236.42 on new device d_931250 (user median $38.23, threshold $191.15) within 24h of first use — possible ATO",5
-t_606e2d79cd22aeec,R2,"$203.32 on new device d_931250 (user median $38.23, threshold $191.15) within 24h of first use — possible ATO",5
-t_72cf1c9b2db2d8b2,R2,"$206.39 on new device d_899055 (user median $8.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_74a92cc5e7cc4704,R2,"$163.77 on new device d_899055 (user median $8.67, threshold $150.00) within 24h of first use — possible ATO",5
-t_554fa9126f91576f,R2,"$207.84 on new device d_899055 (user median $8.67, threshold $150.00) within 24h of first use — possible ATO",5
+t_414f5aba5f0804fe,"R1,R2","user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $263.09 on new device d_931250 (user prior median $37.96, threshold $189.80) within 24h of first use — possible ATO",5
+t_154f33eb4c6f635a,"R2,R3","$332.83 on new device d_847598 (user prior median $25.30, threshold $150.00) within 24h of first use — possible ATO | $332.83 vs user prior p99 $103.50 (threshold $300.00) — possible stolen-card cashout",5
+t_4d7b2a626e366bb0,"R2,R3","$349.10 on new device d_931250 (user prior median $19.42, threshold $150.00) within 24h of first use — possible ATO | $349.10 vs user prior p99 $65.92 (threshold $300.00) — possible stolen-card cashout",5
+t_1d715ede5c39f193,"R2,R3","$372.24 on new device d_931250 (user prior median $19.52, threshold $150.00) within 24h of first use — possible ATO | $372.24 vs user prior p99 $97.42 (threshold $300.00) — possible stolen-card cashout",5
+t_0484a46a96b56b81,"R2,R3","$336.37 on new device d_985129 (user prior median $20.78, threshold $150.00) within 24h of first use — possible ATO | $336.37 vs user prior p99 $93.66 (threshold $300.00) — possible stolen-card cashout",5
+t_4269893d5faf4f32,"R2,R3","$346.79 on new device d_985129 (user prior median $21.19, threshold $150.00) within 24h of first use — possible ATO | $346.79 vs user prior p99 $135.72 (threshold $300.00) — possible stolen-card cashout",5
+t_6921f4cae1ddb7e8,"R2,R3","$1114.56 on new device d_754243 (user prior median $134.14, threshold $670.70) within 24h of first use — possible ATO | $1114.56 vs user prior p99 $737.09 (threshold $1105.63) — possible stolen-card cashout",5
+t_7d1fbcab92313e83,"R2,R3","$1504.24 on new device d_754243 (user prior median $138.27, threshold $691.35) within 24h of first use — possible ATO | $1504.24 vs user prior p99 $923.14 (threshold $1384.71) — possible stolen-card cashout",5
+t_4bb82736139ce2d4,"R2,R3","$419.40 on new device d_847598 (user prior median $35.62, threshold $178.10) within 24h of first use — possible ATO | $419.40 vs user prior p99 $150.11 (threshold $300.00) — possible stolen-card cashout",5
+t_1176b88214a841f6,"R2,R3","$332.70 on new device d_847598 (user prior median $36.00, threshold $180.02) within 24h of first use — possible ATO | $332.70 vs user prior p99 $151.81 (threshold $300.00) — possible stolen-card cashout",5
+t_6c3dc3ff705a5728,"R2,R3","$363.18 on new device d_847598 (user prior median $36.30, threshold $181.48) within 24h of first use — possible ATO | $363.18 vs user prior p99 $153.65 (threshold $300.00) — possible stolen-card cashout",5
+t_6c17190268734497,"R2,R3","$318.73 on new device d_832817 (user prior median $24.93, threshold $150.00) within 24h of first use — possible ATO | $318.73 vs user prior p99 $124.99 (threshold $300.00) — possible stolen-card cashout",5
+t_591d8ff49e1713f0,"R2,R3","$336.22 on new device d_899055 (user prior median $22.44, threshold $150.00) within 24h of first use — possible ATO | $336.22 vs user prior p99 $168.38 (threshold $300.00) — possible stolen-card cashout",5
+t_3a3af14caf0fa26b,"R2,R3","$1144.90 on new device d_945424 (user prior median $11.98, threshold $150.00) within 24h of first use — possible ATO | $1144.90 vs user prior p99 $97.70 (threshold $300.00) — possible stolen-card cashout",5
+t_469a9a6c8eb28b4b,"R2,R3","$1044.01 on new device d_945424 (user prior median $11.99, threshold $150.00) within 24h of first use — possible ATO | $1044.01 vs user prior p99 $98.17 (threshold $300.00) — possible stolen-card cashout",5
+t_75d1cce3d75b6534,"R2,R3","$1469.21 on new device d_945424 (user prior median $12.00, threshold $150.00) within 24h of first use — possible ATO | $1469.21 vs user prior p99 $99.70 (threshold $300.00) — possible stolen-card cashout",5
+t_6c917559f6557f0a,"R2,R3","$1585.50 on new device d_945424 (user prior median $12.00, threshold $150.00) within 24h of first use — possible ATO | $1585.50 vs user prior p99 $101.96 (threshold $300.00) — possible stolen-card cashout",5
+t_2abcfdac1f7a654b,"R2,R3","$1592.05 on new device d_945424 (user prior median $12.02, threshold $150.00) within 24h of first use — possible ATO | $1592.05 vs user prior p99 $103.14 (threshold $300.00) — possible stolen-card cashout",5
+t_57c1f9d8ab256a1b,"R2,R3","$997.47 on new device d_842963 (user prior median $31.06, threshold $155.32) within 24h of first use — possible ATO | $997.47 vs user prior p99 $110.36 (threshold $300.00) — possible stolen-card cashout",5
+t_0b769a418bb76b69,"R2,R3","$1784.03 on new device d_842963 (user prior median $32.22, threshold $161.12) within 24h of first use — possible ATO | $1784.03 vs user prior p99 $827.84 (threshold $1241.76) — possible stolen-card cashout",5
+t_5f3ea6f5b3e25df9,"R2,R3","$326.72 on new device d_832817 (user prior median $18.35, threshold $150.00) within 24h of first use — possible ATO | $326.72 vs user prior p99 $111.23 (threshold $300.00) — possible stolen-card cashout",5
+t_0229532a940f4d9f,"R2,R3","$367.69 on new device d_931250 (user prior median $29.58, threshold $150.00) within 24h of first use — possible ATO | $367.69 vs user prior p99 $173.83 (threshold $300.00) — possible stolen-card cashout",5
+t_01e622bab28d4ee1,"R2,R3","$329.34 on new device d_931250 (user prior median $29.59, threshold $150.00) within 24h of first use — possible ATO | $329.34 vs user prior p99 $179.50 (threshold $300.00) — possible stolen-card cashout",5
+t_2d0d31cebf5102d6,"R2,R3","$1204.34 on new device d_739614 (user prior median $89.25, threshold $446.25) within 24h of first use — possible ATO | $1204.34 vs user prior p99 $257.04 (threshold $385.56) — possible stolen-card cashout",5
+t_73e17964ba7343b2,"R2,R3","$1126.65 on new device d_739614 (user prior median $89.60, threshold $448.00) within 24h of first use — possible ATO | $1126.65 vs user prior p99 $458.78 (threshold $688.17) — possible stolen-card cashout",5
+t_46d7bbbf7d8aa0d9,"R2,R3","$1435.08 on new device d_815031 (user prior median $33.65, threshold $168.25) within 24h of first use — possible ATO | $1435.08 vs user prior p99 $186.57 (threshold $300.00) — possible stolen-card cashout",5
+t_4719d4b16bc81d0a,"R2,R3","$1755.59 on new device d_815031 (user prior median $33.91, threshold $169.55) within 24h of first use — possible ATO | $1755.59 vs user prior p99 $202.65 (threshold $303.98) — possible stolen-card cashout",5
+t_6908733509a5ba00,"R2,R3","$1132.59 on new device d_815031 (user prior median $34.36, threshold $171.80) within 24h of first use — possible ATO | $1132.59 vs user prior p99 $245.76 (threshold $368.64) — possible stolen-card cashout",5
+t_33172c64eaf6c4f2,"R2,R3","$1781.46 on new device d_815031 (user prior median $34.81, threshold $174.05) within 24h of first use — possible ATO | $1781.46 vs user prior p99 $738.42 (threshold $1107.63) — possible stolen-card cashout",5
+t_53389263edaa950e,"R2,R3","$865.32 on new device d_737139 (user prior median $52.28, threshold $261.38) within 24h of first use — possible ATO | $865.32 vs user prior p99 $193.10 (threshold $300.00) — possible stolen-card cashout",5
+t_3283c75e8518dc98,"R2,R3","$1289.51 on new device d_737139 (user prior median $52.35, threshold $261.75) within 24h of first use — possible ATO | $1289.51 vs user prior p99 $205.54 (threshold $308.31) — possible stolen-card cashout",5
+t_09ff8474cfbb6733,"R2,R3","$1011.62 on new device d_737139 (user prior median $52.72, threshold $263.60) within 24h of first use — possible ATO | $1011.62 vs user prior p99 $623.43 (threshold $935.14) — possible stolen-card cashout",5
+t_4c08b8a97020b810,"R2,R3","$1705.86 on new device d_737139 (user prior median $53.09, threshold $265.45) within 24h of first use — possible ATO | $1705.86 vs user prior p99 $956.03 (threshold $1434.04) — possible stolen-card cashout",5
+t_53947499e15e495e,"R2,R3","$1701.64 on new device d_752324 (user prior median $18.74, threshold $150.00) within 24h of first use — possible ATO | $1701.64 vs user prior p99 $207.20 (threshold $310.79) — possible stolen-card cashout",5
+t_16401693ed136e83,"R2,R3","$1071.76 on new device d_752324 (user prior median $19.09, threshold $150.00) within 24h of first use — possible ATO | $1071.76 vs user prior p99 $419.32 (threshold $628.98) — possible stolen-card cashout",5
+t_3d6bf427144ffeed,"R2,R3","$347.35 on new device d_847598 (user prior median $13.04, threshold $150.00) within 24h of first use — possible ATO | $347.35 vs user prior p99 $54.07 (threshold $300.00) — possible stolen-card cashout",5
+t_09d798ff9b182c6e,"R2,R3","$1346.81 on new device d_949314 (user prior median $21.66, threshold $150.00) within 24h of first use — possible ATO | $1346.81 vs user prior p99 $219.87 (threshold $329.80) — possible stolen-card cashout",5
+t_0db888bcc9dffab5,"R2,R3","$1541.82 on new device d_949314 (user prior median $23.34, threshold $150.00) within 24h of first use — possible ATO | $1541.82 vs user prior p99 $921.90 (threshold $1382.85) — possible stolen-card cashout",5
+t_0038d9554f344ad3,"R2,R3","$645.39 on new device d_724476 (user prior median $31.98, threshold $159.90) within 24h of first use — possible ATO | $645.39 vs user prior p99 $120.26 (threshold $300.00) — possible stolen-card cashout",5
+t_79848286aaddb552,"R2,R3","$1647.76 on new device d_724476 (user prior median $34.01, threshold $170.05) within 24h of first use — possible ATO | $1647.76 vs user prior p99 $642.11 (threshold $963.16) — possible stolen-card cashout",5
+t_45d03feb733de26d,"R2,R3","$307.30 on new device d_985129 (user prior median $15.54, threshold $150.00) within 24h of first use — possible ATO | $307.30 vs user prior p99 $85.07 (threshold $300.00) — possible stolen-card cashout",5
+t_1a1383683f31d791,"R2,R3","$330.07 on new device d_985129 (user prior median $15.59, threshold $150.00) within 24h of first use — possible ATO | $330.07 vs user prior p99 $201.66 (threshold $302.49) — possible stolen-card cashout",5
+t_4f35eaa9b18b10f4,"R2,R3","$339.73 on new device d_832817 (user prior median $34.43, threshold $172.15) within 24h of first use — possible ATO | $339.73 vs user prior p99 $222.63 (threshold $333.94) — possible stolen-card cashout",5
+t_029f60df3390cc03,"R2,R3","$961.07 on new device d_987869 (user prior median $28.39, threshold $150.00) within 24h of first use — possible ATO | $961.07 vs user prior p99 $82.28 (threshold $300.00) — possible stolen-card cashout",5
+t_542a87502148f538,"R2,R3","$1167.16 on new device d_987869 (user prior median $28.85, threshold $150.00) within 24h of first use — possible ATO | $1167.16 vs user prior p99 $477.92 (threshold $716.88) — possible stolen-card cashout",5
+t_5cde4e22978278bf,"R2,R3","$359.44 on new device d_985129 (user prior median $43.26, threshold $216.30) within 24h of first use — possible ATO | $359.44 vs user prior p99 $192.32 (threshold $300.00) — possible stolen-card cashout",5
+t_289e406f2f2b9942,"R2,R3","$360.14 on new device d_772146 (user prior median $41.30, threshold $206.50) within 24h of first use — possible ATO | $360.14 vs user prior p99 $111.23 (threshold $300.00) — possible stolen-card cashout",5
+t_0df3d8ff23ae5e8b,"R2,R3","$767.00 on new device d_905940 (user prior median $14.68, threshold $150.00) within 24h of first use — possible ATO | $767.00 vs user prior p99 $51.36 (threshold $300.00) — possible stolen-card cashout",5
+t_7ced7cc6edd935c6,"R2,R3","$1397.65 on new device d_905940 (user prior median $15.73, threshold $150.00) within 24h of first use — possible ATO | $1397.65 vs user prior p99 $482.37 (threshold $723.56) — possible stolen-card cashout",5
+t_1643505b4db82427,"R2,R3","$1285.53 on new device d_978745 (user prior median $51.74, threshold $258.70) within 24h of first use — possible ATO | $1285.53 vs user prior p99 $411.62 (threshold $617.43) — possible stolen-card cashout",5
+t_1fce7f75c194e0ef,"R2,R3","$1697.56 on new device d_978745 (user prior median $52.67, threshold $263.35) within 24h of first use — possible ATO | $1697.56 vs user prior p99 $455.21 (threshold $682.81) — possible stolen-card cashout",5
+t_732e04bacb1bc8ae,"R2,R3","$940.07 on new device d_978745 (user prior median $52.76, threshold $263.80) within 24h of first use — possible ATO | $940.07 vs user prior p99 $476.68 (threshold $715.02) — possible stolen-card cashout",5
+t_21d7cf97eabb9ca9,"R2,R3","$1504.21 on new device d_978745 (user prior median $52.85, threshold $264.25) within 24h of first use — possible ATO | $1504.21 vs user prior p99 $764.19 (threshold $1146.29) — possible stolen-card cashout",5
+t_260e18ee8a50f7b4,"R2,R3","$392.73 on new device d_832817 (user prior median $16.12, threshold $150.00) within 24h of first use — possible ATO | $392.73 vs user prior p99 $65.54 (threshold $300.00) — possible stolen-card cashout",5
+t_722c9d325196e2f7,"R2,R3","$312.55 on new device d_832817 (user prior median $16.39, threshold $150.00) within 24h of first use — possible ATO | $312.55 vs user prior p99 $144.11 (threshold $300.00) — possible stolen-card cashout",5
+t_04451c78fc2b0c07,"R2,R3","$1658.73 on new device d_773269 (user prior median $21.45, threshold $150.00) within 24h of first use — possible ATO | $1658.73 vs user prior p99 $69.35 (threshold $300.00) — possible stolen-card cashout",5
+t_0ad7906e67459b1f,"R2,R3","$382.08 on new device d_773269 (user prior median $21.52, threshold $150.00) within 24h of first use — possible ATO | $382.08 vs user prior p99 $108.47 (threshold $300.00) — possible stolen-card cashout",5
+t_3148913751c0f236,"R2,R3","$1059.65 on new device d_773269 (user prior median $21.60, threshold $150.00) within 24h of first use — possible ATO | $1059.65 vs user prior p99 $294.67 (threshold $442.01) — possible stolen-card cashout",5
+t_625c20d34d614fe9,"R2,R3","$374.48 on new device d_904876 (user prior median $22.90, threshold $150.00) within 24h of first use — possible ATO | $374.48 vs user prior p99 $75.14 (threshold $300.00) — possible stolen-card cashout",5
+t_304f4d7541bc9c3e,"R2,R3","$1694.71 on new device d_839789 (user prior median $23.27, threshold $150.00) within 24h of first use — possible ATO | $1694.71 vs user prior p99 $76.23 (threshold $300.00) — possible stolen-card cashout",5
+t_6eb722a80e2c329e,"R2,R3","$1253.58 on new device d_839789 (user prior median $23.46, threshold $150.00) within 24h of first use — possible ATO | $1253.58 vs user prior p99 $804.31 (threshold $1206.47) — possible stolen-card cashout",5
+t_3836588497a69083,"R2,R3","$356.12 on new device d_899055 (user prior median $35.68, threshold $178.40) within 24h of first use — possible ATO | $356.12 vs user prior p99 $131.55 (threshold $300.00) — possible stolen-card cashout",5
+t_4f6559dfde8421de,"R2,R3","$350.87 on new device d_899055 (user prior median $36.46, threshold $182.30) within 24h of first use — possible ATO | $350.87 vs user prior p99 $185.24 (threshold $300.00) — possible stolen-card cashout",5
+t_409607d8296ec22a,"R2,R3","$554.19 on new device d_752033 (user prior median $39.41, threshold $197.05) within 24h of first use — possible ATO | $554.19 vs user prior p99 $126.46 (threshold $300.00) — possible stolen-card cashout",5
+t_65a826d872ed5ea4,"R2,R3","$1797.78 on new device d_752033 (user prior median $39.72, threshold $198.60) within 24h of first use — possible ATO | $1797.78 vs user prior p99 $156.14 (threshold $300.00) — possible stolen-card cashout",5
+t_1d0eb87d907e4cc2,"R2,R3","$1217.79 on new device d_752033 (user prior median $39.79, threshold $198.95) within 24h of first use — possible ATO | $1217.79 vs user prior p99 $371.75 (threshold $557.63) — possible stolen-card cashout",5
+t_297d60609df20518,"R2,R3","$1644.83 on new device d_752033 (user prior median $39.86, threshold $199.30) within 24h of first use — possible ATO | $1644.83 vs user prior p99 $899.26 (threshold $1348.89) — possible stolen-card cashout",5
+t_0d682d5c136d5200,"R2,R3","$368.60 on new device d_847598 (user prior median $12.55, threshold $150.00) within 24h of first use — possible ATO | $368.60 vs user prior p99 $122.96 (threshold $300.00) — possible stolen-card cashout",5
+t_3907b5a3e1a1c59c,"R2,R3","$403.42 on new device d_847598 (user prior median $17.02, threshold $150.00) within 24h of first use — possible ATO | $403.42 vs user prior p99 $108.13 (threshold $300.00) — possible stolen-card cashout",5
+t_5eb915321094540f,"R2,R3","$411.85 on new device d_847598 (user prior median $17.12, threshold $150.00) within 24h of first use — possible ATO | $411.85 vs user prior p99 $129.82 (threshold $300.00) — possible stolen-card cashout",5
+t_1c32b64460cd5894,"R2,R3","$310.03 on new device d_847598 (user prior median $17.14, threshold $150.00) within 24h of first use — possible ATO | $310.03 vs user prior p99 $171.54 (threshold $300.00) — possible stolen-card cashout",5
+t_54746f069f47846d,"R2,R3","$1063.84 on new device d_726059 (user prior median $13.58, threshold $150.00) within 24h of first use — possible ATO | $1063.84 vs user prior p99 $91.29 (threshold $300.00) — possible stolen-card cashout",5
+t_4148466023fbba20,"R2,R3","$946.71 on new device d_726059 (user prior median $13.60, threshold $150.00) within 24h of first use — possible ATO | $946.71 vs user prior p99 $101.73 (threshold $300.00) — possible stolen-card cashout",5
+t_7f821d02aa166b74,"R2,R3","$1524.43 on new device d_709067 (user prior median $24.62, threshold $150.00) within 24h of first use — possible ATO | $1524.43 vs user prior p99 $215.19 (threshold $322.79) — possible stolen-card cashout",5
+t_07cf9396780a75db,"R2,R3","$1753.17 on new device d_709067 (user prior median $24.70, threshold $150.00) within 24h of first use — possible ATO | $1753.17 vs user prior p99 $246.18 (threshold $369.27) — possible stolen-card cashout",5
+t_2c1819586cc127e4,"R2,R3","$360.11 on new device d_985129 (user prior median $35.81, threshold $179.05) within 24h of first use — possible ATO | $360.11 vs user prior p99 $157.74 (threshold $300.00) — possible stolen-card cashout",5
+t_7ff871f7ce18a7b6,"R2,R3","$366.87 on new device d_772146 (user prior median $13.62, threshold $150.00) within 24h of first use — possible ATO | $366.87 vs user prior p99 $122.59 (threshold $300.00) — possible stolen-card cashout",5
+t_1abe2f79c4f1e152,"R2,R3","$853.18 on new device d_858104 (user prior median $13.98, threshold $150.00) within 24h of first use — possible ATO | $853.18 vs user prior p99 $77.80 (threshold $300.00) — possible stolen-card cashout",5
+t_717038f6521d35e9,"R2,R3","$1678.96 on new device d_858104 (user prior median $14.26, threshold $150.00) within 24h of first use — possible ATO | $1678.96 vs user prior p99 $676.80 (threshold $1015.20) — possible stolen-card cashout",5
+t_31f1eba2cc71fc0b,"R2,R3","$1493.41 on new device d_788486 (user prior median $45.23, threshold $226.15) within 24h of first use — possible ATO | $1493.41 vs user prior p99 $440.72 (threshold $661.08) — possible stolen-card cashout",5
+t_3c4171ea470ee3fc,"R2,R3","$1435.56 on new device d_788486 (user prior median $45.33, threshold $226.67) within 24h of first use — possible ATO | $1435.56 vs user prior p99 $617.90 (threshold $926.85) — possible stolen-card cashout",5
+t_4e2fe28d072d037f,"R2,R3","$421.55 on new device d_904876 (user prior median $17.53, threshold $150.00) within 24h of first use — possible ATO | $421.55 vs user prior p99 $108.69 (threshold $300.00) — possible stolen-card cashout",5
+t_430db10e4ed7239c,"R2,R5","$426.09 on new device d_899055 (user prior median $15.58, threshold $150.00) within 24h of first use — possible ATO | device d_899055 had 7 distinct users as of this txn (threshold 4) — possible mule ring; this $426.09 txn by user u_00834",5
+t_2e330ef1c99adf92,"R2,R3","$1746.99 on new device d_836713 (user prior median $31.79, threshold $158.95) within 24h of first use — possible ATO | $1746.99 vs user prior p99 $209.06 (threshold $313.59) — possible stolen-card cashout",5
+t_703f1e6cb186b26c,"R2,R3","$1407.95 on new device d_836713 (user prior median $31.80, threshold $159.00) within 24h of first use — possible ATO | $1407.95 vs user prior p99 $212.85 (threshold $319.27) — possible stolen-card cashout",5
+t_1ac41c99491478bb,"R2,R3","$1216.43 on new device d_836713 (user prior median $31.81, threshold $159.05) within 24h of first use — possible ATO | $1216.43 vs user prior p99 $215.71 (threshold $323.56) — possible stolen-card cashout",5
+t_20de5bcb620ded2e,"R2,R3","$435.88 on new device d_985129 (user prior median $27.25, threshold $150.00) within 24h of first use — possible ATO | $435.88 vs user prior p99 $114.17 (threshold $300.00) — possible stolen-card cashout",5
+t_01d004496568ed7b,"R2,R3","$1125.56 on new device d_832888 (user prior median $37.50, threshold $187.50) within 24h of first use — possible ATO | $1125.56 vs user prior p99 $244.92 (threshold $367.39) — possible stolen-card cashout",5
+t_24a038d156d41bfe,"R2,R3","$1485.07 on new device d_832888 (user prior median $38.12, threshold $190.60) within 24h of first use — possible ATO | $1485.07 vs user prior p99 $861.00 (threshold $1291.50) — possible stolen-card cashout",5
+t_5f2bb21d8db7cff2,"R2,R3","$1207.28 on new device d_932918 (user prior median $15.40, threshold $150.00) within 24h of first use — possible ATO | $1207.28 vs user prior p99 $92.27 (threshold $300.00) — possible stolen-card cashout",5
+t_2a748a2b00b9ef73,"R2,R3","$1570.67 on new device d_932918 (user prior median $15.59, threshold $150.00) within 24h of first use — possible ATO | $1570.67 vs user prior p99 $98.24 (threshold $300.00) — possible stolen-card cashout",5
+t_3c904eed66912cda,"R2,R3","$911.54 on new device d_932918 (user prior median $15.60, threshold $150.00) within 24h of first use — possible ATO | $911.54 vs user prior p99 $119.75 (threshold $300.00) — possible stolen-card cashout",5
+t_1e78d2b3318d9a8c,"R2,R3","$1304.47 on new device d_932918 (user prior median $15.60, threshold $150.00) within 24h of first use — possible ATO | $1304.47 vs user prior p99 $630.55 (threshold $945.82) — possible stolen-card cashout",5
+t_1744e23f46d05330,"R2,R3","$321.51 on new device d_931250 (user prior median $21.23, threshold $150.00) within 24h of first use — possible ATO | $321.51 vs user prior p99 $116.96 (threshold $300.00) — possible stolen-card cashout",5
+t_738e71fd1a3d9e2a,"R2,R3","$340.31 on new device d_931250 (user prior median $21.38, threshold $150.00) within 24h of first use — possible ATO | $340.31 vs user prior p99 $140.43 (threshold $300.00) — possible stolen-card cashout",5
+t_38c6f4e1ca6c9fe7,"R2,R3","$397.72 on new device d_847598 (user prior median $10.22, threshold $150.00) within 24h of first use — possible ATO | $397.72 vs user prior p99 $31.24 (threshold $300.00) — possible stolen-card cashout",5
+t_721ec71849e1a628,"R2,R3","$329.64 on new device d_847598 (user prior median $10.31, threshold $150.00) within 24h of first use — possible ATO | $329.64 vs user prior p99 $102.82 (threshold $300.00) — possible stolen-card cashout",5
+t_23ed347ea1ee687f,"R2,R3","$392.20 on new device d_847598 (user prior median $10.31, threshold $150.00) within 24h of first use — possible ATO | $392.20 vs user prior p99 $230.59 (threshold $345.88) — possible stolen-card cashout",5
+t_2cbe6cc991131a9a,"R2,R3","$308.36 on new device d_832817 (user prior median $21.02, threshold $150.00) within 24h of first use — possible ATO | $308.36 vs user prior p99 $113.51 (threshold $300.00) — possible stolen-card cashout",5
+t_2085eba74650e245,"R2,R3","$547.32 on new device d_719120 (user prior median $25.99, threshold $150.00) within 24h of first use — possible ATO | $547.32 vs user prior p99 $81.64 (threshold $300.00) — possible stolen-card cashout",5
+t_71e3f8cddf9712a6,"R2,R3","$1784.90 on new device d_719120 (user prior median $26.02, threshold $150.00) within 24h of first use — possible ATO | $1784.90 vs user prior p99 $165.25 (threshold $300.00) — possible stolen-card cashout",5
+t_782857873a57e8c8,"R2,R3","$1254.17 on new device d_719120 (user prior median $26.44, threshold $150.00) within 24h of first use — possible ATO | $1254.17 vs user prior p99 $732.96 (threshold $1099.44) — possible stolen-card cashout",5
+t_27ce02fdd1379bb4,"R2,R3","$335.55 on new device d_772146 (user prior median $46.74, threshold $233.70) within 24h of first use — possible ATO | $335.55 vs user prior p99 $182.75 (threshold $300.00) — possible stolen-card cashout",5
+t_2bc476e38d7f35f3,"R2,R3","$736.45 on new device d_718405 (user prior median $29.44, threshold $150.00) within 24h of first use — possible ATO | $736.45 vs user prior p99 $230.29 (threshold $345.43) — possible stolen-card cashout",5
+t_4360f665da1927b1,"R2,R3","$460.20 on new device d_808534 (user prior median $33.66, threshold $168.30) within 24h of first use — possible ATO | $460.20 vs user prior p99 $112.15 (threshold $300.00) — possible stolen-card cashout",5
+t_0547f08089839e5b,"R2,R3","$1277.97 on new device d_808534 (user prior median $33.69, threshold $168.47) within 24h of first use — possible ATO | $1277.97 vs user prior p99 $122.45 (threshold $300.00) — possible stolen-card cashout",5
+t_111f4b2454178c37,"R2,R3","$548.74 on new device d_808534 (user prior median $33.73, threshold $168.65) within 24h of first use — possible ATO | $548.74 vs user prior p99 $134.74 (threshold $300.00) — possible stolen-card cashout",5
+t_1e5b664e862f272f,"R2,R3","$504.52 on new device d_871301 (user prior median $25.42, threshold $150.00) within 24h of first use — possible ATO | $504.52 vs user prior p99 $72.22 (threshold $300.00) — possible stolen-card cashout",5
+t_6ae206f80ddf10ce,"R2,R3","$946.20 on new device d_871301 (user prior median $25.76, threshold $150.00) within 24h of first use — possible ATO | $946.20 vs user prior p99 $213.55 (threshold $320.33) — possible stolen-card cashout",5
+t_1c1d145a577f9952,"R2,R3","$1747.65 on new device d_871301 (user prior median $26.11, threshold $150.00) within 24h of first use — possible ATO | $1747.65 vs user prior p99 $637.02 (threshold $955.54) — possible stolen-card cashout",5
+t_63fc0d7c624ac02b,"R2,R3","$708.18 on new device d_859441 (user prior median $5.58, threshold $150.00) within 24h of first use — possible ATO | $708.18 vs user prior p99 $18.06 (threshold $300.00) — possible stolen-card cashout",5
+t_10fc7eb19e87d699,"R2,R3","$1798.31 on new device d_859441 (user prior median $6.27, threshold $150.00) within 24h of first use — possible ATO | $1798.31 vs user prior p99 $683.19 (threshold $1024.79) — possible stolen-card cashout",5
+t_488e2a087910c27a,"R2,R3","$1308.45 on new device d_712924 (user prior median $46.04, threshold $230.18) within 24h of first use — possible ATO | $1308.45 vs user prior p99 $98.24 (threshold $300.00) — possible stolen-card cashout",5
+t_4a5cdea2c5da7bb1,"R2,R3","$694.76 on new device d_848085 (user prior median $11.17, threshold $150.00) within 24h of first use — possible ATO | $694.76 vs user prior p99 $33.51 (threshold $300.00) — possible stolen-card cashout",5
+t_67e0c8918b2fbff4,"R2,R3","$1096.02 on new device d_848085 (user prior median $11.19, threshold $150.00) within 24h of first use — possible ATO | $1096.02 vs user prior p99 $36.18 (threshold $300.00) — possible stolen-card cashout",5
+t_5361424bd02ed317,"R2,R3","$1666.59 on new device d_848085 (user prior median $11.21, threshold $150.00) within 24h of first use — possible ATO | $1666.59 vs user prior p99 $95.68 (threshold $300.00) — possible stolen-card cashout",5
+t_406af559b5bace75,"R2,R3","$356.42 on new device d_772146 (user prior median $48.95, threshold $244.75) within 24h of first use — possible ATO | $356.42 vs user prior p99 $223.60 (threshold $335.39) — possible stolen-card cashout",5
+t_1f728978e1daf4e8,"R2,R3","$358.65 on new device d_847598 (user prior median $24.22, threshold $150.00) within 24h of first use — possible ATO | $358.65 vs user prior p99 $169.30 (threshold $300.00) — possible stolen-card cashout",5
+t_4e4dbf22836fd55f,"R2,R3","$1441.80 on new device d_905062 (user prior median $19.47, threshold $150.00) within 24h of first use — possible ATO | $1441.80 vs user prior p99 $98.23 (threshold $300.00) — possible stolen-card cashout",5
+t_5d0532321ca69404,"R2,R3","$687.08 on new device d_710585 (user prior median $29.00, threshold $150.00) within 24h of first use — possible ATO | $687.08 vs user prior p99 $185.60 (threshold $300.00) — possible stolen-card cashout",5
+t_088f0811d8ec9bc7,"R2,R3","$841.91 on new device d_710585 (user prior median $29.03, threshold $150.00) within 24h of first use — possible ATO | $841.91 vs user prior p99 $241.14 (threshold $361.71) — possible stolen-card cashout",5
+t_1aa7a1f9dc8db37c,"R2,R3","$1382.10 on new device d_710585 (user prior median $29.08, threshold $150.00) within 24h of first use — possible ATO | $1382.10 vs user prior p99 $416.25 (threshold $624.37) — possible stolen-card cashout",5
+t_2066166e04f93ed6,"R2,R3","$1711.63 on new device d_710585 (user prior median $29.13, threshold $150.00) within 24h of first use — possible ATO | $1711.63 vs user prior p99 $671.38 (threshold $1007.06) — possible stolen-card cashout",5
+t_27b7a1e2359a89f5,"R2,R3","$753.43 on new device d_940216 (user prior median $36.32, threshold $181.58) within 24h of first use — possible ATO | $753.43 vs user prior p99 $135.70 (threshold $300.00) — possible stolen-card cashout",5
+t_2c3ca33dc7fd68a2,"R2,R3","$1178.37 on new device d_940216 (user prior median $36.67, threshold $183.35) within 24h of first use — possible ATO | $1178.37 vs user prior p99 $278.59 (threshold $417.89) — possible stolen-card cashout",5
+t_1fc901bb220ab9a4,"R2,R3","$1440.58 on new device d_857915 (user prior median $27.06, threshold $150.00) within 24h of first use — possible ATO | $1440.58 vs user prior p99 $112.58 (threshold $300.00) — possible stolen-card cashout",5
+t_5d5f10f4f4adfa16,"R2,R3","$769.34 on new device d_857915 (user prior median $27.16, threshold $150.00) within 24h of first use — possible ATO | $769.34 vs user prior p99 $421.98 (threshold $632.96) — possible stolen-card cashout",5
+t_7a6cefe498181e71,"R2,R3","$1463.18 on new device d_857915 (user prior median $28.21, threshold $150.00) within 24h of first use — possible ATO | $1463.18 vs user prior p99 $904.75 (threshold $1357.12) — possible stolen-card cashout",5
+t_3ebf109745acd6ff,"R2,R3","$342.64 on new device d_931250 (user prior median $24.59, threshold $150.00) within 24h of first use — possible ATO | $342.64 vs user prior p99 $216.26 (threshold $324.38) — possible stolen-card cashout",5
+t_4cbf0b0caf2ac1f2,"R2,R3","$322.00 on new device d_832817 (user prior median $59.46, threshold $297.30) within 24h of first use — possible ATO | $322.00 vs user prior p99 $211.78 (threshold $317.66) — possible stolen-card cashout",5
+t_04076b80d051d50f,"R2,R3","$306.97 on new device d_832817 (user prior median $23.89, threshold $150.00) within 24h of first use — possible ATO | $306.97 vs user prior p99 $115.03 (threshold $300.00) — possible stolen-card cashout",5
+t_62087a4167cb1e80,"R2,R3","$886.53 on new device d_905902 (user prior median $18.98, threshold $150.00) within 24h of first use — possible ATO | $886.53 vs user prior p99 $151.75 (threshold $300.00) — possible stolen-card cashout",5
+t_10b99d9585c52d70,"R2,R3","$750.01 on new device d_905902 (user prior median $19.07, threshold $150.00) within 24h of first use — possible ATO | $750.01 vs user prior p99 $156.57 (threshold $300.00) — possible stolen-card cashout",5
+t_702fe90fe9944c41,"R2,R3","$1118.74 on new device d_905902 (user prior median $19.08, threshold $150.00) within 24h of first use — possible ATO | $1118.74 vs user prior p99 $174.11 (threshold $300.00) — possible stolen-card cashout",5
+t_492250785aaba263,"R2,R3","$349.85 on new device d_905902 (user prior median $19.10, threshold $150.00) within 24h of first use — possible ATO | $349.85 vs user prior p99 $224.76 (threshold $337.14) — possible stolen-card cashout",5
+t_3ac6ff0c11636ab1,"R2,R3","$1342.52 on new device d_905902 (user prior median $19.12, threshold $150.00) within 24h of first use — possible ATO | $1342.52 vs user prior p99 $320.35 (threshold $480.53) — possible stolen-card cashout",5
+t_5707ddf96d3dcf6c,"R2,R3","$982.03 on new device d_905902 (user prior median $19.15, threshold $150.00) within 24h of first use — possible ATO | $982.03 vs user prior p99 $637.97 (threshold $956.95) — possible stolen-card cashout",5
+t_00006372f2898f1b,"R2,R3","$401.65 on new device d_847598 (user prior median $8.25, threshold $150.00) within 24h of first use — possible ATO | $401.65 vs user prior p99 $71.84 (threshold $300.00) — possible stolen-card cashout",5
+t_013a20ecb57a68a2,"R2,R3","$1346.80 on new device d_743104 (user prior median $41.48, threshold $207.40) within 24h of first use — possible ATO | $1346.80 vs user prior p99 $127.42 (threshold $300.00) — possible stolen-card cashout",5
+t_52ec25c8a0179c48,"R2,R3","$984.00 on new device d_743104 (user prior median $41.69, threshold $208.47) within 24h of first use — possible ATO | $984.00 vs user prior p99 $132.24 (threshold $300.00) — possible stolen-card cashout",5
+t_6268b8e95df7cf97,"R2,R3","$1788.48 on new device d_743104 (user prior median $41.92, threshold $209.60) within 24h of first use — possible ATO | $1788.48 vs user prior p99 $648.69 (threshold $973.04) — possible stolen-card cashout",5
+t_3ffc97899c6dfb62,"R2,R3","$860.05 on new device d_937470 (user prior median $15.76, threshold $150.00) within 24h of first use — possible ATO | $860.05 vs user prior p99 $96.14 (threshold $300.00) — possible stolen-card cashout",5
+t_35068f6e7791c13a,"R2,R3","$1723.64 on new device d_937470 (user prior median $15.76, threshold $150.00) within 24h of first use — possible ATO | $1723.64 vs user prior p99 $140.83 (threshold $300.00) — possible stolen-card cashout",5
+t_53f8f2e20e30d3f8,"R2,R3","$606.65 on new device d_937470 (user prior median $15.79, threshold $150.00) within 24h of first use — possible ATO | $606.65 vs user prior p99 $360.66 (threshold $541.00) — possible stolen-card cashout",5
+t_4daa836fc08e53fb,"R2,R3","$1619.66 on new device d_937470 (user prior median $15.82, threshold $150.00) within 24h of first use — possible ATO | $1619.66 vs user prior p99 $672.53 (threshold $1008.80) — possible stolen-card cashout",5
+t_5ec88699b9c1f74e,"R2,R3","$313.65 on new device d_904876 (user prior median $21.14, threshold $150.00) within 24h of first use — possible ATO | $313.65 vs user prior p99 $165.32 (threshold $300.00) — possible stolen-card cashout",5
+t_457ccb09dad8c056,"R2,R3","$396.32 on new device d_904876 (user prior median $21.13, threshold $150.00) within 24h of first use — possible ATO | $396.32 vs user prior p99 $167.51 (threshold $300.00) — possible stolen-card cashout",5
+t_27e37fe017c1b398,"R2,R3","$380.41 on new device d_772146 (user prior median $15.66, threshold $150.00) within 24h of first use — possible ATO | $380.41 vs user prior p99 $191.40 (threshold $300.00) — possible stolen-card cashout",5
+t_638fc72d63cd98b2,"R2,R3","$378.24 on new device d_931250 (user prior median $29.00, threshold $150.00) within 24h of first use — possible ATO | $378.24 vs user prior p99 $126.94 (threshold $300.00) — possible stolen-card cashout",5
+t_6d40ecda9556cc6a,"R2,R3","$351.33 on new device d_931250 (user prior median $29.00, threshold $150.00) within 24h of first use — possible ATO | $351.33 vs user prior p99 $127.39 (threshold $300.00) — possible stolen-card cashout",5
+t_385432e33f70f320,"R2,R3","$371.71 on new device d_985129 (user prior median $16.10, threshold $150.00) within 24h of first use — possible ATO | $371.71 vs user prior p99 $121.64 (threshold $300.00) — possible stolen-card cashout",5
+t_77180f6f3b2f5db4,"R2,R3","$335.36 on new device d_985129 (user prior median $16.16, threshold $150.00) within 24h of first use — possible ATO | $335.36 vs user prior p99 $124.27 (threshold $300.00) — possible stolen-card cashout",5
+t_6348f883f2a89a4f,"R2,R3","$350.87 on new device d_904876 (user prior median $8.62, threshold $150.00) within 24h of first use — possible ATO | $350.87 vs user prior p99 $19.71 (threshold $300.00) — possible stolen-card cashout",5
+t_4ac52dff631ad8a9,"R2,R3","$356.76 on new device d_904876 (user prior median $8.76, threshold $150.00) within 24h of first use — possible ATO | $356.76 vs user prior p99 $200.65 (threshold $300.98) — possible stolen-card cashout",5
+t_7abb1ae689ffe718,"R2,R3","$475.95 on new device d_825348 (user prior median $12.85, threshold $150.00) within 24h of first use — possible ATO | $475.95 vs user prior p99 $50.60 (threshold $300.00) — possible stolen-card cashout",5
+t_700653b1edd12b4a,"R2,R3","$790.74 on new device d_825348 (user prior median $12.86, threshold $150.00) within 24h of first use — possible ATO | $790.74 vs user prior p99 $346.59 (threshold $519.89) — possible stolen-card cashout",5
+t_4e65d0e5fb95d999,"R2,R3","$321.12 on new device d_899055 (user prior median $12.39, threshold $150.00) within 24h of first use — possible ATO | $321.12 vs user prior p99 $94.75 (threshold $300.00) — possible stolen-card cashout",5
+t_609e394b21c771b2,"R2,R3","$1545.58 on new device d_865092 (user prior median $31.95, threshold $159.75) within 24h of first use — possible ATO | $1545.58 vs user prior p99 $122.54 (threshold $300.00) — possible stolen-card cashout",5
+t_47052307d17b0847,"R2,R3","$1074.74 on new device d_708294 (user prior median $10.18, threshold $150.00) within 24h of first use — possible ATO | $1074.74 vs user prior p99 $95.93 (threshold $300.00) — possible stolen-card cashout",5
+t_55ab965b7c96b895,"R2,R3","$1553.29 on new device d_708294 (user prior median $10.18, threshold $150.00) within 24h of first use — possible ATO | $1553.29 vs user prior p99 $113.93 (threshold $300.00) — possible stolen-card cashout",5
+t_7add65f205e5194a,"R2,R3","$339.48 on new device d_772146 (user prior median $24.52, threshold $150.00) within 24h of first use — possible ATO | $339.48 vs user prior p99 $79.32 (threshold $300.00) — possible stolen-card cashout",5
+t_6f90082dd1c36bbd,"R2,R3","$449.26 on new device d_904876 (user prior median $65.34, threshold $326.73) within 24h of first use — possible ATO | $449.26 vs user prior p99 $226.23 (threshold $339.34) — possible stolen-card cashout",5
+t_6b23b121bb8e8aad,"R2,R3","$866.08 on new device d_768933 (user prior median $23.90, threshold $150.00) within 24h of first use — possible ATO | $866.08 vs user prior p99 $98.37 (threshold $300.00) — possible stolen-card cashout",5
+t_7420479ea7da749e,"R2,R3","$737.45 on new device d_768933 (user prior median $24.34, threshold $150.00) within 24h of first use — possible ATO | $737.45 vs user prior p99 $307.06 (threshold $460.59) — possible stolen-card cashout",5
+t_4afd7737dd5472b7,"R2,R3","$1605.09 on new device d_768933 (user prior median $24.39, threshold $150.00) within 24h of first use — possible ATO | $1605.09 vs user prior p99 $769.61 (threshold $1154.41) — possible stolen-card cashout",5
+t_78de779cab132170,"R2,R3","$313.66 on new device d_985129 (user prior median $21.63, threshold $150.00) within 24h of first use — possible ATO | $313.66 vs user prior p99 $112.88 (threshold $300.00) — possible stolen-card cashout",5
+t_5ee12274f6848f31,"R2,R3","$1511.88 on new device d_741671 (user prior median $15.82, threshold $150.00) within 24h of first use — possible ATO | $1511.88 vs user prior p99 $76.72 (threshold $300.00) — possible stolen-card cashout",5
+t_3b796d666c60b741,"R2,R3","$942.57 on new device d_741671 (user prior median $15.85, threshold $150.00) within 24h of first use — possible ATO | $942.57 vs user prior p99 $83.38 (threshold $300.00) — possible stolen-card cashout",5
+t_75fe1d51a1fc518b,"R2,R3","$982.50 on new device d_741671 (user prior median $15.88, threshold $150.00) within 24h of first use — possible ATO | $982.50 vs user prior p99 $88.30 (threshold $300.00) — possible stolen-card cashout",5
+t_338b0a864269fdf3,"R2,R3","$1008.75 on new device d_741671 (user prior median $15.88, threshold $150.00) within 24h of first use — possible ATO | $1008.75 vs user prior p99 $156.24 (threshold $300.00) — possible stolen-card cashout",5
+t_5cd6f250d43627e4,"R2,R3","$1646.79 on new device d_741671 (user prior median $15.88, threshold $150.00) within 24h of first use — possible ATO | $1646.79 vs user prior p99 $944.17 (threshold $1416.25) — possible stolen-card cashout",5
+t_2480f0e4d924b656,"R2,R3","$344.11 on new device d_931250 (user prior median $23.26, threshold $150.00) within 24h of first use — possible ATO | $344.11 vs user prior p99 $155.18 (threshold $300.00) — possible stolen-card cashout",5
+t_5375e38b62b56419,"R2,R5","$447.63 on new device d_931250 (user prior median $23.30, threshold $150.00) within 24h of first use — possible ATO | device d_931250 had 10 distinct users as of this txn (threshold 4) — possible mule ring; this $447.63 txn by user u_01901",5
+t_1ae71cc05d837064,"R2,R3","$680.18 on new device d_965945 (user prior median $26.78, threshold $150.00) within 24h of first use — possible ATO | $680.18 vs user prior p99 $49.47 (threshold $300.00) — possible stolen-card cashout",5
+t_15fab4a76b74c704,"R2,R3","$847.38 on new device d_965945 (user prior median $27.85, threshold $150.00) within 24h of first use — possible ATO | $847.38 vs user prior p99 $554.21 (threshold $831.32) — possible stolen-card cashout",5
+t_1471aa22c532ff54,"R2,R3","$1408.70 on new device d_965945 (user prior median $29.58, threshold $150.00) within 24h of first use — possible ATO | $1408.70 vs user prior p99 $910.43 (threshold $1365.64) — possible stolen-card cashout",5
+t_6b19a65b595a6162,"R2,R3","$1390.00 on new device d_730432 (user prior median $28.88, threshold $150.00) within 24h of first use — possible ATO | $1390.00 vs user prior p99 $107.92 (threshold $300.00) — possible stolen-card cashout",5
+t_1b4b4593dccd882a,"R2,R3","$386.23 on new device d_772146 (user prior median $16.99, threshold $150.00) within 24h of first use — possible ATO | $386.23 vs user prior p99 $80.98 (threshold $300.00) — possible stolen-card cashout",5
+t_0da49460c00aa7b2,"R1,R3",user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst | $738.19 vs user prior p99 $247.32 (threshold $370.99) — possible stolen-card cashout,4
+t_6ba2b3a89202c203,"R3,R5",$397.45 vs user prior p99 $255.39 (threshold $383.08) — possible stolen-card cashout | device d_899055 had 4 distinct users as of this txn (threshold 4) — possible mule ring; this $397.45 txn by user u_00100,3
+t_479593fa8665bf92,"R3,R5",$427.73 vs user prior p99 $128.02 (threshold $300.00) — possible stolen-card cashout | device d_847598 had 11 distinct users as of this txn (threshold 4) — possible mule ring; this $427.73 txn by user u_00819,3
+t_44e2f2faf88b6459,"R3,R5",$432.19 vs user prior p99 $205.20 (threshold $307.79) — possible stolen-card cashout | device d_904876 had 4 distinct users as of this txn (threshold 4) — possible mule ring; this $432.19 txn by user u_00980,3
+t_6f9e667fef6cebeb,"R3,R5",$627.66 vs user prior p99 $187.56 (threshold $300.00) — possible stolen-card cashout | device d_002845 had 5 distinct users as of this txn (threshold 4) — possible mule ring; this $627.66 txn by user u_01105,3
+t_1de3453dfbab336d,"R3,R5",$361.67 vs user prior p99 $195.67 (threshold $300.00) — possible stolen-card cashout | device d_002845 had 5 distinct users as of this txn (threshold 4) — possible mule ring; this $361.67 txn by user u_01105,3
+t_2461fa1764be7dc0,"R3,R5",$321.84 vs user prior p99 $158.78 (threshold $300.00) — possible stolen-card cashout | device d_002847 had 5 distinct users as of this txn (threshold 4) — possible mule ring; this $321.84 txn by user u_01368,3
+t_2cdd4eec16f2f3ef,"R3,R5",$579.13 vs user prior p99 $321.53 (threshold $482.30) — possible stolen-card cashout | device d_002853 had 4 distinct users as of this txn (threshold 4) — possible mule ring; this $579.13 txn by user u_01466,3
+t_48f576bf29db4413,"R3,R5",$555.47 vs user prior p99 $325.48 (threshold $488.21) — possible stolen-card cashout | device d_002853 had 4 distinct users as of this txn (threshold 4) — possible mule ring; this $555.47 txn by user u_01466,3
+t_3ff9a860f47e7b78,"R3,R5",$685.44 vs user prior p99 $333.57 (threshold $500.36) — possible stolen-card cashout | device d_002853 had 4 distinct users as of this txn (threshold 4) — possible mule ring; this $685.44 txn by user u_01466,3
+t_60936d6b77d548b8,"R3,R5",$431.27 vs user prior p99 $244.08 (threshold $366.11) — possible stolen-card cashout | device d_904876 had 5 distinct users as of this txn (threshold 4) — possible mule ring; this $431.27 txn by user u_01517,3
+t_3d11d6ec37fc19fe,"R3,R5",$379.57 vs user prior p99 $163.29 (threshold $300.00) — possible stolen-card cashout | device d_002849 had 4 distinct users as of this txn (threshold 4) — possible mule ring; this $379.57 txn by user u_01518,3
+t_72b69432e9fa1826,"R3,R5",$2433.33 vs user prior p99 $1377.80 (threshold $2066.69) — possible stolen-card cashout | device d_002854 had 4 distinct users as of this txn (threshold 4) — possible mule ring; this $2433.33 txn by user u_01532,3
+t_3d1e15939989ea6c,"R3,R5",$809.93 vs user prior p99 $371.03 (threshold $556.55) — possible stolen-card cashout | device d_002845 had 5 distinct users as of this txn (threshold 4) — possible mule ring; this $809.93 txn by user u_01904,3
+t_036a01e1d3fb2b7e,R2,"$236.88 on new device d_985129 (user prior median $34.23, threshold $171.15) within 24h of first use — possible ATO",5
+t_4fc65162f96b8584,R2,"$258.76 on new device d_847598 (user prior median $25.40, threshold $150.00) within 24h of first use — possible ATO",5
+t_53525cc113ce9a8c,R2,"$189.22 on new device d_847598 (user prior median $25.49, threshold $150.00) within 24h of first use — possible ATO",5
+t_79ed690980c4aee4,R2,"$156.53 on new device d_847598 (user prior median $25.53, threshold $150.00) within 24h of first use — possible ATO",5
+t_45485ba66bda303f,R2,"$264.57 on new device d_931250 (user prior median $19.49, threshold $150.00) within 24h of first use — possible ATO",5
+t_2af4d9417ab1a5cc,R2,"$824.53 on new device d_754243 (user prior median $130.01, threshold $650.05) within 24h of first use — possible ATO",5
+t_0ccee32be830599b,R2,"$1618.91 on new device d_754243 (user prior median $139.18, threshold $695.92) within 24h of first use — possible ATO",5
+t_345d34e0052254c1,R2,"$187.47 on new device d_899055 (user prior median $36.39, threshold $181.95) within 24h of first use — possible ATO",5
+t_71a3fdb062645de8,R2,"$186.93 on new device d_899055 (user prior median $36.61, threshold $183.05) within 24h of first use — possible ATO",5
+t_756d21128af6b603,R2,"$194.70 on new device d_899055 (user prior median $36.62, threshold $183.10) within 24h of first use — possible ATO",5
+t_08421627a4704344,R2,"$234.18 on new device d_832817 (user prior median $24.93, threshold $150.00) within 24h of first use — possible ATO",5
+t_110bff58e41226e2,R2,"$299.24 on new device d_899055 (user prior median $22.44, threshold $150.00) within 24h of first use — possible ATO",5
+t_611fe6b2c6a58584,R2,"$689.05 on new device d_842963 (user prior median $31.18, threshold $155.90) within 24h of first use — possible ATO",5
+t_58df544c9bbd06bc,R2,"$1406.63 on new device d_842963 (user prior median $33.27, threshold $166.35) within 24h of first use — possible ATO",5
+t_7535485b67f5063e,R2,"$236.12 on new device d_931250 (user prior median $25.96, threshold $150.00) within 24h of first use — possible ATO",5
+t_2f4cee11e1700b94,R2,"$322.36 on new device d_931250 (user prior median $25.97, threshold $150.00) within 24h of first use — possible ATO",5
+t_5b2065d87f5cceb9,R2,"$301.80 on new device d_931250 (user prior median $25.98, threshold $150.00) within 24h of first use — possible ATO",5
+t_3e7f6ef6c91e913f,R2,"$209.38 on new device d_931250 (user prior median $26.08, threshold $150.00) within 24h of first use — possible ATO",5
+t_79bf67f670f2e8c9,R2,"$288.26 on new device d_931250 (user prior median $26.19, threshold $150.00) within 24h of first use — possible ATO",5
+t_07460588c429141f,R2,"$248.12 on new device d_985129 (user prior median $47.84, threshold $239.22) within 24h of first use — possible ATO",5
+t_50f0cfce9bd451d7,R2,"$186.08 on new device d_931250 (user prior median $29.52, threshold $150.00) within 24h of first use — possible ATO",5
+t_6a141d8a027c660a,R2,"$207.83 on new device d_931250 (user prior median $29.60, threshold $150.00) within 24h of first use — possible ATO",5
+t_10efbb5e7e61bb8e,R2,"$204.70 on new device d_931250 (user prior median $29.62, threshold $150.00) within 24h of first use — possible ATO",5
+t_659e253bf6d00930,R2,"$1669.27 on new device d_739614 (user prior median $89.96, threshold $449.83) within 24h of first use — possible ATO",5
+t_16e80d167f4a9d32,R2,"$1212.09 on new device d_739614 (user prior median $90.33, threshold $451.65) within 24h of first use — possible ATO",5
+t_03ac85d4180b9b13,R2,"$976.63 on new device d_739614 (user prior median $90.41, threshold $452.05) within 24h of first use — possible ATO",5
+t_3743709201ec9e31,R2,"$581.30 on new device d_815031 (user prior median $34.86, threshold $174.28) within 24h of first use — possible ATO",5
+t_7ec5527f335625a8,R2,"$1333.79 on new device d_815031 (user prior median $34.90, threshold $174.50) within 24h of first use — possible ATO",5
+t_239d645fc13a80c8,R2,"$1741.15 on new device d_737139 (user prior median $53.80, threshold $268.98) within 24h of first use — possible ATO",5
+t_0de52120f98ff47c,R2,"$993.61 on new device d_737139 (user prior median $54.50, threshold $272.50) within 24h of first use — possible ATO",5
+t_1ba1ffb1f91983f3,R2,"$268.35 on new device d_985129 (user prior median $18.50, threshold $150.00) within 24h of first use — possible ATO",5
+t_1f50f82c8972e89b,R2,"$246.03 on new device d_847598 (user prior median $42.72, threshold $213.62) within 24h of first use — possible ATO",5
+t_5e74ca01137292ec,R2,"$248.07 on new device d_847598 (user prior median $43.19, threshold $215.95) within 24h of first use — possible ATO",5
+t_65763ff2025f28ac,R2,"$901.01 on new device d_752324 (user prior median $19.42, threshold $150.00) within 24h of first use — possible ATO",5
+t_2084be645c2c72ca,R2,"$1316.25 on new device d_752324 (user prior median $19.76, threshold $150.00) within 24h of first use — possible ATO",5
+t_4bd5fa79be2e18b5,R2,"$931.63 on new device d_752324 (user prior median $19.88, threshold $150.00) within 24h of first use — possible ATO",5
+t_1fbd11bd70ae895b,R2,"$270.86 on new device d_847598 (user prior median $13.04, threshold $150.00) within 24h of first use — possible ATO",5
+t_5c0d4713a135cae1,R2,"$1020.73 on new device d_949314 (user prior median $23.96, threshold $150.00) within 24h of first use — possible ATO",5
+t_29fdcc7e91546d2e,R2,"$1612.23 on new device d_949314 (user prior median $24.57, threshold $150.00) within 24h of first use — possible ATO",5
+t_278a54571a26cdd8,R2,"$403.93 on new device d_949314 (user prior median $26.17, threshold $150.00) within 24h of first use — possible ATO",5
+t_1c2e1a87f8911fff,R2,"$632.77 on new device d_724476 (user prior median $32.99, threshold $164.98) within 24h of first use — possible ATO",5
+t_20b4cd55c8772338,R2,"$291.91 on new device d_985129 (user prior median $15.49, threshold $150.00) within 24h of first use — possible ATO",5
+t_18b05607f27d5164,R2,"$210.62 on new device d_772146 (user prior median $18.33, threshold $150.00) within 24h of first use — possible ATO",5
+t_40ba0eb818b16d36,R2,"$230.76 on new device d_772146 (user prior median $18.39, threshold $150.00) within 24h of first use — possible ATO",5
+t_4aeacc352527e3ad,R2,"$1324.25 on new device d_987869 (user prior median $29.31, threshold $150.00) within 24h of first use — possible ATO",5
+t_1014c9630b253252,R2,"$279.77 on new device d_985129 (user prior median $41.52, threshold $207.60) within 24h of first use — possible ATO",5
+t_24aee7b716266bec,R2,"$210.87 on new device d_772146 (user prior median $31.25, threshold $156.25) within 24h of first use — possible ATO",5
+t_1f2f8c44c60f6857,R2,"$287.44 on new device d_772146 (user prior median $31.56, threshold $157.83) within 24h of first use — possible ATO",5
+t_3223633dab76ddeb,R2,"$1600.68 on new device d_905940 (user prior median $15.76, threshold $150.00) within 24h of first use — possible ATO",5
+t_607ec5a0371c2c8a,R2,"$1129.12 on new device d_905940 (user prior median $15.78, threshold $150.00) within 24h of first use — possible ATO",5
+t_661f4f20896875cc,R2,"$1317.17 on new device d_905940 (user prior median $15.90, threshold $150.00) within 24h of first use — possible ATO",5
+t_36e10b9e9ccf68d2,R2,"$252.53 on new device d_832817 (user prior median $16.42, threshold $150.00) within 24h of first use — possible ATO",5
+t_7ea70a0d799b321f,R2,"$320.69 on new device d_847598 (user prior median $64.11, threshold $320.55) within 24h of first use — possible ATO",5
+t_3a24f492f1ba0697,R2,"$930.77 on new device d_773269 (user prior median $21.70, threshold $150.00) within 24h of first use — possible ATO",5
+t_491e71924bbd8900,R2,"$1386.87 on new device d_773269 (user prior median $21.80, threshold $150.00) within 24h of first use — possible ATO",5
+t_0e76ceec46446aea,R2,"$709.42 on new device d_773269 (user prior median $21.83, threshold $150.00) within 24h of first use — possible ATO",5
+t_1451f2735653a3be,R2,"$375.32 on new device d_904876 (user prior median $22.86, threshold $150.00) within 24h of first use — possible ATO",5
+t_6acab916ed240a88,R2,"$206.77 on new device d_904876 (user prior median $22.90, threshold $150.00) within 24h of first use — possible ATO",5
+t_2c8faa6f5240cf60,R2,"$577.93 on new device d_839789 (user prior median $23.33, threshold $150.00) within 24h of first use — possible ATO",5
+t_3e1822b19e432989,R2,"$621.94 on new device d_839789 (user prior median $23.39, threshold $150.00) within 24h of first use — possible ATO",5
+t_0a2802aee55e0949,R2,"$673.69 on new device d_839789 (user prior median $23.54, threshold $150.00) within 24h of first use — possible ATO",5
+t_76875f2af2958528,R2,"$193.51 on new device d_899055 (user prior median $36.46, threshold $182.27) within 24h of first use — possible ATO",5
+t_12815210a61e4f64,R2,"$150.73 on new device d_847598 (user prior median $12.47, threshold $150.00) within 24h of first use — possible ATO",5
+t_3d99653458d32b53,R2,"$1213.10 on new device d_726059 (user prior median $13.68, threshold $150.00) within 24h of first use — possible ATO",5
+t_2d753df81f073242,R2,"$1138.73 on new device d_709067 (user prior median $24.94, threshold $150.00) within 24h of first use — possible ATO",5
+t_3c1231645485f464,R2,"$759.64 on new device d_709067 (user prior median $25.17, threshold $150.00) within 24h of first use — possible ATO",5
+t_0e2daf4f467d593e,R2,"$1602.42 on new device d_709067 (user prior median $25.17, threshold $150.00) within 24h of first use — possible ATO",5
+t_28e24ca99626f975,R2,"$674.32 on new device d_709067 (user prior median $25.17, threshold $150.00) within 24h of first use — possible ATO",5
+t_02c140ef600bb675,R2,"$235.30 on new device d_847598 (user prior median $17.53, threshold $150.00) within 24h of first use — possible ATO",5
+t_6e4c588ee203b450,R2,"$270.64 on new device d_847598 (user prior median $17.68, threshold $150.00) within 24h of first use — possible ATO",5
+t_3a2ea6feb36eab7f,R2,"$245.86 on new device d_847598 (user prior median $17.82, threshold $150.00) within 24h of first use — possible ATO",5
+t_31ff3d9d2e0b38f7,R2,"$573.21 on new device d_858104 (user prior median $14.24, threshold $150.00) within 24h of first use — possible ATO",5
+t_30f53e8199fbbd9e,R2,"$839.95 on new device d_858104 (user prior median $14.27, threshold $150.00) within 24h of first use — possible ATO",5
+t_7a110dde57fd991b,R2,"$1483.19 on new device d_858104 (user prior median $14.50, threshold $150.00) within 24h of first use — possible ATO",5
+t_2b1896e400b35fc7,R2,"$1058.01 on new device d_858104 (user prior median $14.72, threshold $150.00) within 24h of first use — possible ATO",5
+t_2e69e1c76ef4e706,R2,"$316.10 on new device d_899055 (user prior median $16.91, threshold $150.00) within 24h of first use — possible ATO",5
+t_2f5dfd840078c0c8,R2,"$367.37 on new device d_899055 (user prior median $16.91, threshold $150.00) within 24h of first use — possible ATO",5
+t_5512caa05aad4b8c,R2,"$189.68 on new device d_899055 (user prior median $16.91, threshold $150.00) within 24h of first use — possible ATO",5
+t_78e40dabc3b30fb1,R2,"$453.89 on new device d_788486 (user prior median $45.11, threshold $225.55) within 24h of first use — possible ATO",5
+t_131f2c1b6282eb65,R2,"$1161.41 on new device d_788486 (user prior median $45.44, threshold $227.20) within 24h of first use — possible ATO",5
+t_3784acacb8b9f8d8,R2,"$1425.19 on new device d_788486 (user prior median $45.46, threshold $227.27) within 24h of first use — possible ATO",5
+t_0378b5de488d4d8e,R2,"$942.32 on new device d_788486 (user prior median $45.47, threshold $227.35) within 24h of first use — possible ATO",5
+t_15dc43761ed1f913,R2,"$182.17 on new device d_847598 (user prior median $16.95, threshold $150.00) within 24h of first use — possible ATO",5
+t_371401abaacb99de,R2,"$295.05 on new device d_899055 (user prior median $15.33, threshold $150.00) within 24h of first use — possible ATO",5
+t_6d9a886cab5b8d3b,R2,"$255.29 on new device d_899055 (user prior median $15.35, threshold $150.00) within 24h of first use — possible ATO",5
+t_226dcb29f255e624,R2,"$298.35 on new device d_899055 (user prior median $15.80, threshold $150.00) within 24h of first use — possible ATO",5
+t_25daccb7915f1b5c,R2,"$230.33 on new device d_001275 (user prior median $45.60, threshold $227.98) within 24h of first use — possible ATO",5
+t_66ec35c01217ccd2,R2,"$215.30 on new device d_001275 (user prior median $39.16, threshold $195.80) within 24h of first use — possible ATO",5
+t_79930713ebf538b5,R2,"$415.78 on new device d_832888 (user prior median $37.86, threshold $189.30) within 24h of first use — possible ATO",5
+t_310ada1133b6f7bb,R2,"$772.81 on new device d_832888 (user prior median $37.88, threshold $189.40) within 24h of first use — possible ATO",5
+t_4d074ab7e1190977,R2,"$634.26 on new device d_832888 (user prior median $37.90, threshold $189.50) within 24h of first use — possible ATO",5
+t_1169daef44b9f5e0,R2,"$724.03 on new device d_832888 (user prior median $38.34, threshold $191.70) within 24h of first use — possible ATO",5
+t_05b1ff92bceabcaa,R2,"$1141.97 on new device d_932918 (user prior median $15.61, threshold $150.00) within 24h of first use — possible ATO",5
+t_488ee52a2fa78308,R2,"$253.92 on new device d_904876 (user prior median $32.68, threshold $163.43) within 24h of first use — possible ATO",5
+t_260c1c3e730321ea,R2,"$178.77 on new device d_904876 (user prior median $33.38, threshold $166.90) within 24h of first use — possible ATO",5
+t_3003f3677b263063,R2,"$264.45 on new device d_847598 (user prior median $10.26, threshold $150.00) within 24h of first use — possible ATO",5
+t_660cbbc142bd1300,R2,"$209.83 on new device d_847598 (user prior median $10.31, threshold $150.00) within 24h of first use — possible ATO",5
+t_68eddd70fc228b35,R2,"$216.06 on new device d_904876 (user prior median $37.69, threshold $188.45) within 24h of first use — possible ATO",5
+t_0dd93b8ad49a30b0,R2,"$198.25 on new device d_904876 (user prior median $37.69, threshold $188.45) within 24h of first use — possible ATO",5
+t_4ede7cea2af661d4,R2,"$281.92 on new device d_904876 (user prior median $37.78, threshold $188.88) within 24h of first use — possible ATO",5
+t_4cf6f5993fa0610b,R2,"$1753.49 on new device d_719120 (user prior median $26.86, threshold $150.00) within 24h of first use — possible ATO",5
+t_27d20598dd9ca4a5,R2,"$415.17 on new device d_772146 (user prior median $48.66, threshold $243.30) within 24h of first use — possible ATO",5
+t_405c497465221c9a,R2,"$643.62 on new device d_718405 (user prior median $30.01, threshold $150.05) within 24h of first use — possible ATO",5
+t_55b7e2bae09d360c,R2,"$883.31 on new device d_718405 (user prior median $30.50, threshold $152.48) within 24h of first use — possible ATO",5
+t_6d5ead8332ab5b73,R2,"$752.36 on new device d_718405 (user prior median $30.98, threshold $154.90) within 24h of first use — possible ATO",5
+t_6850bdc77ee19c88,R2,"$163.80 on new device d_832817 (user prior median $23.64, threshold $150.00) within 24h of first use — possible ATO",5
+t_38a3cb0e28d1582d,R2,"$198.90 on new device d_832817 (user prior median $23.59, threshold $150.00) within 24h of first use — possible ATO",5
+t_5e2c9b7818297391,R2,"$183.96 on new device d_001638 (user prior median $17.26, threshold $150.00) within 24h of first use — possible ATO",5
+t_40781937c31dde67,R2,"$663.74 on new device d_871301 (user prior median $26.24, threshold $150.00) within 24h of first use — possible ATO",5
+t_6fc7739cbb1dc94e,R2,"$330.63 on new device d_871301 (user prior median $26.37, threshold $150.00) within 24h of first use — possible ATO",5
+t_08d904c635f11e56,R2,"$287.60 on new device d_847598 (user prior median $19.80, threshold $150.00) within 24h of first use — possible ATO",5
+t_160f36543c33b329,R2,"$226.91 on new device d_847598 (user prior median $19.92, threshold $150.00) within 24h of first use — possible ATO",5
+t_28aa550c040b8cca,R2,"$188.32 on new device d_832817 (user prior median $36.69, threshold $183.45) within 24h of first use — possible ATO",5
+t_06780264f71d1a94,R2,"$263.34 on new device d_832817 (user prior median $36.87, threshold $184.35) within 24h of first use — possible ATO",5
+t_2b4a0acb50ab3784,R2,"$270.19 on new device d_931250 (user prior median $32.18, threshold $160.90) within 24h of first use — possible ATO",5
+t_6e8da96f02615647,R2,"$260.20 on new device d_931250 (user prior median $32.35, threshold $161.75) within 24h of first use — possible ATO",5
+t_14c13e3a60a7b152,R2,"$328.30 on new device d_931250 (user prior median $32.40, threshold $162.00) within 24h of first use — possible ATO",5
+t_7965e7e197c9b2b8,R2,"$509.32 on new device d_859441 (user prior median $5.68, threshold $150.00) within 24h of first use — possible ATO",5
+t_53516ab1c54a289e,R2,"$632.46 on new device d_859441 (user prior median $5.78, threshold $150.00) within 24h of first use — possible ATO",5
+t_2f80ec2a1863a040,R2,"$1644.07 on new device d_859441 (user prior median $6.76, threshold $150.00) within 24h of first use — possible ATO",5
+t_61176eb3bb96e493,R2,"$1372.61 on new device d_859441 (user prior median $7.16, threshold $150.00) within 24h of first use — possible ATO",5
+t_0ab360dc1aaa7b75,R2,"$948.85 on new device d_712924 (user prior median $47.36, threshold $236.80) within 24h of first use — possible ATO",5
+t_2784a074eceba836,R2,"$441.63 on new device d_712924 (user prior median $47.48, threshold $237.42) within 24h of first use — possible ATO",5
+t_26aa94da2b8ab159,R2,"$1218.93 on new device d_712924 (user prior median $47.61, threshold $238.05) within 24h of first use — possible ATO",5
+t_3e13036e6896adaa,R2,"$559.10 on new device d_712924 (user prior median $48.27, threshold $241.35) within 24h of first use — possible ATO",5
+t_2200a6ed21df4a2b,R2,"$975.18 on new device d_712924 (user prior median $48.93, threshold $244.65) within 24h of first use — possible ATO",5
+t_5e777b6bea402096,R2,"$236.61 on new device d_904876 (user prior median $30.27, threshold $151.35) within 24h of first use — possible ATO",5
+t_590bb9771bb904dc,R2,"$183.05 on new device d_904876 (user prior median $30.38, threshold $151.90) within 24h of first use — possible ATO",5
+t_6c7034fd54cfa7e7,R2,"$271.92 on new device d_847598 (user prior median $24.34, threshold $150.00) within 24h of first use — possible ATO",5
+t_3c35494806a96694,R2,"$236.20 on new device d_847598 (user prior median $24.42, threshold $150.00) within 24h of first use — possible ATO",5
+t_0aa35f369f706b10,R2,"$456.17 on new device d_905062 (user prior median $20.28, threshold $150.00) within 24h of first use — possible ATO",5
+t_399e061a3f2b3f5c,R2,"$768.63 on new device d_905062 (user prior median $21.09, threshold $150.00) within 24h of first use — possible ATO",5
+t_1e0360186620ecb9,R2,"$1015.52 on new device d_905062 (user prior median $21.20, threshold $150.00) within 24h of first use — possible ATO",5
+t_0537666550ba7996,R2,"$399.32 on new device d_905062 (user prior median $21.31, threshold $150.00) within 24h of first use — possible ATO",5
+t_1956777577b0a70a,R2,"$335.49 on new device d_905062 (user prior median $22.62, threshold $150.00) within 24h of first use — possible ATO",5
+t_3683cf511947c270,R2,"$802.92 on new device d_940216 (user prior median $36.86, threshold $184.32) within 24h of first use — possible ATO",5
+t_5441954a896796e4,R2,"$794.47 on new device d_857915 (user prior median $27.67, threshold $150.00) within 24h of first use — possible ATO",5
+t_1d23539ab5516773,R2,"$817.52 on new device d_857915 (user prior median $28.18, threshold $150.00) within 24h of first use — possible ATO",5
+t_5115ceb3dcf259c7,R2,"$482.98 on new device d_857915 (user prior median $28.20, threshold $150.00) within 24h of first use — possible ATO",5
+t_008c13105c40fecb,R2,"$229.89 on new device d_931250 (user prior median $24.55, threshold $150.00) within 24h of first use — possible ATO",5
+t_43e811b72d697b6d,R2,"$298.37 on new device d_931250 (user prior median $24.70, threshold $150.00) within 24h of first use — possible ATO",5
+t_5815e94663ecf314,R2,"$219.44 on new device d_904876 (user prior median $13.58, threshold $150.00) within 24h of first use — possible ATO",5
+t_3575befbc8f8919f,R2,"$182.41 on new device d_832817 (user prior median $23.36, threshold $150.00) within 24h of first use — possible ATO",5
+t_5cd11379d4e4ca74,R2,"$199.43 on new device d_832817 (user prior median $23.82, threshold $150.00) within 24h of first use — possible ATO",5
+t_105566342c5e1409,R2,"$293.79 on new device d_899055 (user prior median $11.01, threshold $150.00) within 24h of first use — possible ATO",5
+t_5ee7d37f5cc25cda,R2,"$240.62 on new device d_772146 (user prior median $32.65, threshold $163.25) within 24h of first use — possible ATO",5
+t_5b030795f0073aa4,R2,"$183.00 on new device d_847598 (user prior median $8.25, threshold $150.00) within 24h of first use — possible ATO",5
+t_6a45ea92b6b5613a,R2,"$244.82 on new device d_847598 (user prior median $8.30, threshold $150.00) within 24h of first use — possible ATO",5
+t_0276a736eb6b1163,R2,"$498.05 on new device d_743104 (user prior median $41.91, threshold $209.55) within 24h of first use — possible ATO",5
+t_65eb0f0642bffc3e,R2,"$634.67 on new device d_743104 (user prior median $41.93, threshold $209.65) within 24h of first use — possible ATO",5
+t_550727533b833559,R2,"$1176.21 on new device d_937470 (user prior median $15.93, threshold $150.00) within 24h of first use — possible ATO",5
+t_6586218785d9e037,R2,"$753.02 on new device d_937470 (user prior median $16.04, threshold $150.00) within 24h of first use — possible ATO",5
+t_547902a5255c587f,R2,"$168.75 on new device d_904876 (user prior median $21.14, threshold $150.00) within 24h of first use — possible ATO",5
+t_06285914c6fc4bf1,R2,"$239.61 on new device d_904876 (user prior median $21.14, threshold $150.00) within 24h of first use — possible ATO",5
+t_2b223f1f0e10d9bd,R2,"$285.95 on new device d_832817 (user prior median $14.26, threshold $150.00) within 24h of first use — possible ATO",5
+t_7c88a11ee667f7ac,R2,"$268.11 on new device d_772146 (user prior median $15.66, threshold $150.00) within 24h of first use — possible ATO",5
+t_110eeb7bcf5912cb,R2,"$366.32 on new device d_772146 (user prior median $15.85, threshold $150.00) within 24h of first use — possible ATO",5
+t_4cec5cf867a301d5,R2,"$199.33 on new device d_931250 (user prior median $29.00, threshold $150.00) within 24h of first use — possible ATO",5
+t_5ea318d9ff87ddff,R2,"$299.47 on new device d_931250 (user prior median $29.00, threshold $150.00) within 24h of first use — possible ATO",5
+t_0674dacffebe325c,R2,"$150.58 on new device d_904876 (user prior median $8.64, threshold $150.00) within 24h of first use — possible ATO",5
+t_047529e3321c7488,R2,"$772.84 on new device d_825348 (user prior median $12.88, threshold $150.00) within 24h of first use — possible ATO",5
+t_7b775527d7fdd44d,R2,"$1080.06 on new device d_825348 (user prior median $13.39, threshold $150.00) within 24h of first use — possible ATO",5
+t_798dcf42384b35fd,R2,"$1429.48 on new device d_825348 (user prior median $13.89, threshold $150.00) within 24h of first use — possible ATO",5
+t_61395772bf63c5df,R2,"$1046.26 on new device d_865092 (user prior median $31.96, threshold $159.82) within 24h of first use — possible ATO",5
+t_08b2be930112da65,R2,"$1222.02 on new device d_865092 (user prior median $31.98, threshold $159.90) within 24h of first use — possible ATO",5
+t_4a14c172fed712eb,R2,"$1061.44 on new device d_865092 (user prior median $34.79, threshold $173.95) within 24h of first use — possible ATO",5
+t_6fa5a1844dc5a4b8,R2,"$326.35 on new device d_865092 (user prior median $37.60, threshold $188.00) within 24h of first use — possible ATO",5
+t_58de8289119b15b4,R2,"$539.19 on new device d_708294 (user prior median $10.19, threshold $150.00) within 24h of first use — possible ATO",5
+t_7c7ea88987fd328f,R2,"$697.80 on new device d_708294 (user prior median $10.27, threshold $150.00) within 24h of first use — possible ATO",5
+t_11b1e10c40230c23,R2,"$568.31 on new device d_708294 (user prior median $10.36, threshold $150.00) within 24h of first use — possible ATO",5
+t_378e29f4e54b84f7,R2,"$271.97 on new device d_931250 (user prior median $52.48, threshold $262.40) within 24h of first use — possible ATO",5
+t_28a771a1f45d241b,R2,"$164.09 on new device d_772146 (user prior median $24.52, threshold $150.00) within 24h of first use — possible ATO",5
+t_5738aa6e8eaac932,R2,"$309.07 on new device d_772146 (user prior median $25.06, threshold $150.00) within 24h of first use — possible ATO",5
+t_493a46c019d3cca4,R2,"$299.10 on new device d_772146 (user prior median $58.13, threshold $290.65) within 24h of first use — possible ATO",5
+t_06723105f6781457,R2,"$305.99 on new device d_772146 (user prior median $58.13, threshold $290.65) within 24h of first use — possible ATO",5
+t_41a262247fb8ea92,R2,"$352.13 on new device d_772146 (user prior median $58.15, threshold $290.75) within 24h of first use — possible ATO",5
+t_2a71aba17c3ec7eb,R2,"$1440.47 on new device d_741671 (user prior median $15.89, threshold $150.00) within 24h of first use — possible ATO",5
+t_3e25bff510b3d060,R2,"$928.21 on new device d_965945 (user prior median $28.72, threshold $150.00) within 24h of first use — possible ATO",5
+t_228439ac8ae0358b,R2,"$684.43 on new device d_965945 (user prior median $30.29, threshold $151.45) within 24h of first use — possible ATO",5
+t_3a2de009e7ad742b,R2,"$832.57 on new device d_730432 (user prior median $29.12, threshold $150.00) within 24h of first use — possible ATO",5
+t_6d61a14c186a3f1b,R2,"$456.50 on new device d_730432 (user prior median $29.85, threshold $150.00) within 24h of first use — possible ATO",5
+t_46b743db481d752b,R2,"$945.06 on new device d_730432 (user prior median $30.58, threshold $152.90) within 24h of first use — possible ATO",5
+t_1b658f829cdb3a75,R2,"$1273.51 on new device d_730432 (user prior median $30.60, threshold $153.00) within 24h of first use — possible ATO",5
+t_3f0137bd06c266dd,R2,"$406.96 on new device d_772146 (user prior median $17.50, threshold $150.00) within 24h of first use — possible ATO",5
+t_11acd5bb063b66db,R2,"$236.42 on new device d_931250 (user prior median $37.39, threshold $186.95) within 24h of first use — possible ATO",5
+t_606e2d79cd22aeec,R2,"$203.32 on new device d_931250 (user prior median $37.92, threshold $189.62) within 24h of first use — possible ATO",5
+t_72cf1c9b2db2d8b2,R2,"$206.39 on new device d_899055 (user prior median $8.49, threshold $150.00) within 24h of first use — possible ATO",5
+t_74a92cc5e7cc4704,R2,"$163.77 on new device d_899055 (user prior median $8.49, threshold $150.00) within 24h of first use — possible ATO",5
+t_554fa9126f91576f,R2,"$207.84 on new device d_899055 (user prior median $8.52, threshold $150.00) within 24h of first use — possible ATO",5
 t_775665156436e540,R4,5 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_21336427efc89f6f,R4,8 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
 t_7dfeb7ef7fb2cc21,R4,9 distinct merchants with micro-charges (<$2.00) in 30 min — possible BIN-testing sweep,5
@@ -999,3 +971,31 @@ t_3a1456f9a56c28d9,R1,user made 6 transactions in 10 min (threshold 6) — possi
 t_1e16649d15e82935,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
 t_222ebed4cf0951e2,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
 t_11a30d1edd3a9b57,R1,user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_285da300e7db7071,R1,user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_0be8c5e4a13730b0,R1,user made 8 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_5fc02dd19a7770e7,R1,user made 9 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_0f766f63a3e080d3,R1,user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_299ca3799e5bfa9b,R1,user made 8 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_36ce66733062e8ef,R1,user made 9 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_7c3ad035cced3a42,R1,user made 9 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_12e79479e8cdc030,R1,user made 8 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_6767661e2080380a,R1,user made 9 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_336d499894bfff44,R1,user made 10 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_2c1a0e8d21650360,R1,user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_0d51b1b9e6c63170,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_28327986eb8c2adc,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_26a8844070410f0c,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_2fe05e72f36d8ef4,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_74ba1d0a519d9296,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_5953ad0f420ffc94,R1,user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_1192b6d7628b4133,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_068df958ab3d7bc7,R1,user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_55247265fb70ddfd,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_7f37d9ad6ea681ac,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_29a4ae50423740a0,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_4a5d8489b03cdab1,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_183f930c49ad8ad8,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_3936190b8db41ada,R1,user made 7 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_366bd4b252800c45,R1,user made 8 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_1afcc43ae328023e,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4
+t_43b93ca8026ee804,R1,user made 6 transactions in 10 min (threshold 6) — possible card-testing or ATO burst,4

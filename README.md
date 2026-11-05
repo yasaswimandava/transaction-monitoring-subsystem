@@ -4,9 +4,11 @@ Rule-based batch fraud monitor for consumer fintech. Ingests a ~1M-row
 transaction CSV and emits a budgeted set of flagged transactions for a
 fraud-ops analyst team to review.
 
-- Full pipeline on 1M rows: **~4 seconds** on a laptop (M-series, cold cache).
+- Full pipeline on 1M rows: **~5.4 seconds** on a laptop (M-series, cold cache).
 - Budget-respecting: flags trimmed to 1,000 per 1M (0.1%) by default.
-- 15 targeted tests covering ingest, each rule, merge, and budget trimming.
+- Point-in-time features — rules that look at per-user history use prior-only
+  aggregates so a txn never contributes to the baseline it's being tested against.
+- 16 targeted tests covering ingest, each rule, merge, and budget trimming.
 
 ## Run it (under 10 minutes from a fresh clone)
 
@@ -44,8 +46,9 @@ python -m tms.cli --txns PATH --fraud PATH --out DIR --budget 1000
 pytest
 ```
 
-15 tests, <1s runtime. Cover ingest cleaning, each rule's positive and negative
-cases, and the end-to-end pipeline on a synthetic CSV.
+16 tests, <1s runtime. Cover ingest cleaning, each rule's positive and negative
+cases (including a dedicated point-in-time regression for R3), and the
+end-to-end pipeline on a synthetic CSV.
 
 ## What this ships
 
@@ -78,7 +81,7 @@ Deliberately skipped:
 - **Rule engine (Drools, durable_rules, etc.).** 5 rules with simple
   vectorizable logic — framework overhead > benefit.
 - **UI, Docker, CI, auth, deployment.** Spec said not evaluated.
-- **Polars / DuckDB.** Pandas finishes in 4s on 1M rows; swapping was not worth
+- **Polars / DuckDB.** Pandas finishes in ~5s on 1M rows; swapping was not worth
   the risk.
 
 ## Numbers from the latest run
@@ -91,14 +94,27 @@ Deliberately skipped:
 | Dropped: bad timestamps | 20 |
 | Dropped: non-positive/null amounts | 25 |
 | Dropped: null merchants | 15 |
-| Pre-budget flags | 2,957 |
+| Pre-budget flags | 3,321 |
 | Final flags (budget = 1,000) | 1,000 |
 | Flag rate | 0.10% |
-| Recall vs 190 confirmed fraud | **43.2%** |
-| Total wall-clock | 4.3 s |
+| Recall vs 190 confirmed fraud (pre-budget) | 70.0% (133 / 190) |
+| Recall vs 190 confirmed fraud (post-budget) | **44.7% (85 / 190)** |
+| Total wall-clock | 5.44 s |
 
-Per-rule counts: R1 1,348 · R2 424 · R3 1,182 · R4 93 · R5 95. See
-`out/metrics.json` after a run for full numbers.
+Per-rule counts: R1 1,348 · R2 395 · R3 1,715 · R4 93 · R5 95.
+
+Per-rule budget survival (how many of each rule's hits made the 1,000-flag cut):
+
+| Rule | Pre-budget | Survived | Survival rate |
+|---|---:|---:|---:|
+| R1 | 1,348 | 590 | 43.8% |
+| R2 | 395 | 395 | 100% |
+| R3 | 1,715 | 211 | 12.3% |
+| R4 | 93 | 93 | 100% |
+| R5 | 95 | 36 | 37.9% |
+
+See `out/metrics.json` after a run for full numbers (timings, pairwise overlap,
+per-rule survival detail).
 
 ## Repository layout
 

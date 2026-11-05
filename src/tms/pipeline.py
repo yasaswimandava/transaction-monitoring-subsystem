@@ -100,18 +100,38 @@ def run(
         rule_df = _time(f"rule:{rule.id}", lambda r=rule: r.apply(df))
         per_rule[rule.id] = rule_df[FLAG_COLUMNS].copy()
 
-    flags = _time("merge", lambda: _merge_flags(per_rule))
-    pre_budget_count = len(flags)
-    flags = _time("trim", lambda: _trim_to_budget(flags, budget))
+    pre_merge_flags = _time("merge", lambda: _merge_flags(per_rule))
+    pre_budget_count = len(pre_merge_flags)
+    flags = _time("trim", lambda: _trim_to_budget(pre_merge_flags, budget))
 
     flagged_path = out_dir / "flagged.csv"
     _time("write", lambda: flags.to_csv(flagged_path, index=False))
+
+    # Per-rule survival of the budget step. A rule's pre-budget count is the
+    # distinct txns it contributed to pre_merge_flags; its survived count is
+    # how many of those made it past the trim. Lets a reviewer see exactly
+    # what each rule lost at the budget cut, not just the aggregate.
+    final_txn_ids = set(flags["txn_id"]) if not flags.empty else set()
+    budget_survival = {}
+    for rid, d in per_rule.items():
+        rule_ids = set(d["txn_id"]) if not d.empty else set()
+        survived = rule_ids & final_txn_ids
+        budget_survival[rid] = {
+            "pre_budget": len(rule_ids),
+            "survived_budget": len(survived),
+            "dropped_by_budget": len(rule_ids) - len(survived),
+            "survival_rate": round(len(survived) / len(rule_ids), 4) if rule_ids else None,
+        }
+
+    recall_pre = _recall(pre_merge_flags, labels)
+    recall_post = _recall(flags, labels)
 
     metrics = {
         "input_rows": ingest_report.raw_rows,
         "clean_rows": ingest_report.final_rows,
         "ingest_report": ingest_report.as_dict(),
         "per_rule_counts": {rid: int(len(d)) for rid, d in per_rule.items()},
+        "per_rule_budget_survival": budget_survival,
         "pre_budget_flags": pre_budget_count,
         "final_flags": int(len(flags)),
         "flag_rate_per_1M": round(len(flags) * 1_000_000 / ingest_report.final_rows, 2)
@@ -119,7 +139,10 @@ def run(
         else 0,
         "budget": budget,
         "pairwise_overlap": _pairwise_overlap(per_rule),
-        "recall_against_confirmed_fraud": _recall(flags, labels),
+        "recall_against_confirmed_fraud": {
+            "pre_budget": recall_pre,
+            "post_budget": recall_post,
+        },
         "timings_seconds": {t.name: t.seconds for t in timings},
         "total_seconds": round(sum(t.seconds for t in timings), 3),
     }
