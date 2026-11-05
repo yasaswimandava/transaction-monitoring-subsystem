@@ -31,10 +31,10 @@ The pipeline reports recall against the 190 labeled fraud txns at two points:
 - **Pre-budget recall: 70.0%** (133 / 190). Of the labeled fraud, this is how
   much our rules catch *before* the 1,000-flag trim. That is the ceiling of
   what our rule set can see given its thresholds.
-- **Post-budget recall: 44.7%** (85 / 190). After trimming to the 1,000-flag
+- **Post-budget recall: 45.3%** (86 / 190). After trimming to the 1,000-flag
   analyst budget, this is how much actually reaches a reviewer.
 
-The gap between the two (25.3 percentage points, or 48 labeled fraud txns) is
+The gap between the two (24.7 percentage points, or 47 labeled fraud txns) is
 the direct cost of the budget cut — mostly R3 single-rule hits that get
 outranked by multi-rule corroborated flags. The per-rule survival table in
 `metrics.json` shows exactly which rule paid for the budget.
@@ -56,7 +56,7 @@ the pipeline hiding the cost of its own budget decision.
   and not a bug.
 - **They are not a precision estimate.** We have no "confirmed legit" set, so
   false-positive rate is unknown. The best we can say is that an analyst
-  reviewing 1,000 flags, of which 85 are known-bad, will see corroborated
+  reviewing 1,000 flags, of which 86 are known-bad, will see corroborated
   evidence (multi-rule hits) for a substantial fraction of the rest — see the
   pairwise overlap matrix in `metrics.json`.
 

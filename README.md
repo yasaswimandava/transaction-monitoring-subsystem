@@ -8,7 +8,7 @@ fraud-ops analyst team to review.
 - Budget-respecting: flags trimmed to 1,000 per 1M (0.1%) by default.
 - Point-in-time features — rules that look at per-user history use prior-only
   aggregates so a txn never contributes to the baseline it's being tested against.
-- 16 targeted tests covering ingest, each rule, merge, and budget trimming.
+- 17 targeted tests covering ingest, each rule, merge, and budget trimming.
 
 ## Run it (under 10 minutes from a fresh clone)
 
@@ -46,9 +46,9 @@ python -m tms.cli --txns PATH --fraud PATH --out DIR --budget 1000
 pytest
 ```
 
-16 tests, <1s runtime. Cover ingest cleaning, each rule's positive and negative
-cases (including a dedicated point-in-time regression for R3), and the
-end-to-end pipeline on a synthetic CSV.
+17 tests, <1s runtime. Cover ingest cleaning, each rule's positive and negative
+cases (including point-in-time regressions for R3 and the R5 output selection),
+and the end-to-end pipeline on a synthetic CSV.
 
 ## What this ships
 
@@ -94,12 +94,12 @@ Deliberately skipped:
 | Dropped: bad timestamps | 20 |
 | Dropped: non-positive/null amounts | 25 |
 | Dropped: null merchants | 15 |
-| Pre-budget flags | 3,321 |
+| Pre-budget flags | 3,335 |
 | Final flags (budget = 1,000) | 1,000 |
 | Flag rate | 0.10% |
 | Recall vs 190 confirmed fraud (pre-budget) | 70.0% (133 / 190) |
-| Recall vs 190 confirmed fraud (post-budget) | **44.7% (85 / 190)** |
-| Total wall-clock | 5.44 s |
+| Recall vs 190 confirmed fraud (post-budget) | **45.3% (86 / 190)** |
+| Total wall-clock | 5.48 s |
 
 Per-rule counts: R1 1,348 · R2 395 · R3 1,715 · R4 93 · R5 95.
 
@@ -107,11 +107,15 @@ Per-rule budget survival (how many of each rule's hits made the 1,000-flag cut):
 
 | Rule | Pre-budget | Survived | Survival rate |
 |---|---:|---:|---:|
-| R1 | 1,348 | 590 | 43.8% |
+| R1 | 1,348 | 599 | 44.4% |
 | R2 | 395 | 395 | 100% |
-| R3 | 1,715 | 211 | 12.3% |
+| R3 | 1,715 | 202 | 11.8% |
 | R4 | 93 | 93 | 100% |
-| R5 | 95 | 36 | 37.9% |
+| R5 | 95 | 22 | 23.2% |
+
+Threshold calibration against the budget is documented in
+[docs/RULES.md](docs/RULES.md#threshold-calibration-against-the-review-budget)
+and reproducible with `python scripts/sensitivity.py`.
 
 See `out/metrics.json` after a run for full numbers (timings, pairwise overlap,
 per-rule survival detail).
@@ -131,8 +135,10 @@ src/tms/
   pipeline.py        # merge, budget trim, recall, timings
   cli.py             # typer entrypoint
 tests/               # ingest, rule, pipeline tests
+scripts/
+  sensitivity.py     # threshold-vs-budget sweep (reproduces the RULES.md table)
 docs/
-  RULES.md           # 5 rules + rationales + deferral reasoning
+  RULES.md           # 5 rules + rationales + deferral reasoning + calibration
   LABELS_NOTE.md     # how confirmed_fraud.csv was (not) used
   AI_USAGE.md        # LLM leverage + mistakes I caught
 ```

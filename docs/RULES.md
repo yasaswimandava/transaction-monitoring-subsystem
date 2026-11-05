@@ -34,8 +34,8 @@ incident doesn't eat the whole budget.
 bill across apps, replaying a cart. These usually show up at low amounts; a
 fraud-ops analyst dismisses them in seconds.
 
-**On this dataset:** 1,348 flagged pre-budget, 590 survive the budget cut
-(43.8%). Correlates strongly with R4 (81 overlapping txns — bursts of
+**On this dataset:** 1,348 flagged pre-budget, 599 survive the budget cut
+(44.4%). Correlates strongly with R4 (81 overlapping txns — bursts of
 micro-charges are often card-testing).
 
 ---
@@ -126,22 +126,102 @@ is overwhelmingly a fraud operation.
 
 **Logic:** a txn fires when, by the time it happens, the device has already
 been used by ≥ 4 distinct `user_id`s (including the current txn's user).
-Surface the top 5 highest-amount qualifying txns per device.
+Surface the first 5 qualifying txns per device *by timestamp*.
 
 **Threshold:** `user_threshold=4`, `top_n_per_device=5`.
 
-**Point-in-time correctness:** the distinct-user count is a *running* tally.
-Txns from the first three users on a device do **not** fire just because the
-device later serves many users. Using the eventual (end-of-file) count would
-retroactively flag innocent txns that happened before the device looked
-suspicious — a form of look-ahead bias.
+**Point-in-time correctness:** two steps, both strictly as-of:
 
-**False-positive tradeoff:** shared family phones exist — hence the top-N-per-
-device cap, which keeps one legitimate shared device from flooding the queue.
+1. **Firing**: the distinct-user count is a *running* tally. Txns from the
+   first three users on a device do **not** fire just because the device
+   later serves many users. Using the eventual (end-of-file) count would
+   retroactively flag innocent txns that happened before the device looked
+   suspicious.
+2. **Per-device cap**: once a device has more than 5 qualifying txns, the cap
+   picks the *first 5 by timestamp*, not the 5 highest-amount. Amount-sorting
+   would let a later large purchase retroactively displace an earlier
+   qualifying txn from the output — a subtler form of the same look-ahead
+   bias.
 
-**On this dataset:** 95 flagged pre-budget, 36 survive the budget cut (37.9%).
+**False-positive tradeoff:** shared family phones exist — hence the per-device
+cap, which keeps one legitimate shared device from flooding the queue.
+
+**On this dataset:** 95 flagged pre-budget, 22 survive the budget cut (23.2%).
 
 ---
+
+## Severity ordering
+
+Severity is set per rule and drives the budget-trim tiebreak. The ranking is
+based on signal-to-noise, not on analyst dollar impact:
+
+| Rule | Severity | Why |
+|---|---|---|
+| R2 — new-device + high-value | 5 | Two independent corroborating signals (new device AND amount anomaly within 24h) — among the lowest false-positive profiles in consumer fraud. |
+| R4 — micro-charge sweep | 5 | ≥5 distinct merchants under $2 in 30 min is near-definitionally card testing. Very low legitimate-traffic analogue. |
+| R1 — velocity burst | 4 | Strong signal, but legitimate bursts exist (split bills, retry loops). Flagging only the 6th+ txn in the burst limits false positives but doesn't eliminate them. |
+| R3 — amount anomaly | 3 | Single-signal rule. One large txn on a user's own device is explainable (rent, deposit, electronics) and relatively often legitimate. |
+| R5 — device sharing | 3 | Shared family devices exist; the top-N-per-device cap limits damage but a 3-user threshold has genuine false-positive risk. |
+
+R2 and R4 share severity 5 because both carry independent corroborating
+signal (R2: device + amount; R4: multi-merchant + micro-amount). R1 sits one
+tier below because velocity alone is noisier. R3 and R5 share severity 3
+because each is a single-signal rule that an analyst would want more context on
+before escalating.
+
+## Threshold calibration against the review budget
+
+Each rule has one primary calibration knob. The table below shows how
+pre-budget candidate counts move as that knob is varied around its chosen
+value on the 1M-row dataset. This is how the thresholds were sized against
+the 1,000-flag analyst budget — not label recall, which stays post-hoc.
+
+Reproduce with `python scripts/sensitivity.py`.
+
+| Rule | Knob | Value | Pre-budget count |
+|---|---|---:|---:|
+| R1 | `burst_count` (10-min window) | 5 | 3,689 |
+| R1 | | **6 (chosen)** | **1,348** |
+| R1 | | 7 | 515 |
+| R1 | | 8 | 204 |
+| R2 | amount `floor` ($) | 50 | 437 |
+| R2 | | 100 | 426 |
+| R2 | | **150 (chosen)** | **395** |
+| R2 | | 300 | 306 |
+| R3 | amount `floor` ($) | 150 | 2,946 |
+| R3 | | 200 | 2,467 |
+| R3 | | **300 (chosen)** | **1,715** |
+| R3 | | 500 | 834 |
+| R4 | `distinct_merchants` (30-min window) | 4 | 165 |
+| R4 | | **5 (chosen)** | **93** |
+| R4 | | 6 | 44 |
+| R5 | `user_threshold` (distinct users/device) | 3 | 180 |
+| R5 | | **4 (chosen)** | **95** |
+| R5 | | 5 | 65 |
+| R5 | | 6 | 45 |
+
+Reading the table:
+
+- **R1 at 5** produces 3,689 candidates — larger than the entire budget on its
+  own. Dropping to 6 cuts volume ~63% and leaves R1 contributing a defensible
+  share of the final 1,000. Going to 7 and 8 drops recall faster than the
+  precision gain justifies (bursts of 7+ are strictly a subset of bursts of 6+).
+- **R2 is relatively insensitive to the floor** — stepping the floor from $50
+  to $150 only trims 42 txns. The choice is driven by false-positive reasoning
+  (tiny-median users making a routine $75 gift-card purchase on a newly-seen
+  phone shouldn't fire), not by budget pressure.
+- **R3's floor is where budget pressure is most visible.** $150 gives 2,946
+  candidates — three times the analyst budget by this one rule alone. $300
+  keeps R3 under 2k pre-budget; $500 would squeeze it further but cuts the
+  "mid-range stolen-card cashout" segment ($300–$500) that the rule is partly
+  designed for.
+- **R4 at 4 merchants** doubles the flag count but weakens the "card testing
+  looks like card testing" story — 4 distinct micro-charges in 30 min is
+  plausible for a legitimate rapid-fire shopper. 5 is the smallest value
+  where the pattern looks unambiguously like BIN validation.
+- **R5 at 3 users** nearly doubles the flag count. 3-user households exist
+  (parents + one kid). 4 draws a cleaner line between "shared device" and
+  "device farm".
 
 ## Severity ordering
 
@@ -165,7 +245,7 @@ before escalating.
 ## Budget enforcement
 
 The analyst team can review ~1,000 flags per 1M txns. Our rules collectively
-produced 3,321 pre-budget flags (after merging same-txn hits across rules).
+produced 3,335 pre-budget flags (after merging same-txn hits across rules).
 The merge-and-trim step:
 
 1. Groups per-rule flags by `txn_id`, concatenating reasons and taking the max
@@ -183,11 +263,11 @@ guessing from the aggregate.
 
 | Rule | Pre-budget | Survived | Dropped | Survival rate |
 |---|---:|---:|---:|---:|
-| R1 | 1,348 | 590 | 758 | 43.8% |
+| R1 | 1,348 | 599 | 749 | 44.4% |
 | R2 | 395 | 395 | 0 | 100% |
-| R3 | 1,715 | 211 | 1,504 | 12.3% |
+| R3 | 1,715 | 202 | 1,513 | 11.8% |
 | R4 | 93 | 93 | 0 | 100% |
-| R5 | 95 | 36 | 59 | 37.9% |
+| R5 | 95 | 22 | 73 | 23.2% |
 
 R2 and R4 keep everything because their raw counts fit well within the budget
 even after ranking. R3 pays the most because its rank — single signal, severity

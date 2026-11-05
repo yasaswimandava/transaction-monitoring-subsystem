@@ -5,12 +5,15 @@ strong tell: shared family phones exist, but a device serving >= N distinct
 users is overwhelmingly fraud infrastructure in consumer fintech.
 
 Flag: transactions on a device whose *running* distinct-user count has reached
-``user_threshold`` as of (and including) that transaction. The N highest-
-amount qualifying txns per device are surfaced.
+``user_threshold`` as of (and including) that transaction. The first
+``top_n_per_device`` qualifying txns per device by timestamp are surfaced.
 
 Point-in-time correctness: we count distinct users seen on the device so far,
 not its eventual lifetime count. A txn from the first user on a device cannot
-be flagged just because that device later serves many users.
+be flagged just because that device later serves many users. The per-device
+top-N selection is also time-ordered — we take the first N qualifying txns on
+each device rather than the N highest-amount ones, so a later large purchase
+can never retroactively displace an earlier qualifying one from the output.
 """
 from __future__ import annotations
 
@@ -43,15 +46,15 @@ class DeviceSharingRule:
         if not mask.any():
             return pd.DataFrame(columns=FLAG_COLUMNS)
 
+        # ``tmp`` is already sorted by (device_id, timestamp); preserve that
+        # order through the mask so the per-device head() takes the first N
+        # qualifying txns by time, not the N largest. Sorting by amount here
+        # would let a later large purchase retroactively displace an earlier
+        # qualifying txn — a form of look-ahead in the output.
         candidates = tmp.loc[
-            mask, ["txn_id", "device_id", "amount", "user_id", "users_so_far"]
+            mask, ["txn_id", "device_id", "timestamp", "amount", "user_id", "users_so_far"]
         ].copy()
-        # Cap per device so one shared device can't flood the queue.
-        candidates = (
-            candidates.sort_values(["device_id", "amount"], ascending=[True, False])
-            .groupby("device_id", sort=False)
-            .head(self.top_n_per_device)
-        )
+        candidates = candidates.groupby("device_id", sort=False).head(self.top_n_per_device)
 
         candidates["rule_id"] = self.id
         candidates["reason"] = [

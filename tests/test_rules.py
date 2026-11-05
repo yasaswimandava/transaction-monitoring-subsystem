@@ -174,6 +174,33 @@ def test_device_sharing_fires_from_fourth_user_onward():
     assert "t4_same_user_later" in flagged
 
 
+def test_device_sharing_top_n_is_time_ordered_not_amount_ordered():
+    # Reviewer case: the first qualifying txn ($23 by u3) must survive the
+    # top-N cap even when later qualifying txns are much larger. Amount-sort
+    # selection would displace it; time-ordered selection keeps it.
+    rows = [
+        {"txn_id": "u0_early", "user_id": "u0", "timestamp": _iso(0),
+         "merchant_name": "SHELL", "amount": 10.0, "device_id": "shared"},
+        {"txn_id": "u1_early", "user_id": "u1", "timestamp": _iso(10),
+         "merchant_name": "SHELL", "amount": 10.0, "device_id": "shared"},
+        {"txn_id": "u2_early", "user_id": "u2", "timestamp": _iso(20),
+         "merchant_name": "SHELL", "amount": 10.0, "device_id": "shared"},
+        {"txn_id": "u3_fourth_user_small", "user_id": "u3", "timestamp": _iso(30),
+         "merchant_name": "SHELL", "amount": 23.0, "device_id": "shared"},
+        # Six later, much larger txns that would win an amount-sort top-5.
+        *[{"txn_id": f"late_big_{i}", "user_id": "u3", "timestamp": _iso(40 + i),
+           "merchant_name": "SHELL", "amount": 500.0 + i, "device_id": "shared"}
+          for i in range(6)],
+    ]
+    df = make_df(rows)
+    flags = DeviceSharingRule(user_threshold=4, top_n_per_device=5).apply(df)
+    flagged = set(flags["txn_id"])
+    # The first qualifying txn is earliest by time — must be kept.
+    assert "u3_fourth_user_small" in flagged
+    # And the cap limits total qualifying txns per device to 5.
+    assert len(flagged) == 5
+
+
 def test_device_sharing_quiet_on_single_user_device():
     rows = [
         {"txn_id": f"t{i}", "user_id": "u1", "timestamp": _iso(i),
