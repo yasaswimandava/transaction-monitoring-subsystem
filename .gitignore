@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.DS_Store
+
+# data and outputs are never committed
+data/*.csv
+out/*.csv
+out/*.jsonl
+out/*.json
+
+# but keep the directories
+!data/.gitkeep
+!out/.gitkeep
