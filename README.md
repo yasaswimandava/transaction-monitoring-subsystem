@@ -146,5 +146,5 @@ docs/
 ## Further reading
 
 - [docs/RULES.md](docs/RULES.md) — the 5 rules, rationale, thresholds, budget trade
-- [docs/LABELS_NOTE.md](docs/LABELS_NOTE.md) — what the 43% recall does and doesn't tell you
+- [docs/LABELS_NOTE.md](docs/LABELS_NOTE.md) — what the 45.3% recall does and doesn't tell you
 - [docs/AI_USAGE.md](docs/AI_USAGE.md) — where Claude helped and where I overrode it

@@ -14,7 +14,8 @@ All rules are computable from the six provided columns (`txn_id`, `user_id`,
 | R5 | Device sharing | Mule ring / account farming | 3 | ✅ |
 
 All five shipped. Spec requires ≥3; the extra two cost < 50 lines each and
-measurably improve precision when combined.
+produce meaningful multi-rule corroboration (see the pairwise overlap matrix
+in `metrics.json`).
 
 ---
 
@@ -161,7 +162,7 @@ based on signal-to-noise, not on analyst dollar impact:
 | R4 — micro-charge sweep | 5 | ≥5 distinct merchants under $2 in 30 min is near-definitionally card testing. Very low legitimate-traffic analogue. |
 | R1 — velocity burst | 4 | Strong signal, but legitimate bursts exist (split bills, retry loops). Flagging only the 6th+ txn in the burst limits false positives but doesn't eliminate them. |
 | R3 — amount anomaly | 3 | Single-signal rule. One large txn on a user's own device is explainable (rent, deposit, electronics) and relatively often legitimate. |
-| R5 — device sharing | 3 | Shared family devices exist; the top-N-per-device cap limits damage but a 3-user threshold has genuine false-positive risk. |
+| R5 — device sharing | 3 | Shared family devices exist; the per-device cap limits damage but a 4-user threshold still has genuine false-positive risk. |
 
 R2 and R4 share severity 5 because both carry independent corroborating
 signal (R2: device + amount; R4: multi-merchant + micro-amount). R1 sits one
@@ -204,8 +205,10 @@ Reading the table:
 
 - **R1 at 5** produces 3,689 candidates — larger than the entire budget on its
   own. Dropping to 6 cuts volume ~63% and leaves R1 contributing a defensible
-  share of the final 1,000. Going to 7 and 8 drops recall faster than the
-  precision gain justifies (bursts of 7+ are strictly a subset of bursts of 6+).
+  share of the final 1,000. Going to 7 or 8 trims volume further but also
+  skips a plausible fraud shape — a legitimate 7-txn-in-10-min burst is rarer
+  than a 6-txn one, so pushing the threshold higher narrows what the rule
+  catches, not what it rejects.
 - **R2 is relatively insensitive to the floor** — stepping the floor from $50
   to $150 only trims 42 txns. The choice is driven by false-positive reasoning
   (tiny-median users making a routine $75 gift-card purchase on a newly-seen
@@ -222,25 +225,6 @@ Reading the table:
 - **R5 at 3 users** nearly doubles the flag count. 3-user households exist
   (parents + one kid). 4 draws a cleaner line between "shared device" and
   "device farm".
-
-## Severity ordering
-
-Severity is set per rule and drives the budget-trim tiebreak. The ranking is
-based on signal-to-noise, not on analyst dollar impact:
-
-| Rule | Severity | Why |
-|---|---|---|
-| R2 — new-device + high-value | 5 | Two independent corroborating signals (new device AND amount anomaly within 24h) — among the lowest false-positive profiles in consumer fraud. |
-| R4 — micro-charge sweep | 5 | ≥5 distinct merchants under $2 in 30 min is near-definitionally card testing. Very low legitimate-traffic analogue. |
-| R1 — velocity burst | 4 | Strong signal, but legitimate bursts exist (split bills, retry loops). Flagging only the 6th+ txn in the burst limits false positives but doesn't eliminate them. |
-| R3 — amount anomaly | 3 | Single-signal rule. One large txn on a user's own device is explainable (rent, deposit, electronics) and relatively often legitimate. |
-| R5 — device sharing | 3 | Shared family devices exist; the top-N-per-device cap limits damage but a 3-user threshold has genuine false-positive risk. |
-
-R2 and R4 share severity 5 because both carry independent corroborating
-signal (R2: device + amount; R4: multi-merchant + micro-amount). R1 sits one
-tier below because velocity alone is noisier. R3 and R5 share severity 3
-because each is a single-signal rule that an analyst would want more context on
-before escalating.
 
 ## Budget enforcement
 
