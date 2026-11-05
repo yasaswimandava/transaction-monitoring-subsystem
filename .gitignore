@@ -5,7 +5,8 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 
-# data and outputs are never committed
+# Keep the supplied input data and new generated output files out of Git.
+# The example outputs already committed under out/ remain tracked.
 data/*.csv
 out/*.csv
 out/*.jsonl

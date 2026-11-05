@@ -15,15 +15,20 @@ fraud-ops analyst team to review.
 ```bash
 # 1. Python 3.9+ venv
 python3 -m venv .venv && source .venv/bin/activate
-pip install -e .
+python -m pip install --upgrade pip
+python -m pip install -e '.[dev]'
 
-# 2. Drop the two CSVs into data/
+# 2. Download the two supplied CSVs and put them in data/
 #    data/transactions.csv
 #    data/confirmed_fraud.csv
 
 # 3. Run
 python -m tms.cli
 ```
+
+Download the assignment inputs: [transactions.csv](https://drive.google.com/file/d/1aRY6Yf0vQFqoSEg77npv92iJsl16snYP/view) and [confirmed_fraud.csv](https://drive.google.com/file/d/1MS6ZKhhx6v8BYQYWGysBsULiI-nsJLzo/view). The raw CSVs are excluded from Git. If you already have them elsewhere, use `--txns` and `--fraud` with their paths instead of copying them into `data/`.
+
+The pip upgrade is needed for older Python 3.9 environments whose bundled pip cannot install this `pyproject.toml` project in editable mode. The `[dev]` extra installs pytest for the test command below.
 
 Outputs land in `out/`:
 
@@ -43,7 +48,7 @@ python -m tms.cli --txns PATH --fraud PATH --out DIR --budget 1000
 ## Tests
 
 ```bash
-pytest
+python -m pytest
 ```
 
 17 tests, <1s runtime. Cover ingest cleaning, each rule's positive and negative
