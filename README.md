@@ -28,6 +28,10 @@ Outputs land in `out/`:
 - `flagged.csv` — `txn_id, rules_fired, reason, severity`
 - `metrics.json` — per-rule counts, overlap, timings, recall vs confirmed fraud
 
+The repo also ships pre-generated `out/flagged.csv` and `out/metrics.json` from
+the latest run, so you can inspect the output without running the pipeline.
+Running the pipeline overwrites them.
+
 ### Options
 
 ```bash

@@ -36,11 +36,10 @@ class NewDeviceRule:
         user_count = grp_user.transform("count")
         user_median = grp_user.transform("median")
 
-        # First-seen timestamp per (user_id, device_id).
+        # First-seen timestamp per (user_id, device_id) and per user. The user
+        # comparison is so we don't flag the user's very first device (every
+        # user has to start somewhere).
         first_seen = df.groupby(["user_id", "device_id"], sort=False)["timestamp"].transform("min")
-        # First-seen per user (to determine if this device is "new" — i.e. not
-        # the user's very first device, since every user has to start somewhere).
-        user_first_ts = grp_user.transform("count")  # placeholder, replaced below
         user_first_ts = df.groupby("user_id", sort=False)["timestamp"].transform("min")
 
         delta_hours = (df["timestamp"] - first_seen).dt.total_seconds() / 3600.0

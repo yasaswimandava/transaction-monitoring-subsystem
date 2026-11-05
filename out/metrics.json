@@ -1,0 +1,53 @@
+{
+  "input_rows": 1001000,
+  "clean_rows": 999940,
+  "ingest_report": {
+    "raw_rows": 1001000,
+    "duplicate_txn_ids": 1000,
+    "bad_timestamps": 20,
+    "bad_amounts": 25,
+    "null_merchants": 15,
+    "final_rows": 999940
+  },
+  "per_rule_counts": {
+    "R1": 1348,
+    "R2": 424,
+    "R3": 1182,
+    "R4": 93,
+    "R5": 95
+  },
+  "pre_budget_flags": 2957,
+  "final_flags": 1000,
+  "flag_rate_per_1M": 1000.06,
+  "budget": 1000,
+  "pairwise_overlap": {
+    "R1&R2": 10,
+    "R1&R3": 2,
+    "R1&R4": 81,
+    "R1&R5": 2,
+    "R2&R3": 58,
+    "R2&R4": 0,
+    "R2&R5": 23,
+    "R3&R4": 0,
+    "R3&R5": 19,
+    "R4&R5": 0
+  },
+  "recall_against_confirmed_fraud": {
+    "labeled_fraud_count": 190,
+    "flagged_labels": 82,
+    "recall": 0.4316
+  },
+  "timings_seconds": {
+    "ingest": 2.353,
+    "load_fraud": 0.018,
+    "rule:R1": 0.425,
+    "rule:R2": 0.615,
+    "rule:R3": 0.442,
+    "rule:R4": 0.029,
+    "rule:R5": 0.328,
+    "merge": 0.043,
+    "trim": 0.001,
+    "write": 0.003
+  },
+  "total_seconds": 4.257
+}
